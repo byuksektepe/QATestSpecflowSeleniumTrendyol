@@ -3,24 +3,34 @@ using TechTalk.SpecFlow;
 using FluentAssertions;
 using QATestSpecflowSeleniumTrendyol.Drivers;
 using QATestSpecflowSeleniumTrendyol.Resources;
+using QATestSpecflowSeleniumTrendyol.PO;
 
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
     public class TrendyolOnChromeStepDefinitions
     {
-        private readonly Common _common;
+        private readonly Common _driver;
+        private readonly Navbar navbar;
 
         public TrendyolOnChromeStepDefinitions(SeleniumDriver driver)
         {
-            _common = new Common(driver.Current);
+            _driver = new Common(driver.Current);
+            navbar = new Navbar(driver.Current);
         }
 
         [Given(@"Navigate to trendyol website")]
         public void GivenNavigateToTrendyolWebsite()
         {
-
+            // Given in hooks, its just for define BDD
         }
+
+        [Given(@"Search for product ""([^""]*)"" in search")]
+        public void GivenSearchForProductInSearch(string product)
+        {
+            navbar.SearchItem(product);
+        }
+
 
     }
 

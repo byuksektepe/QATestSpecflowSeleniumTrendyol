@@ -20,10 +20,9 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void StartTest()
         {
-            _webDriver.Manage().Window.Maximize();
-
             if (_webDriver.Url != SiteUrl)
             {
+                _webDriver.Manage().Window.Maximize();
                 _webDriver.Url = SiteUrl;
             }
         }
@@ -37,7 +36,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private T WaitUntil<T>(Func<T> getResult, Func<T, bool> isResultAccepted) where T : class
         {
             var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));
-#pragma warning disable CS8603 // Possible null reference return.
+            #pragma warning disable CS8603 // Possible null reference return.
             return wait.Until(driver =>
             {
 
@@ -47,7 +46,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                 return result;
 
             });
-#pragma warning restore CS8603 // Possible null reference return.
+            #pragma warning restore CS8603 // Possible null reference return.
         }
     }
 }
