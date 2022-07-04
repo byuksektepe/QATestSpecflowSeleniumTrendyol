@@ -1,25 +1,27 @@
 ﻿using TechTalk.SpecFlow;
 using OpenQA.Selenium.Chrome;
+using QATestSpecflowSeleniumTrendyol.Drivers;
+using QATestSpecflowSeleniumTrendyol.Resources;
+using BoDi;
 
 namespace QATestSpecflowSeleniumTrendyol.Hooks
 {
     [Binding]
     public sealed class HookInit
     {
-        private ChromeDriver _driver;
+        private static Common _common;
 
-        [BeforeScenario]
-        public void BeforeScenario()
+        [BeforeTestRun]
+        public static void BeforeTestRun(ObjectContainer testThreadContainer)
         {
-            _driver.Navigate().GoToUrl("about:blank");
-
+            testThreadContainer.BaseContainer.Resolve<SeleniumDriver>();
         }
 
-
-        [AfterScenario]
-        public void AfterScenario()
+        [BeforeScenario]
+        public static void BeforeScenario(SeleniumDriver driver)
         {
-            _driver.Quit();
+            _common = new Common(driver.Current);
+            _common.StartTest();
         }
     }
 }
