@@ -13,6 +13,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public Navbar(IWebDriver webDriver)
         {
             Driver = webDriver;
+            common = new Common(webDriver);
         }
 
         private IWebElement SearchInput => Driver.FindElement(By.XPath("//div[@class='search-box-container']//input[@class='search-box']"));
@@ -23,6 +24,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             SearchInput.SendKeys(SearchItem);
             SearchInput.SendKeys(Keys.Return);
             //System.Threading.Thread.Sleep(5000);
+            common.VerifyPageLoad();
 
         }
     }

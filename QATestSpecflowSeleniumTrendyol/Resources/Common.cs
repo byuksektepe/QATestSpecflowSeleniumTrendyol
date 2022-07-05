@@ -43,6 +43,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void CloseModalIfExists()
         {
+            VerifyPageLoad();
             IWebElement ModalClose = _webDriver.FindElement(By.XPath(ModalCloseElement));
             if (Exists(ModalClose)) {
                 ModalClose.Click();
@@ -59,25 +60,22 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void VerifyPageLoad()
         {
-
+            WaitUntilElementVisible(By.XPath(PageLoadVerifyElement));
         }
 
-        public void WaitForPageToLoad(Action doing)
+        public IWebElement WaitUntilElementVisible(By elementLocator, int timeout = 10)
         {
-            IWebElement oldPage = _webDriver.FindElement(By.TagName("html"));
-            doing();
-            WebDriverWait wait = new WebDriverWait(_webDriver, new TimeSpan(0, 0, DefaultWaitInSeconds));
             try
             {
-                wait.Until(driver => ExpectedConditions.StalenessOf(oldPage)(_webDriver) &&
-                    ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+                var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(timeout));
+                return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
             }
-            catch (Exception pageLoadWaitError)
+            catch (NoSuchElementException)
             {
-                throw new TimeoutException("Timeout during page load", pageLoadWaitError);
+                Console.WriteLine("Element with locator: '" + elementLocator + "' was not found.");
+                throw;
             }
         }
-
 
         // taken from specflow website, WaitUntil method
         private T WaitUntil<T>(Func<T> getResult, Func<T, bool> isResultAccepted) where T : class
