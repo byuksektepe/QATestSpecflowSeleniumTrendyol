@@ -14,7 +14,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         //
         private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[2]//div[@class='image-overlay-body']";
-
+        // Create new instances
         public SearchResults(IWebDriver webDriver)
         {
             Driver = webDriver;
