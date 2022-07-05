@@ -13,7 +13,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Actions action;
 
         //
-        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']//div[@class='p-card-wrppr'][9]";
+        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[2]//div[@class='image-overlay-body']";
 
         public SearchResults(IWebDriver webDriver)
         {
@@ -26,7 +26,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void ClickFirstProduct()
         {
-            common.WaitUntilElement(By.XPath(FirstProductXPath), "Exists");
+            common.WaitUntilElement(By.XPath(FirstProductXPath), "Visible");
             action.MoveToElement(FirstProductInResults).Perform();
             FirstProductInResults.Click();
 

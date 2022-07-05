@@ -1,6 +1,8 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
 
 namespace QATestSpecflowSeleniumTrendyol.Drivers
 {
@@ -20,6 +22,22 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
 
         private IWebDriver CreateWebDriver()
         {
+            return ChromeWebDriver();
+        }
+
+        private IWebDriver FirefoxWebDriver()
+        {
+            var firefoxDriverService = FirefoxDriverService.CreateDefaultService();
+
+            var firefoxOptions = new FirefoxOptions();
+
+            var firefoxDriver = new FirefoxDriver(firefoxDriverService, firefoxOptions);
+
+            return firefoxDriver;
+        }
+
+        private IWebDriver ChromeWebDriver()
+        {
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
 
             var chromeOptions = new ChromeOptions();
@@ -28,6 +46,17 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
             var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
 
             return chromeDriver;
+        }
+
+        private IWebDriver EdgeWebDriver()
+        {
+            var edgeDriverService = EdgeDriverService.CreateDefaultService();
+
+            var edgeOptions = new EdgeOptions();
+
+            var edgeDriver = new EdgeDriver(edgeDriverService, edgeOptions);
+
+            return edgeDriver;
         }
 
 

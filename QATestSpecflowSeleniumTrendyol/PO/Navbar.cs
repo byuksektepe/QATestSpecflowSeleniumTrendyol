@@ -25,6 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void SearchItem(String SearchItem)
         {
             SearchInput.SendKeys(SearchItem);
+            System.Threading.Thread.Sleep(300);
             SearchInput.SendKeys(Keys.Enter);
             common.VerifyPageLoad();
 
