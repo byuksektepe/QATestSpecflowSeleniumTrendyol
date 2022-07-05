@@ -9,14 +9,18 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
     public class TrendyolOnChromeStepDefinitions
-    {
+    {   
+        //
         private readonly Common _driver;
         private readonly Navbar navbar;
+        private readonly SearchResults searchResults;
+        //
 
         public TrendyolOnChromeStepDefinitions(SeleniumDriver driver)
         {
             _driver = new Common(driver.Current);
             navbar = new Navbar(driver.Current);
+            searchResults = new SearchResults(driver.Current);
         }
 
         [Given(@"Navigate to trendyol website")]
@@ -34,7 +38,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Then(@"Click first product in results")]
         public void ThenClickFirstProductInResults()
         {
-            throw new PendingStepException();
+            searchResults.ClickFirstProduct();
         }
 
     }

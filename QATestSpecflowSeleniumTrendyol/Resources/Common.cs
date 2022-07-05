@@ -60,17 +60,33 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void VerifyPageLoad()
         {
-            WaitUntilElementVisible(By.XPath(PageLoadVerifyElement));
+            WaitUntilElement(By.XPath(PageLoadVerifyElement));
             // This 3ms wait for prevent sync errors.
             System.Threading.Thread.Sleep(300);
         }
 
-        public IWebElement WaitUntilElementVisible(By elementLocator, int timeout = 10)
+        public IWebElement WaitUntilElement(By elementLocator, string method="Visible", int timeout = 10)
         {
             try
             {
                 var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(timeout));
-                return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
+                if(method == "Clickable") 
+                {
+                    return wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
+                }
+                else if (method == "Exists")
+                {
+                    return wait.Until(ExpectedConditions.ElementExists(elementLocator));
+                }
+                else if (method == "Visible")
+                {
+                    return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
+                }
+                else
+                {
+                    return wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
+                }
+                
             }
             catch (NoSuchElementException)
             {

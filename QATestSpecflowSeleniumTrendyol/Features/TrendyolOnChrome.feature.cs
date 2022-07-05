@@ -98,6 +98,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.And("Search for product \"Laptop\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 8
+ testRunner.Then("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
