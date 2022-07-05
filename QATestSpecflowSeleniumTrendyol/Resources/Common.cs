@@ -61,6 +61,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public void VerifyPageLoad()
         {
             WaitUntilElementVisible(By.XPath(PageLoadVerifyElement));
+            // This 3ms wait for prevent sync errors.
+            System.Threading.Thread.Sleep(300);
         }
 
         public IWebElement WaitUntilElementVisible(By elementLocator, int timeout = 10)

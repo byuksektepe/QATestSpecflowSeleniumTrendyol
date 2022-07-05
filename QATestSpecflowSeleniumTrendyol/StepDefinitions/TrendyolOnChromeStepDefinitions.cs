@@ -31,6 +31,11 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar.SearchItem(product);
         }
 
+        [Then(@"Click first product in results")]
+        public void ThenClickFirstProductInResults()
+        {
+            throw new PendingStepException();
+        }
 
     }
 

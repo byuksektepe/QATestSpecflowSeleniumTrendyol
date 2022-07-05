@@ -10,6 +10,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly IWebDriver Driver;
         private readonly Common common;
 
+        // Create new instances
         public Navbar(IWebDriver webDriver)
         {
             Driver = webDriver;
@@ -23,7 +24,6 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         {
             SearchInput.SendKeys(SearchItem);
             SearchInput.SendKeys(Keys.Return);
-            //System.Threading.Thread.Sleep(5000);
             common.VerifyPageLoad();
 
         }
