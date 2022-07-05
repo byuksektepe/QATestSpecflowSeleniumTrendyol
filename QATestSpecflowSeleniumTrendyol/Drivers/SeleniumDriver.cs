@@ -23,6 +23,7 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
 
             var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("--disable-notifications");
 
             var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
 
