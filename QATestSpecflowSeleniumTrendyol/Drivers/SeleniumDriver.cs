@@ -22,7 +22,7 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
 
         private IWebDriver CreateWebDriver()
         {
-            return EdgeWebDriver();
+            return ChromeWebDriver();
         }
 
         private IWebDriver FirefoxWebDriver()

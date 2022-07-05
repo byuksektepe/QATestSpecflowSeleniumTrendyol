@@ -8,7 +8,7 @@ using QATestSpecflowSeleniumTrendyol.PO;
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
-    public class TrendyolOnChromeStepDefinitions
+    public class TrendyolStepDefinitions
     {   
         //
         private readonly Common _driver;
@@ -16,7 +16,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly SearchResults searchResults;
         //
 
-        public TrendyolOnChromeStepDefinitions(SeleniumDriver driver)
+        public TrendyolStepDefinitions(SeleniumDriver driver)
         {
             _driver = new Common(driver.Current);
             navbar = new Navbar(driver.Current);

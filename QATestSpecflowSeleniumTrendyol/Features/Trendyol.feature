@@ -1,4 +1,4 @@
-﻿Feature: TrendyolOnChrome
+﻿Feature: Trendyol
 	Trendyol Chrome Browser Tests
 
 @Smoke
