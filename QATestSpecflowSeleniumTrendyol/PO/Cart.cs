@@ -8,5 +8,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 {
     public class Cart
     {
+        private readonly IWebDriver Driver;
+        private readonly Common common;
+
+        public Cart(IWebDriver webDriver)
+        {
+            Driver = webDriver;
+            common = new Common(webDriver);
+        }
     }
 }
