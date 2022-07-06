@@ -17,7 +17,9 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public const string PageLoadVerifyElement = "//div[@class='header']//a[@id='logo']";
 
         private readonly IWebDriver _webDriver;
+        private readonly IJavaScriptExecutor js;
         private readonly Actions action;
+        
 
         // its a default wait time for expicit waits
         public const int DefaultWaitInSeconds = 5;
@@ -25,6 +27,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public Common(IWebDriver webDriver)
         {
             _webDriver = webDriver;
+            js = (IJavaScriptExecutor)webDriver;
             action = new Actions(webDriver);
         }
 
@@ -77,9 +80,17 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
             catch
             {
-                Console.WriteLine("Info: Scroll error catched in: " + elementLocator + ". Error Ignored");
+                Console.WriteLine("Info: Scroll error catched in: " + elementLocator + ". Error Ignored, used js.");
+                js.ExecuteScript("arguments[0].scrollIntoView(true);", elementLocator);
             }
 
+        }
+
+        public void Sleep(int Time)
+        {
+            // Hand writed method, Sleep like in Robot Framework.
+            int SecsToMs = Time * 1000;
+            System.Threading.Thread.Sleep(SecsToMs);
         }
 
         public IWebElement WaitUntilElement(By elementLocator, string method="Visible", int timeout = 10)
