@@ -55,6 +55,13 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail.ClickAddToCartButton();
         }
 
+        [When(@"Click see cart button")]
+        public void WhenClickSeeCartButton()
+        {
+            throw new PendingStepException();
+        }
+
+
 
 
     }

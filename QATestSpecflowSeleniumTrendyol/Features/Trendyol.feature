@@ -8,4 +8,5 @@ Scenario: Trendyol.com should be work on chrome browser
 	When Click first product in results
 	And Verify product detail page opened
 	And Click add to cart button
+	And Click see cart button
 
