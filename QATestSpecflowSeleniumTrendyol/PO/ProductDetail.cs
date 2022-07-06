@@ -33,6 +33,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickAddToCartButton()
         {
             AddToChartButtonElement.Click();
+            common.Sleep(2);
         }
     }
 }

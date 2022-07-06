@@ -52,7 +52,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click add to cart button")]
         public void WhenClickAddToCartButton()
         {
-            // pending
+            productDetail.ClickAddToCartButton();
         }
 
 
