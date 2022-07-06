@@ -27,5 +27,10 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
             common.WaitUntilElement(By.XPath(ProductDetailVerifyLocator), "Visible");
         }
+
+        public void ClickAddToCartButton()
+        {
+
+        }
     }
 }
