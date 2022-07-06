@@ -1,7 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.PO
@@ -12,8 +9,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         private const string ProductDetailVerifyLocator = "//main[@id='product-detail-app']";
-        private const string AddToCartButtonLocator = "//div[@class='add-to-basket-button-text']";
-        private const string SeeCartLocator = "//div[@class='account-nav-item basket-preview']";
+        private const string AddToCartButtonLocator = "//div[@class='account-nav-item basket-preview']";
+        private const string SeeCartLocator = "g";
 
         public ProductDetail(IWebDriver webDriver)
         {
@@ -41,6 +38,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickSeeCartElement()
         {
             SeeCartElement.Click();
+
         }
     }
 }
