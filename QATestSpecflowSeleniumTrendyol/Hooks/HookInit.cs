@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.Hooks
     [Binding]
     public sealed class HookInit
     {
-        private static Common _common;
+        private static Common common;
 
         [BeforeTestRun]
         public static void BeforeTestRun(ObjectContainer testThreadContainer)
@@ -20,8 +20,8 @@ namespace QATestSpecflowSeleniumTrendyol.Hooks
         [BeforeScenario]
         public static void BeforeScenario(SeleniumDriver driver)
         {
-            _common = new Common(driver.Current);
-            _common.StartTest();
+            common = new Common(driver.Current);
+            common.StartTest();
         }
     }
 }

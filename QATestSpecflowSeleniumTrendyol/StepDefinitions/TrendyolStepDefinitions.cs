@@ -11,16 +11,18 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
     public class TrendyolStepDefinitions
     {   
         //
-        private readonly Common _driver;
+        private readonly Common common;
         private readonly Navbar navbar;
         private readonly SearchResults searchResults;
+        private readonly ProductDetail productDetail;
         //
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
-            _driver = new Common(driver.Current);
+            common = new Common(driver.Current);
             navbar = new Navbar(driver.Current);
             searchResults = new SearchResults(driver.Current);
+            productDetail = new ProductDetail(driver.Current);
         }
 
         [Given(@"Navigate to trendyol website")]
@@ -35,11 +37,25 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar.SearchItem(product);
         }
 
-        [Then(@"Click first product in results")]
+        [When(@"Click first product in results")]
         public void ThenClickFirstProductInResults()
         {
             searchResults.ClickFirstProduct();
         }
+
+        [When(@"Verify product detail page opened")]
+        public void WhenVerifyProductDetailPageOpened()
+        {
+            productDetail.VerifyPageLoad();
+        }
+
+        [When(@"Click add to cart button")]
+        public void WhenClickAddToCartButton()
+        {
+            // pending
+        }
+
+
 
     }
 

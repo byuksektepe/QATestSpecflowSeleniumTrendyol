@@ -28,9 +28,6 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common.ScrollToElement(FirstProductInResults);
             FirstProductInResults.Click();
 
-            System.Threading.Thread.Sleep(3000);
-
-
         }
     }
 }

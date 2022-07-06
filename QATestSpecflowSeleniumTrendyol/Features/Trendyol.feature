@@ -5,5 +5,7 @@
 Scenario: Trendyol.com should be work on chrome browser
 	Given Navigate to trendyol website
 	And Search for product "Laptop" in search
-	Then Click first product in results
+	When Click first product in results
+	And Verify product detail page opened
+	And Click add to cart button
 
