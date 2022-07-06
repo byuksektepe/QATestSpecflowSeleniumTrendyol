@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 using SeleniumExtras.WaitHelpers;
 
 namespace QATestSpecflowSeleniumTrendyol.Resources
@@ -16,6 +17,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public const string PageLoadVerifyElement = "//div[@class='header']//a[@id='logo']";
 
         private readonly IWebDriver _webDriver;
+        private readonly Actions action;
 
         // its a default wait time for expicit waits
         public const int DefaultWaitInSeconds = 5;
@@ -23,6 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public Common(IWebDriver webDriver)
         {
             _webDriver = webDriver;
+            action = new Actions(webDriver);
         }
 
         public void StartTest()
@@ -63,6 +66,20 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             WaitUntilElement(By.XPath(PageLoadVerifyElement));
             // This 3ms wait for prevent sync errors.
             System.Threading.Thread.Sleep(300);
+        }
+
+        public void ScrollToElement(IWebElement elementLocator)
+        {
+            // its scrolls and ignore errors. For firefox's fucking scroll error.
+            try
+            {
+                action.MoveToElement(elementLocator).Perform();
+            }
+            catch
+            {
+                Console.WriteLine("Info: Scroll error catched in: " + elementLocator + ". Error Ignored");
+            }
+
         }
 
         public IWebElement WaitUntilElement(By elementLocator, string method="Visible", int timeout = 10)

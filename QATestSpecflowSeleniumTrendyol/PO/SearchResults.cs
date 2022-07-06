@@ -10,16 +10,14 @@ namespace QATestSpecflowSeleniumTrendyol.PO
     {
         private readonly IWebDriver Driver;
         private readonly Common common;
-        private readonly Actions action;
 
         //
-        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[2]//div[@class='image-overlay-body']";
+        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[9]//div[@class='image-overlay-body']";
         // Create new instances
         public SearchResults(IWebDriver webDriver)
         {
             Driver = webDriver;
             common = new Common(webDriver);
-            action = new Actions(webDriver);
         }
 
         IWebElement FirstProductInResults => Driver.FindElement(By.XPath(FirstProductXPath));
@@ -27,7 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickFirstProduct()
         {
             common.WaitUntilElement(By.XPath(FirstProductXPath), "Visible");
-            action.MoveToElement(FirstProductInResults).Perform();
+            common.ScrollToElement(FirstProductInResults);
             FirstProductInResults.Click();
 
             System.Threading.Thread.Sleep(3000);
