@@ -1,21 +1,17 @@
-using System;
-using TechTalk.SpecFlow;
-using FluentAssertions;
 using QATestSpecflowSeleniumTrendyol.Drivers;
-using QATestSpecflowSeleniumTrendyol.Resources;
 using QATestSpecflowSeleniumTrendyol.PO;
+using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
     public class TrendyolStepDefinitions
-    {   
-        //
+    {
         private readonly Common common;
         private readonly Navbar navbar;
         private readonly SearchResults searchResults;
         private readonly ProductDetail productDetail;
-        //
+        private readonly Cart cart;
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
@@ -23,6 +19,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar = new Navbar(driver.Current);
             searchResults = new SearchResults(driver.Current);
             productDetail = new ProductDetail(driver.Current);
+            cart = new Cart(driver.Current);
         }
 
         [Given(@"Navigate to trendyol website")]
@@ -58,7 +55,8 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click see cart button")]
         public void WhenClickSeeCartButton()
         {
-            throw new PendingStepException();
+            productDetail.ClickSeeCartElement();
+            cart.VerifyPageLoad();
         }
 
 

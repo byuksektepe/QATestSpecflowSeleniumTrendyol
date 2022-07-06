@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
 namespace QATestSpecflowSeleniumTrendyol.Resources
@@ -18,8 +13,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         private readonly IWebDriver _webDriver;
         private readonly IJavaScriptExecutor js;
-        private readonly Actions action;
-        
+        public readonly Actions action;
+
 
         // its a default wait time for expicit waits
         public const int DefaultWaitInSeconds = 5;
@@ -51,7 +46,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         {
             VerifyPageLoad();
             IWebElement ModalClose = _webDriver.FindElement(By.XPath(ModalCloseElement));
-            if (Exists(ModalClose)) {
+            if (Exists(ModalClose))
+            {
                 ModalClose.Click();
             }
 
@@ -73,17 +69,15 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void ScrollToElement(IWebElement elementLocator)
         {
-            // its scrolls and ignore errors. For firefox's fucking scroll error.
             try
             {
                 action.MoveToElement(elementLocator).Perform();
             }
-            catch
+            catch (MoveTargetOutOfBoundsException e)
             {
-                Console.WriteLine("Info: Scroll error catched in: " + elementLocator + ". Error Ignored, used js.");
+                Console.WriteLine(e);
                 js.ExecuteScript("arguments[0].scrollIntoView(true);", elementLocator);
             }
-
         }
 
         public void Sleep(int Time)
@@ -93,12 +87,12 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             System.Threading.Thread.Sleep(SecsToMs);
         }
 
-        public void WaitUntilElement(By elementLocator, string method="Visible", int timeout = 10)
+        public void WaitUntilElement(By elementLocator, string method = "Visible", int timeout = 10)
         {
             try
             {
                 var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(timeout));
-                if(method == "Clickable") 
+                if (method == "Clickable")
                 {
                     wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
                 }
@@ -114,7 +108,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                 {
                     wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
                 }
-                
+
             }
             catch (NoSuchElementException)
             {
@@ -127,7 +121,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private T WaitUntil<T>(Func<T> getResult, Func<T, bool> isResultAccepted) where T : class
         {
             var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));
-            #pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8603 // Possible null reference return.
             return wait.Until(driver =>
             {
 
@@ -137,7 +131,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                 return result;
 
             });
-            #pragma warning restore CS8603 // Possible null reference return.
+#pragma warning restore CS8603 // Possible null reference return.
         }
     }
 }

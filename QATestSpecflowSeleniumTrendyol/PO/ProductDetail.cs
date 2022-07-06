@@ -10,6 +10,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         private const string ProductDetailVerifyLocator = "//main[@id='product-detail-app']";
         private const string AddToCartButtonLocator = "//div[@class='add-to-basket-button-text']";
+        private const string SeeCartLocator = "//div[@class='account-nav-item basket-preview']";
 
         public ProductDetail(IWebDriver webDriver)
         {
@@ -32,6 +33,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         {
             AddToChartButtonElement.Click();
             common.Sleep(2);
+        }
+
+        public void ClickSeeCartElement()
+        {
+            SeeCartElement.Click();
         }
     }
 }

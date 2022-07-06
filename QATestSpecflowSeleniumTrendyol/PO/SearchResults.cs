@@ -1,7 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.PO
@@ -12,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         //
-        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[9]//div[@class='image-overlay-body']";
+        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[10]//div[@class='image-overlay-body']";
         // Create new instances
         public SearchResults(IWebDriver webDriver)
         {

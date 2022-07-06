@@ -1,8 +1,6 @@
-﻿using TechTalk.SpecFlow;
-using OpenQA.Selenium.Chrome;
+﻿using BoDi;
 using QATestSpecflowSeleniumTrendyol.Drivers;
 using QATestSpecflowSeleniumTrendyol.Resources;
-using BoDi;
 
 namespace QATestSpecflowSeleniumTrendyol.Hooks
 {

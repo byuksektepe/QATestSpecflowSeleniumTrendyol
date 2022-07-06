@@ -1,8 +1,7 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 
 namespace QATestSpecflowSeleniumTrendyol.Drivers
 {
@@ -22,7 +21,7 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
 
         private IWebDriver CreateWebDriver()
         {
-            return ChromeWebDriver();
+            return FirefoxWebDriver();
         }
 
         private IWebDriver FirefoxWebDriver()

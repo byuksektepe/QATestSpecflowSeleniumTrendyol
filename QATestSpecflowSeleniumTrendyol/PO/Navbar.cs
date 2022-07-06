@@ -1,6 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.PO
