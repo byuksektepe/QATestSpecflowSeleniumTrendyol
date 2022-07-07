@@ -15,13 +15,11 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
             _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
         }
 
-
         public IWebDriver Current => _currentWebDriverLazy.Value;
-
 
         private IWebDriver CreateWebDriver()
         {
-            return FirefoxWebDriver();
+            return ChromeWebDriver();
         }
 
         private IWebDriver FirefoxWebDriver()
