@@ -63,8 +63,11 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             cart.VerifyPageLoad();
         }
 
-
-
+        [Then(@"Verify product added to cart")]
+        public void ThenVerifyProductAddedToCart()
+        {
+            cart.VerifyProductAddedToCart();
+        }
 
     }
 

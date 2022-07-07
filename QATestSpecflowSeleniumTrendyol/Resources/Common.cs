@@ -108,6 +108,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                 {
                     wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
                 }
+                Console.WriteLine(method);
 
             }
             catch (NoSuchElementException)

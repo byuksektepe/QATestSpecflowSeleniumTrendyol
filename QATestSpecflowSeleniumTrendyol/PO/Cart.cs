@@ -9,6 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         private const string CartVerifyLocator = "//div[@id='basket-app-container']";
+        private const string ProductVerifyLocator = "//div[@class='pb-merchant-group'][1]";
 
         public Cart(IWebDriver webDriver)
         {
@@ -16,9 +17,16 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common = new Common(webDriver);
         }
 
+        IWebElement ProductVerifyElement => Driver.FindElement(By.XPath(ProductVerifyLocator));
+
         public void VerifyPageLoad()
         {
             common.WaitUntilElement(By.XPath(CartVerifyLocator));
+        }
+
+        public void VerifyProductAddedToCart()
+        {
+            common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
         }
     }
 }
