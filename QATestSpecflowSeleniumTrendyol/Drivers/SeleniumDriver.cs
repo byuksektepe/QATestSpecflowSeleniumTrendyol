@@ -9,17 +9,31 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
     {
         private readonly Lazy<IWebDriver> _currentWebDriverLazy;
         private bool _isDisposed;
+        private const string browser = "firefox";
 
         public SeleniumDriver()
         {
-            _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver);
+            _currentWebDriverLazy = new Lazy<IWebDriver>(CreateWebDriver(browser));
         }
 
         public IWebDriver Current => _currentWebDriverLazy.Value;
 
-        private IWebDriver CreateWebDriver()
+        private IWebDriver CreateWebDriver(string browser)
         {
-            return ChromeWebDriver();
+            return SetDriver(browser);
+        }
+
+        public IWebDriver SetDriver(string browser)
+        {
+            browser = browser.ToLower();
+
+            if (browser == "chrome") { return ChromeWebDriver(); }
+
+            else if (browser == "firefox") { return FirefoxWebDriver(); }
+
+            else if (browser == "edge") { return EdgeWebDriver(); }
+
+            else { return ChromeWebDriver(); }
         }
 
         private IWebDriver FirefoxWebDriver()

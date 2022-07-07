@@ -1,6 +1,7 @@
 using QATestSpecflowSeleniumTrendyol.Drivers;
 using QATestSpecflowSeleniumTrendyol.PO;
 using QATestSpecflowSeleniumTrendyol.Resources;
+using TechTalk.SpecFlow.Assist;
 
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
@@ -21,11 +22,14 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail = new ProductDetail(driver.Current);
             cart = new Cart(driver.Current);
         }
-
         [Given(@"Navigate to trendyol website")]
-        public void GivenNavigateToTrendyolWebsite()
+        public void GivenNavigateToTrendyolWebsite(Table table)
         {
-            // Given in hooks, its just for define BDD
+            dynamic datas = table.CreateDynamicSet();
+            foreach (var item in datas)
+            {
+                Console.WriteLine($"The Browser is {item.Browser}");
+            }
         }
 
         [Given(@"Search for product ""([^""]*)"" in search")]

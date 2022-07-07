@@ -4,6 +4,8 @@
 @Smoke
 Scenario: Trendyol.com should be work on chrome browser
 	Given Navigate to trendyol website
+			| Browser | Options |
+			| Firefox  | Enabled |
 	And Search for product "Laptop" in search
 	When Click first product in results
 	And Verify product detail page opened
