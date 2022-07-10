@@ -18,3 +18,5 @@ Scenario: Visitor should be able click add to favorites button and redirect logi
 	And Search for product "Watch" in search
 	When Click first product in results
 	And Verify product detail page opened
+	And Click add to favorites button
+	Then Verify login page opened
