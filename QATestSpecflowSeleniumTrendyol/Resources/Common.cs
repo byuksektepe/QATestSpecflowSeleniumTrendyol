@@ -14,7 +14,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public const string PopupLocator = "//div[@class='popup']";
         public const string OverlayLocator = "//div[@class='overlay']";
 
-        private readonly IWebDriver _webDriver;
+        private IWebDriver _webDriver;
         private readonly IJavaScriptExecutor js;
         public readonly Actions action;
 
@@ -48,22 +48,82 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public void CloseModalIfExists()
         {
             VerifyPageLoad();
-            IWebElement ModalClose = _webDriver.FindElement(By.XPath(ModalCloseElement));
+            #pragma warning disable CS8600
+            IWebElement ModalClose = FindElementAndIgnoreErrors("XPath", ModalCloseElement);
+
+            #pragma warning disable CS8604
             if (Exists(ModalClose))
             {
                 ModalClose.Click();
             }
+            #pragma warning restore CS8604
+            #pragma warning restore CS8600
 
         }
 
         public void ClosePopupIfExists()
         {
             VerifyPageLoad();
-            IWebElement PopupElement = _webDriver.FindElement(By.XPath(PopupLocator));
-            IWebElement OverlayElement = _webDriver.FindElement(By.XPath(OverlayLocator));
+            #pragma warning disable CS8600
+            IWebElement PopupElement = FindElementAndIgnoreErrors("XPath", PopupLocator);
+            IWebElement OverlayElement = FindElementAndIgnoreErrors("XPath", OverlayLocator);
+
+            #pragma warning disable CS8604
             if (Exists(PopupElement))
             {
+            #pragma warning disable CS8602
                 OverlayElement.Click();
+            #pragma warning restore CS8602
+            }
+            #pragma warning restore CS8604
+            #pragma warning restore CS8600
+        }
+
+        public IWebElement? FindElementAndIgnoreErrors(string method, string locator)
+        { 
+            method = method.ToLower();
+            switch (method)
+            {
+                case "xpath":
+                    try 
+                    { 
+                        return _webDriver.FindElement(By.XPath(locator)); 
+                    } 
+                    catch(NoSuchElementException e) 
+                    {
+                        Console.WriteLine("Exception Ignored:  "+e);
+                        return null; 
+                    }
+                case "id":
+                    try
+                    {
+                        return _webDriver.FindElement(By.Id(locator));
+                    }
+                    catch (NoSuchElementException e)
+                    {
+                        Console.WriteLine("Exception Ignored:  " + e);
+                        return null;
+                    }
+                case "css":
+                    try
+                    {
+                        return _webDriver.FindElement(By.CssSelector(locator));
+                    }
+                    catch (NoSuchElementException e)
+                    {
+                        Console.WriteLine("Exception Ignored:  " + e);
+                        return null;
+                    }
+                default:
+                    try
+                    {
+                        return _webDriver.FindElement(By.XPath(locator));
+                    }
+                    catch (NoSuchElementException e)
+                    {
+                        Console.WriteLine("Exception Ignored: "+e);
+                        return null;
+                    }
             }
         }
 
@@ -82,7 +142,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         }
 
         public void ScrollToElement(IWebElement elementLocator)
-        {   
+        {
             // Aptal firefox için Scroll to el methodu.
             try
             {

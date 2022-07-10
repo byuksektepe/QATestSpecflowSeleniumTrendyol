@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
     {
         private readonly Lazy<IWebDriver> _currentWebDriverLazy;
         private bool _isDisposed;
-        private const string browser = "chrome";
+        private const string browser = "edge";
 
         public SeleniumDriver()
         {
@@ -53,6 +53,8 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
 
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArgument("--disable-notifications");
+            chromeOptions.AddArgument("start-maximized");
+            chromeOptions.AddArgument("--disable-gpu");
 
             var chromeDriver = new ChromeDriver(chromeDriverService, chromeOptions);
 

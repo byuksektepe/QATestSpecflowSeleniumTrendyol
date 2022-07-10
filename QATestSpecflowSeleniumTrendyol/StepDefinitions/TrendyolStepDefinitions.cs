@@ -23,13 +23,9 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             cart = new Cart(driver.Current);
         }
         [Given(@"Navigate to trendyol website")]
-        public void GivenNavigateToTrendyolWebsite(Table table)
+        public void GivenNavigateToTrendyolWebsite()
         {
-            dynamic datas = table.CreateDynamicSet();
-            foreach (var item in datas)
-            {
-                Console.WriteLine($"The Browser is {item.Browser}");
-            }
+
         }
 
         [Given(@"Search for product ""([^""]*)"" in search")]

@@ -74,14 +74,16 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Trendyol.com should be work on selected browser")]
+        [NUnit.Framework.DescriptionAttribute("Visitor should be able search product and add to cart")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public void Trendyol_ComShouldBeWorkOnSelectedBrowser()
+        [NUnit.Framework.CategoryAttribute("Common")]
+        public void VisitorShouldBeAbleSearchProductAndAddToCart()
         {
             string[] tagsOfScenario = new string[] {
-                    "Smoke"};
+                    "Smoke",
+                    "Common"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trendyol.com should be work on selected browser", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able search product and add to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -92,32 +94,63 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Browser",
-                            "Options"});
-                table1.AddRow(new string[] {
-                            "Firefox",
-                            "Enabled"});
 #line 6
- testRunner.Given("Navigate to trendyol website", ((string)(null)), table1, "Given ");
+ testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 7
  testRunner.And("Search for product \"Laptop\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 8
  testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 9
  testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 10
  testRunner.And("Click add to cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 11
  testRunner.And("Click see cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 12
  testRunner.Then("Verify product added to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Visitor should be able click add to favorites button and redirect login page")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
+        [NUnit.Framework.CategoryAttribute("Favorites")]
+        public void VisitorShouldBeAbleClickAddToFavoritesButtonAndRedirectLoginPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Smoke",
+                    "Favorites"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able click add to favorites button and redirect login page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 16
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 17
+ testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.And("Search for product \"Watch\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
+ testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

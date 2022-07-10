@@ -9,17 +9,18 @@ namespace QATestSpecflowSeleniumTrendyol.Hooks
     {
         private static Common common;
 
-        [BeforeTestRun]
-        public static void BeforeTestRun(ObjectContainer testThreadContainer)
-        {
-            testThreadContainer.BaseContainer.Resolve<SeleniumDriver>();
-        }
-
         [BeforeScenario]
         public static void BeforeScenario(SeleniumDriver driver)
         {
             common = new Common(driver.Current);
             common.StartTest();
+        }
+
+        [AfterScenario]
+        public static void AfterScenario(SeleniumDriver driver)
+        {
+            common = new Common(driver.Current);
+            common.EndTest();
         }
     }
 }

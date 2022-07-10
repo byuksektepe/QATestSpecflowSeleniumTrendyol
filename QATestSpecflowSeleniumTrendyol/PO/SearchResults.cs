@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         //
-        private const string FirstProductXPath = "//div[@class='prdct-cntnr-wrppr']/div[10]//div[@class='image-overlay-body']";
+        private const string FirstProductLocator = "//div[@class='prdct-cntnr-wrppr']/div[10]//div[@class='image-overlay-body']";
         // Create new instances
         public SearchResults(IWebDriver webDriver)
         {
@@ -17,11 +17,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common = new Common(webDriver);
         }
 
-        IWebElement FirstProductInResults => Driver.FindElement(By.XPath(FirstProductXPath));
+        IWebElement FirstProductInResults => Driver.FindElement(By.XPath(FirstProductLocator));
 
         public void ClickFirstProduct()
         {
-            common.WaitUntilElement(By.XPath(FirstProductXPath), "Exists");
+            common.WaitUntilElement(By.XPath(FirstProductLocator), "Exists");
             common.ScrollToElement(FirstProductInResults);
             common.ClosePopupIfExists();
             FirstProductInResults.Click();
