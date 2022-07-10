@@ -8,3 +8,4 @@
  <a href="https://stackoverflow.com/users/12253288/highhill?theme=dark"><img src="https://stackoverflow.com/users/flair/12253288.png?theme=dark" width="100px" alt="profile for HighHill at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for HighHill at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
 
 <p>Software All-Encompassing QA Test Project For Trendyol. Using Specflow .NET BDD with Selenium and NUnit Test Framework. TeamCity was used as CI/CD. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain and Easy-To-Understand. OOP used. Includes only smoke tests, regression and integration tests will be added later. </p>
+<p>All main methods added in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Resources">Resorces/common.cs</a></p>
