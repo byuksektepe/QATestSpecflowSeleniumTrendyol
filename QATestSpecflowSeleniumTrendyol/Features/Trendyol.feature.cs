@@ -35,7 +35,7 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Trendyol", "\tTrendyol Chrome Browser Tests", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Trendyol", "\tTrendyol Complete Tests BDD", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,14 +74,14 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Trendyol.com should be work on chrome browser")]
+        [NUnit.Framework.DescriptionAttribute("Trendyol.com should be work on selected browser")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public void Trendyol_ComShouldBeWorkOnChromeBrowser()
+        public void Trendyol_ComShouldBeWorkOnSelectedBrowser()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trendyol.com should be work on chrome browser", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trendyol.com should be work on selected browser", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -1,8 +1,8 @@
 ﻿Feature: Trendyol
-	Trendyol Chrome Browser Tests
+	Trendyol Complete Tests BDD
 
 @Smoke
-Scenario: Trendyol.com should be work on chrome browser
+Scenario: Trendyol.com should be work on selected browser
 	Given Navigate to trendyol website
 			| Browser | Options |
 			| Firefox | Enabled |

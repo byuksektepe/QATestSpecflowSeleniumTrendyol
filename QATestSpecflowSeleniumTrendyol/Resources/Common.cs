@@ -11,6 +11,9 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public const string ModalCloseElement = "//div[@class='modal-content']//div[@class='modal-close']";
         public const string PageLoadVerifyElement = "//div[@class='header']//a[@id='logo']";
 
+        public const string PopupLocator = "//div[@class='popup']";
+        public const string OverlayLocator = "//div[@class='overlay']";
+
         private readonly IWebDriver _webDriver;
         private readonly IJavaScriptExecutor js;
         public readonly Actions action;
@@ -53,6 +56,17 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         }
 
+        public void ClosePopupIfExists()
+        {
+            VerifyPageLoad();
+            IWebElement PopupElement = _webDriver.FindElement(By.XPath(PopupLocator));
+            IWebElement OverlayElement = _webDriver.FindElement(By.XPath(OverlayLocator));
+            if (Exists(PopupElement))
+            {
+                OverlayElement.Click();
+            }
+        }
+
         public static bool Exists(IWebElement element)
         {
             if (element == null)
@@ -68,7 +82,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         }
 
         public void ScrollToElement(IWebElement elementLocator)
-        {
+        {   
+            // Aptal firefox için Scroll to el methodu.
             try
             {
                 action.MoveToElement(elementLocator).Perform();

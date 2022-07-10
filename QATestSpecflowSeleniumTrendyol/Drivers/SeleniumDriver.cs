@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.Drivers
     {
         private readonly Lazy<IWebDriver> _currentWebDriverLazy;
         private bool _isDisposed;
-        private const string browser = "firefox";
+        private const string browser = "chrome";
 
         public SeleniumDriver()
         {
