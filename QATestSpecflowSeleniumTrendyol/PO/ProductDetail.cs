@@ -13,6 +13,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private const string AddToFavoritesButtonLocator = "//div[@class='favorite-button']";
         private const string SeeCartLocator = "//div[@class='account-nav-item basket-preview']";
 
+        private const string CommentsMainLocator = "//article[@data-drroot='product-reviews']";
+
         public ProductDetail(IWebDriver webDriver)
         {
             Driver = webDriver;
@@ -24,6 +26,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         IWebElement AddToCartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));
         IWebElement SeeCartElement => Driver.FindElement(By.XPath(SeeCartLocator));
         IWebElement AddToFavoritesButtonElement => Driver.FindElement(By.XPath(AddToFavoritesButtonLocator));
+        IWebElement CommentsMainElement => Driver.FindElement(By.XPath(CommentsMainLocator));
 
         public void VerifyPageLoad()
         {
@@ -41,6 +44,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         {
             AddToFavoritesButtonElement.Click();
             common.Sleep(1);
+        }
+
+        public void VerifyCommentsAreVisible()
+        {
+            common.WaitUntilElement(By.XPath(CommentsMainLocator), "Exists");
+            common.ScrollToElement(CommentsMainElement);
+            common.WaitUntilElement(By.XPath(CommentsMainLocator), "Visible");
         }
 
         public void ClickSeeCartElement()

@@ -80,6 +80,14 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         }
 
 
+        [Then(@"Verify visitor see product comments")]
+        public void ThenVerifyVisitorSeeProductComments()
+        {
+            productDetail.VerifyCommentsAreVisible();
+        }
+
+
+
     }
 
 }
