@@ -11,7 +11,6 @@ Scenario: Visitor should be able search product and add to cart
 	And Click see cart button
 	Then Verify product added to cart
 
-
 @Smoke @Favorites
 Scenario: Visitor should be able click add to favorites button and redirect login page
 	Given Navigate to trendyol website
@@ -20,3 +19,10 @@ Scenario: Visitor should be able click add to favorites button and redirect logi
 	And Verify product detail page opened
 	And Click add to favorites button
 	Then Verify login page opened
+
+@Smoke @Comments
+Scenario: Visitor should be see product comments
+	Given Navigate to trendyol website
+	And Search for product "Iphone 12" in search
+	When Click first product in results
+	And Verify product detail page opened
