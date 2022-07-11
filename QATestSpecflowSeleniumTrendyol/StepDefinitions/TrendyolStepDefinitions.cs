@@ -13,6 +13,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly SearchResults searchResults;
         private readonly ProductDetail productDetail;
         private readonly Cart cart;
+        private readonly SignInUp signInUp;
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
@@ -21,11 +22,12 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             searchResults = new SearchResults(driver.Current);
             productDetail = new ProductDetail(driver.Current);
             cart = new Cart(driver.Current);
+            signInUp = new SignInUp(driver.Current);
         }
         [Given(@"Navigate to trendyol website")]
         public void GivenNavigateToTrendyolWebsite()
         {
-
+            // Given in hooks just for BDD text
         }
 
         [Given(@"Search for product ""([^""]*)"" in search")]
@@ -64,6 +66,19 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         {
             cart.VerifyProductAddedToCart();
         }
+
+        [When(@"Click add to favorites button")]
+        public void WhenClickAddToFavoritesButton()
+        {
+            productDetail.ClickAddToFavoritesButton();
+        }
+
+        [Then(@"Verify login page opened")]
+        public void ThenVerifyLoginPageOpened()
+        {
+            signInUp.VerifyPageLoad();
+        }
+
 
     }
 

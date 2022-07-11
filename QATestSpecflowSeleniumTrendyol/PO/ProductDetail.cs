@@ -10,6 +10,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         private const string ProductDetailVerifyLocator = "//main[@id='product-detail-app']";
         private const string AddToCartButtonLocator = "//div[@class='add-to-basket-button-text']";
+        private const string AddToFavoritesButtonLocator = "//div[@class='favorite-button']";
         private const string SeeCartLocator = "//div[@class='account-nav-item basket-preview']";
 
         public ProductDetail(IWebDriver webDriver)
@@ -20,8 +21,9 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         //
 
         IWebElement ProductDetailVerifyElement => Driver.FindElement(By.XPath(ProductDetailVerifyLocator));
-        IWebElement AddToChartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));
+        IWebElement AddToCartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));
         IWebElement SeeCartElement => Driver.FindElement(By.XPath(SeeCartLocator));
+        IWebElement AddToFavoritesButtonElement => Driver.FindElement(By.XPath(AddToFavoritesButtonLocator));
 
         public void VerifyPageLoad()
         {
@@ -31,8 +33,14 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void ClickAddToCartButton()
         {
-            AddToChartButtonElement.Click();
+            AddToCartButtonElement.Click();
             common.Sleep(2);
+        }
+
+        public void ClickAddToFavoritesButton()
+        {
+            AddToFavoritesButtonElement.Click();
+            common.Sleep(1);
         }
 
         public void ClickSeeCartElement()
