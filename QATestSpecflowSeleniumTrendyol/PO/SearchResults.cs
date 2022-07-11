@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         //
-        private const string FirstProductLocator = "//div[@class='prdct-cntnr-wrppr']/div[10]//div[@class='image-overlay-body']";
+        private const string FirstProductLocator = "//div[@class='prdct-cntnr-wrppr']/div[2]//div[@class='image-overlay-body']";
         // Create new instances
         public SearchResults(IWebDriver webDriver)
         {
