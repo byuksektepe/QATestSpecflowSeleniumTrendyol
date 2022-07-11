@@ -26,3 +26,4 @@ Scenario: Visitor should be see product comments
 	And Search for product "Iphone 12" in search
 	When Click first product in results
 	And Verify product detail page opened
+	Then Verify visitor see product comments
