@@ -31,3 +31,9 @@ Scenario: Visitor should be see product comments
 	When Click first product in results
 	And Verify product detail page opened
 	Then Verify visitor see product comments
+
+@Smoke @Footer
+Scenario: Visitor should be able to see footer
+	Given Navigate to trendyol website
+	When Scroll to footer
+	Then Verify footer is visible

@@ -14,6 +14,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly ProductDetail productDetail;
         private readonly Cart cart;
         private readonly SignInUp signInUp;
+        private readonly Footer footer;
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
@@ -23,6 +24,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail = new ProductDetail(driver.Current);
             cart = new Cart(driver.Current);
             signInUp = new SignInUp(driver.Current);
+            footer = new Footer(driver.Current);
         }
         [Given(@"Navigate to trendyol website")]
         public void GivenNavigateToTrendyolWebsite()
@@ -85,6 +87,19 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         {
             productDetail.VerifyCommentsAreVisible();
         }
+
+        [When(@"Scroll to footer")]
+        public void WhenScrollToFooter()
+        {
+            footer.ScrollBottomOfPage();
+        }
+
+        [Then(@"Verify footer is visible")]
+        public void ThenVerifyFooterIsVisible()
+        {
+            footer.VerifyFooterIsVisible();
+        }
+
 
 
 
