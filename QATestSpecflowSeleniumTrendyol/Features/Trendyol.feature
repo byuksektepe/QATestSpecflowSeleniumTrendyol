@@ -1,5 +1,9 @@
 ﻿Feature: Trendyol
-	Trendyol Complete Tests BDD
+	
+	Trendyol Complete Tests BDD, Test badge now TC-U
+
+![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-u.png)
+
 
 @Smoke @Common
 Scenario: Visitor should be able search product and add to cart
