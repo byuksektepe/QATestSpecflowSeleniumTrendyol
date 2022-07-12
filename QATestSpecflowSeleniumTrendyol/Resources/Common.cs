@@ -134,6 +134,12 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             return true;
         }
 
+        public void WaitForPageLoad()
+        {
+            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(20));
+            wait.Until(driver => js.ExecuteScript("return document.readyState").Equals("complete"));
+        }
+
         public void VerifyPageLoad()
         {
             WaitUntilElement(By.XPath(PageLoadVerifyElement));

@@ -21,6 +21,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyPageLoad()
         {
+            common.WaitForPageLoad();
             common.WaitUntilElement(By.XPath(CartVerifyLocator));
         }
 

@@ -19,6 +19,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void VerifyPageLoad()
         {
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
+            common.WaitForPageLoad();
             common.WaitUntilElement(By.XPath(SignInVerifyLocator), "Visible");
         }
     }

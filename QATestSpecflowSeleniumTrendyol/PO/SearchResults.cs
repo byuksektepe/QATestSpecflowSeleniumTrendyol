@@ -21,6 +21,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void ClickFirstProduct()
         {
+            common.WaitForPageLoad();
             common.WaitUntilElement(By.XPath(FirstProductLocator), "Exists");
             common.ScrollToElement(FirstProductInResults);
             common.ClosePopupIfExists();
