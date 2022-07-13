@@ -37,3 +37,11 @@ Scenario: 04 Visitor should be able to see footer
 	Given Navigate to trendyol website
 	When Scroll to footer
 	Then Verify footer is visible
+
+@Smoke @MoveToTop
+Scenario: 05 Move to top button should be work
+	Given Navigate to trendyol website
+	When Scroll to footer
+	And Verify footer is visible
+	And Click move to top button
+	Then Verify top of the page is visible

@@ -17,16 +17,18 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private IWebDriver _webDriver;
         private readonly IJavaScriptExecutor js;
         public readonly Actions action;
+        public readonly WebDriverWait wait;
 
 
         // its a default wait time for expicit waits
-        public const int DefaultWaitInSeconds = 5;
+        public const int DefaultWaitInSeconds = 10;
 
         public Common(IWebDriver webDriver)
         {
             _webDriver = webDriver;
             js = (IJavaScriptExecutor)webDriver;
             action = new Actions(webDriver);
+            wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));
         }
 
         public void StartTest()
@@ -127,7 +129,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
         }
 
-        public static bool Exists(IWebElement element)
+        public bool Exists(IWebElement element)
         {
             if (element == null)
             { return false; }
@@ -170,9 +172,9 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void WaitUntilElement(By elementLocator, string method = "Visible", int timeout = 10)
         {
+            
             try
             {
-                var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(timeout));
                 if (method == "Clickable")
                 {
                     wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
@@ -197,23 +199,6 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                 Console.WriteLine("Element with locator: '" + elementLocator + "' was not found.");
                 throw;
             }
-        }
-
-        // taken from specflow website, WaitUntil method
-        private T WaitUntil<T>(Func<T> getResult, Func<T, bool> isResultAccepted) where T : class
-        {
-            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));
-#pragma warning disable CS8603 // Possible null reference return.
-            return wait.Until(driver =>
-            {
-
-                var result = getResult();
-                if (!isResultAccepted(result))
-                    return default;
-                return result;
-
-            });
-#pragma warning restore CS8603 // Possible null reference return.
         }
     }
 }
