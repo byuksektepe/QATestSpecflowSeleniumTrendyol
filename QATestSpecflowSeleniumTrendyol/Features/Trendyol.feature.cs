@@ -76,16 +76,16 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be able search product and add to cart")]
+        [NUnit.Framework.DescriptionAttribute("01 Visitor should be able search product and add to cart")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Common")]
-        public void VisitorShouldBeAbleSearchProductAndAddToCart()
+        public void _01VisitorShouldBeAbleSearchProductAndAddToCart()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke",
                     "Common"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able search product and add to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 Visitor should be able search product and add to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -122,16 +122,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be able click add to favorites button and redirect login page")]
+        [NUnit.Framework.DescriptionAttribute("02 Visitor should be able click add to favorites button and redirect login page")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Favorites")]
-        public void VisitorShouldBeAbleClickAddToFavoritesButtonAndRedirectLoginPage()
+        public void _02VisitorShouldBeAbleClickAddToFavoritesButtonAndRedirectLoginPage()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke",
                     "Favorites"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able click add to favorites button and redirect login page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 Visitor should be able click add to favorites button and redirect login page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 19
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -165,16 +165,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be see product comments")]
+        [NUnit.Framework.DescriptionAttribute("03 Visitor should be see product comments")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Comments")]
-        public void VisitorShouldBeSeeProductComments()
+        public void _03VisitorShouldBeSeeProductComments()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke",
                     "Comments"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be see product comments", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03 Visitor should be see product comments", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -205,16 +205,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be able to see footer")]
+        [NUnit.Framework.DescriptionAttribute("04 Visitor should be able to see footer")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Footer")]
-        public void VisitorShouldBeAbleToSeeFooter()
+        public void _04VisitorShouldBeAbleToSeeFooter()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke",
                     "Footer"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able to see footer", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04 Visitor should be able to see footer", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

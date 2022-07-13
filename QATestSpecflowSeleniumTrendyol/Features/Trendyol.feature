@@ -6,7 +6,7 @@
 
 
 @Smoke @Common
-Scenario: Visitor should be able search product and add to cart
+Scenario: 01 Visitor should be able search product and add to cart
 	Given Navigate to trendyol website
 	And Search for product "Laptop" in search
 	When Click first product in results
@@ -16,7 +16,7 @@ Scenario: Visitor should be able search product and add to cart
 	Then Verify product added to cart
 
 @Smoke @Favorites
-Scenario: Visitor should be able click add to favorites button and redirect login page
+Scenario: 02 Visitor should be able click add to favorites button and redirect login page
 	Given Navigate to trendyol website
 	And Search for product "Watch" in search
 	When Click first product in results
@@ -25,7 +25,7 @@ Scenario: Visitor should be able click add to favorites button and redirect logi
 	Then Verify login page opened
 
 @Smoke @Comments
-Scenario: Visitor should be see product comments
+Scenario: 03 Visitor should be see product comments
 	Given Navigate to trendyol website
 	And Search for product "Iphone 12" in search
 	When Click first product in results
@@ -33,7 +33,7 @@ Scenario: Visitor should be see product comments
 	Then Verify visitor see product comments
 
 @Smoke @Footer
-Scenario: Visitor should be able to see footer
+Scenario: 04 Visitor should be able to see footer
 	Given Navigate to trendyol website
 	When Scroll to footer
 	Then Verify footer is visible
