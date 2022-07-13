@@ -107,7 +107,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click move to top button")]
         public void WhenClickMoveToTopButton()
         {
-            subMethods.AcceptAllCoockiesIfVisible();
+            subMethods.AcceptCoockiesIfVisible();
             subMethods.ClickMoveToTopButton();
         }
 
@@ -116,7 +116,6 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         {
             subMethods.VerifyTopOfThePageIsVisible();
         }
-
 
     }
 

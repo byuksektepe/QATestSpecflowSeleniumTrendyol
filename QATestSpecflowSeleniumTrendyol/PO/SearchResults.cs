@@ -10,7 +10,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         //
         private const string FirstProductLocator = "//div[@class='prdct-cntnr-wrppr']/div[2]//div[@class='image-overlay-body']";
-        // Create new instances
+
         public SearchResults(IWebDriver webDriver)
         {
             Driver = webDriver;
@@ -22,7 +22,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickFirstProduct()
         {
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(FirstProductLocator), "Exists");
+            common.WaitUntilElement(By.XPath(FirstProductLocator), "Visible");
             common.ScrollToElement(FirstProductInResults);
             common.ClosePopupIfExists();
             FirstProductInResults.Click();

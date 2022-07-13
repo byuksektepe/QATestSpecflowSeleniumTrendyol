@@ -25,7 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         IWebElement PageTopElement => Driver.FindElement(By.XPath(PageTopVerifyLocator));
         IWebElement AcceptCookiesElement => common.FindElementAndIgnoreErrors("XPath", AcceptCoockiesButton);
 
-        public void AcceptAllCoockiesIfVisible()
+        public void AcceptCoockiesIfVisible()
         {
             if (common.Exists(AcceptCookiesElement))
             {
