@@ -45,3 +45,11 @@ Scenario: 05 Move to top button should be work
 	And Verify footer is visible
 	And Click move to top button
 	Then Verify top of the page is visible
+
+Scenario: 06 Visitor should be able search product using filters
+	Given Navigate to trendyol website
+	And Search for product "Piknik Sandalyesi" in search
+	And Set brand filter to "Quechua"
+	And Set price filter to
+	| Min | Max |
+	| 200 | 350 |
