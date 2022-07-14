@@ -16,6 +16,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly SignInUp signInUp;
         private readonly Footer footer;
         private readonly SubMethods subMethods;
+        private readonly Filters filters;
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
@@ -27,6 +28,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             signInUp = new SignInUp(driver.Current);
             footer = new Footer(driver.Current);
             subMethods = new SubMethods(driver.Current);
+            filters = new Filters(driver.Current);
         }
 
         [Given(@"Navigate to trendyol website")]
@@ -116,6 +118,33 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         {
             subMethods.VerifyTopOfThePageIsVisible();
         }
+
+        //
+
+        [Given(@"Set brand filter to ""([^""]*)""")]
+        public void GivenSetBrandFilterTo(string Brand)
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"Set price filter ""([^""]*)"" and ""([^""]*)""")]
+        public void GivenSetPriceFilterAnd(string MinPrice, string MaxPrice)
+        {
+            throw new PendingStepException();
+        }
+
+        [When(@"Verify product brand is ""([^""]*)""")]
+        public void WhenVerifyProductBrandIs(string Brand)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"Verify product title contains ""([^""]*)""")]
+        public void ThenVerifyProductTitleContains(string SearchItem)
+        {
+            throw new PendingStepException();
+        }
+
 
     }
 

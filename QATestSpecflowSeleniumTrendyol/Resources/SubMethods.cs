@@ -43,6 +43,5 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             common.WaitUntilElement(By.XPath(PageTopVerifyLocator), "Visible");
             common.Sleep(1);
         }
-
     }
 }

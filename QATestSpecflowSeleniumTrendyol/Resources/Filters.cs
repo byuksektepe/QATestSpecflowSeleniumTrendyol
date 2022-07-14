@@ -8,8 +8,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private readonly IWebDriver Driver;
         private readonly Common common;
 
-        private string MinPrice = "200";
-        private string MaxPrice = "350";
+        private int MaxPrice;
+        private int MinPrice;
 
         private const string PriceFilterFrameLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']/div[.='Fiyat']";
         private const string PriceFilterContentLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']//div[contains(text(), '0 TL')]";
@@ -31,7 +31,6 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         public void CheckPriceFiter()
         {
             common.ScrollToElement(PriceFilterFrameElement);
-            common.FindElementAndIgnoreErrors("XPath", PriceFilterContentLocator);
 
             if (common.Exists(PriceFilterContentElement))
             {
