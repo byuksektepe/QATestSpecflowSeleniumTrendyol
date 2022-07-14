@@ -9,6 +9,7 @@
 Scenario: 01 Visitor should be able search product and add to cart
 	Given Navigate to trendyol website
 	And Search for product "Laptop" in search
+	And Verify search executed
 	When Click first product in results
 	And Verify product detail page opened
 	And Click add to cart button
@@ -19,6 +20,7 @@ Scenario: 01 Visitor should be able search product and add to cart
 Scenario: 02 Visitor should be able click add to favorites button and redirect login page
 	Given Navigate to trendyol website
 	And Search for product "Watch" in search
+	And Verify search executed
 	When Click first product in results
 	And Verify product detail page opened
 	And Click add to favorites button
@@ -28,6 +30,7 @@ Scenario: 02 Visitor should be able click add to favorites button and redirect l
 Scenario: 03 Visitor should be see product comments
 	Given Navigate to trendyol website
 	And Search for product "Iphone 12" in search
+	And Verify search executed
 	When Click first product in results
 	And Verify product detail page opened
 	Then Verify visitor see product comments

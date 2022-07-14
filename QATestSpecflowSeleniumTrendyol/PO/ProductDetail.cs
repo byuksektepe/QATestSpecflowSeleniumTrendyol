@@ -14,6 +14,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private const string SeeCartLocator = "//div[@class='account-nav-item basket-preview']";
 
         private const string CommentsMainLocator = "//article[@data-drroot='product-reviews']";
+        private const string ProductBrandLocator = "//div[@class='product-container']//h1[@class='pr-new-br']/a";
 
         public ProductDetail(IWebDriver webDriver)
         {
@@ -27,6 +28,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         IWebElement SeeCartElement => Driver.FindElement(By.XPath(SeeCartLocator));
         IWebElement AddToFavoritesButtonElement => Driver.FindElement(By.XPath(AddToFavoritesButtonLocator));
         IWebElement CommentsMainElement => Driver.FindElement(By.XPath(CommentsMainLocator));
+
+        IWebElement ProductBrandElement => Driver.FindElement(By.XPath(ProductBrandLocator));
 
         public void VerifyPageLoad()
         {
@@ -57,6 +60,12 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickSeeCartElement()
         {
             SeeCartElement.Click();
+        }
+
+        public void VerifyProductBrandByGivenBrand(string Brand)
+        {
+            string BrandText = ProductBrandElement.Text;
+
         }
     }
 }

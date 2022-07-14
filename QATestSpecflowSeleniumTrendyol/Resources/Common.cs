@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using System.ComponentModel.DataAnnotations;
 
 namespace QATestSpecflowSeleniumTrendyol.Resources
 {
@@ -18,7 +19,6 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private readonly IJavaScriptExecutor js;
         public readonly Actions action;
         public readonly WebDriverWait wait;
-
 
         // its a default wait time for expicit waits
         public const int DefaultWaitInSeconds = 10;
@@ -87,7 +87,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             method = method.ToLower();
             switch (method)
             {
-                case "xpath":
+                case Locators.XPath.GetDisplayName():
                     try 
                     { 
                         return _webDriver.FindElement(By.XPath(locator)); 
@@ -128,6 +128,15 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                         return null;
                     }
             }
+        }
+
+        public enum Locators
+        {
+            [Display(Name = "xpath")]
+            XPath = 0,
+
+            [Display(Name = "id")]
+            Id = 1,
         }
 
         public bool Exists(IWebElement element)

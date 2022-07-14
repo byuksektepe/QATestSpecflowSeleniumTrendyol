@@ -34,7 +34,6 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common.WaitForPageLoad();
             common.WaitUntilElement(By.XPath(FirstProductLocator), "Visible");
             common.ScrollToElement(FirstProductInResults);
-            common.ClosePopupIfExists();
             FirstProductInResults.Click();
 
         }
