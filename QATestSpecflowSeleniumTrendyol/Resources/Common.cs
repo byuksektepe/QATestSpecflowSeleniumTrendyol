@@ -87,7 +87,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             method = method.ToLower();
             switch (method)
             {
-                case Locators.XPath.GetDisplayName():
+                case Locators.XPath:
                     try 
                     { 
                         return _webDriver.FindElement(By.XPath(locator)); 
@@ -97,7 +97,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                         Console.WriteLine("Exception Ignored:  "+e);
                         return null; 
                     }
-                case "id":
+                case Locators.Id:
                     try
                     {
                         return _webDriver.FindElement(By.Id(locator));
@@ -107,7 +107,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
                         Console.WriteLine("Exception Ignored:  " + e);
                         return null;
                     }
-                case "css":
+                case Locators.CSS:
                     try
                     {
                         return _webDriver.FindElement(By.CssSelector(locator));
@@ -130,14 +130,6 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
         }
 
-        public enum Locators
-        {
-            [Display(Name = "xpath")]
-            XPath = 0,
-
-            [Display(Name = "id")]
-            Id = 1,
-        }
 
         public bool Exists(IWebElement element)
         {

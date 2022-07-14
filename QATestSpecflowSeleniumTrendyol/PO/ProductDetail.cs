@@ -65,7 +65,10 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void VerifyProductBrandByGivenBrand(string Brand)
         {
             string BrandText = ProductBrandElement.Text;
-
+            if (!BrandText.Equals(Brand))
+            {
+                throw new Exception("Product brand("+ BrandText + ") text is not equals given(" + Brand + ") brand name.");
+            }
         }
     }
 }

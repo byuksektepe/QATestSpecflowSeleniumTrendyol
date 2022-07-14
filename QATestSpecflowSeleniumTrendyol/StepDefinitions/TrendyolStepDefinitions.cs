@@ -143,7 +143,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Verify product brand is ""([^""]*)""")]
         public void WhenVerifyProductBrandIs(string Brand)
         {
-
+            productDetail.VerifyProductBrandByGivenBrand(Brand);
         }
 
         [Then(@"Verify product title contains ""([^""]*)""")]
