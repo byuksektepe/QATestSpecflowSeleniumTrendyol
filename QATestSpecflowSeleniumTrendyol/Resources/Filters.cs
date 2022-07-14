@@ -91,12 +91,12 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void SetBrandFilter(string Brand)
         {
-            BrandName = Brand;
+            string BrandFilterCheckBoxLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']//div[.='" + Brand + "']";
             BrandFilterSearchInputElement.SendKeys(Brand);
-            common.Sleep(3);
 
+            IWebElement BrandFilterCheckBoxElement = Driver.FindElement(By.XPath(BrandFilterCheckBoxLocator));
             Console.Write(BrandFilterContentLocator);
-            BrandFilterContentElement.Click();
+            BrandFilterCheckBoxElement.Click();
         }
     }
 }
