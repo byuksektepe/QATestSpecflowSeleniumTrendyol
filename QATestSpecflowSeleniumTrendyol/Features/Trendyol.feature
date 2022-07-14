@@ -50,6 +50,7 @@ Scenario: 05 Move to top button should be work
 Scenario Outline: 06 Visitor should be able search product using filters
 	Given Navigate to trendyol website
 	And Search for product "<SearchItem>" in search
+	And Verify search executed
 	And Set brand filter to "<Brand>"
 	And Set price filter "<MinPrice>" and "<MaxPrice>"
 	When Click first product in results

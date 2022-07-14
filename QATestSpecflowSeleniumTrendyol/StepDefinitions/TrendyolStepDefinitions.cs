@@ -43,6 +43,13 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar.SearchItem(product);
         }
 
+        [Given(@"Verify search executed")]
+        public void GivenVerifySearchExecuted()
+        {
+            searchResults.VerifyPageLoad();
+        }
+
+
         [When(@"Click first product in results")]
         public void ThenClickFirstProductInResults()
         {
@@ -124,13 +131,13 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Set brand filter to ""([^""]*)""")]
         public void GivenSetBrandFilterTo(string Brand)
         {
-
+            filters.CheckAndSetBrandFilter(Brand);
         }
 
         [Given(@"Set price filter ""([^""]*)"" and ""([^""]*)""")]
         public void GivenSetPriceFilterAnd(string MinPrice, string MaxPrice)
         {
-            filters.CheckAndSetPriceFiter();
+            filters.CheckAndSetPriceFiter(MinPrice, MaxPrice);
         }
 
         [When(@"Verify product brand is ""([^""]*)""")]

@@ -22,6 +22,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         // its a default wait time for expicit waits
         public const int DefaultWaitInSeconds = 10;
+        public const int DefaultPageWaitInSeconds = 20;
 
         public Common(IWebDriver webDriver)
         {
@@ -138,7 +139,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
 
         public void WaitForPageLoad()
         {
-            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(20));
+            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultPageWaitInSeconds));
             wait.Until(driver => js.ExecuteScript("return document.readyState").Equals("complete"));
         }
 

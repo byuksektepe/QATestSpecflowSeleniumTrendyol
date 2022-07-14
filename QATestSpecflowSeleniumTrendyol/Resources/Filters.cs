@@ -9,15 +9,21 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private readonly Common common;
         private readonly SubMethods subMethods;
 
-        private int MaxPrice;
-        private int MinPrice;
         private string? BrandName;
- 
-        private const string PriceFilterFrameLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']/div[.='Fiyat']";
-        private const string PriceFilterContentLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']//div[contains(text(), '0 TL')]";
 
-        private const string BrandFilterFrameLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']/div[.='Marka']";
+        private const string FilterFrameMainLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']";
+ 
+        private const string PriceFilterFrameLocator = FilterFrameMainLocator + "/div[.='Fiyat']";
+        private const string PriceFilterContentLocator = FilterFrameMainLocator + "//div[contains(text(), '0 TL')]";
+
+        private const string BrandFilterFrameLocator = FilterFrameMainLocator + "/div[.='Marka']";
         private string BrandFilterContentLocator;
+
+        private const string PriceFilterMinInput = FilterFrameMainLocator + "//input[@class='fltr-srch-prc-rng-input min']";
+        private const string PriceFilterMaxInput = FilterFrameMainLocator + "//input[@class='fltr-srch-prc-rng-input max']";
+        private const string PriceFilterSubmitButton = FilterFrameMainLocator + "//button[@class='fltr-srch-prc-rng-srch']";
+
+        private const string BrandSearchInput = FilterFrameMainLocator + "//input[@class='fltr-srch-inpt']";
 
         public Filters(IWebDriver driver)
         {
@@ -33,32 +39,64 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         IWebElement PriceFilterContentElement => common.FindElementAndIgnoreErrors("XPath", PriceFilterContentLocator);
         IWebElement BrandFilterContentElement => common.FindElementAndIgnoreErrors("XPath", BrandFilterContentLocator);
 
-        public void CheckAndSetPriceFiter()
+        IWebElement PriceFilterMinInputElement => Driver.FindElement(By.XPath(PriceFilterMinInput));
+        IWebElement PriceFilterMaxInputElement => Driver.FindElement(By.XPath(PriceFilterMaxInput));
+        IWebElement PriceFilterSubmitButtonElement => Driver.FindElement(By.XPath(PriceFilterSubmitButton));
+
+        IWebElement BrandFilterSearchInputElement => Driver.FindElement(By.XPath(BrandSearchInput));
+
+
+
+        public void CheckAndSetPriceFiter(string MinPrice, string MaxPrice)
         {
             common.ScrollToElement(PriceFilterFrameElement);
 
             if (common.Exists(PriceFilterContentElement))
             {
-                System.Console.WriteLine("Price Filter Startable");
+                common.WaitUntilElement(By.XPath(PriceFilterContentLocator), "Visible");
+                SetPriceFilter(MinPrice, MaxPrice);
             }
             else
             {
-                subMethods.AcceptCoockiesIfVisible();
-                common.ClosePopupIfExists();
-                
                 PriceFilterFrameElement.Click();
                 common.WaitUntilElement(By.XPath(PriceFilterContentLocator), "Visible");
+                SetPriceFilter(MinPrice, MaxPrice);
             }
         }
 
-        public void SetPriceFilter()
+        public void SetPriceFilter(string MinPrice, string MaxPrice)
         {
+            PriceFilterMinInputElement.SendKeys(MinPrice);
+            PriceFilterMaxInputElement.SendKeys(MaxPrice);
+            PriceFilterSubmitButtonElement.Click();
 
         }
 
-        public void CheckAndSetBrandFilter()
+        public void CheckAndSetBrandFilter(string Brand)
         {
             common.ScrollToElement(BrandFilterFrameElement);
+
+            if (common.Exists(BrandFilterContentElement))
+            {
+                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), "Visible");
+                SetBrandFilter(Brand);
+            }
+            else
+            {
+                BrandFilterFrameElement.Click();
+                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), "Visible");
+                SetBrandFilter(Brand);
+            }
+        }
+
+        public void SetBrandFilter(string Brand)
+        {
+            BrandName = Brand;
+            BrandFilterSearchInputElement.SendKeys(Brand);
+            common.Sleep(3);
+
+            Console.Write(BrandFilterContentLocator);
+            BrandFilterContentElement.Click();
         }
     }
 }
