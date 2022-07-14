@@ -12,5 +12,6 @@
 The tests will be perform 90% automation 10% manually.</p>
 <p>All main methods added in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Resources">Resorces/common.cs</a></p>
 
-![image](https://user-images.githubusercontent.com/61010367/178582406-869c69e8-3aac-4991-9dc5-bbcbf91d1044.png)
+![image](https://user-images.githubusercontent.com/61010367/179116255-e9378698-8c76-441a-8d21-57ad0a39e515.png)
+
 
