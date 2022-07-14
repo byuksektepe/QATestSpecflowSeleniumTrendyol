@@ -7,6 +7,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
     {
         private readonly IWebDriver Driver;
         private readonly Common common;
+        private readonly SubMethods subMethods;
 
         private int MaxPrice;
         private int MinPrice;
@@ -21,6 +22,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         {
             Driver = driver;
             common = new Common(driver);
+            subMethods = new SubMethods(driver);
         }
 
         IWebElement PriceFilterFrameElement => Driver.FindElement(By.XPath(PriceFilterFrameLocator));
@@ -38,11 +40,13 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
             else
             {
+                common.Sleep(1);
+                subMethods.AcceptCoockiesIfVisible();
+                common.ClosePopupIfExists();
+                
                 PriceFilterFrameElement.Click();
                 common.WaitUntilElement(By.XPath(PriceFilterContentLocator), "Visible");
             }
-
         }
-
     }
 }

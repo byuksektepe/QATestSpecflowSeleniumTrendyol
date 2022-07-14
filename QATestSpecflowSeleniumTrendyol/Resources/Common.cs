@@ -71,7 +71,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             IWebElement OverlayElement = FindElementAndIgnoreErrors("XPath", OverlayLocator);
 
             #pragma warning disable CS8604
-            if (Exists(PopupElement))
+            if (Exists(OverlayElement) || Exists(PopupElement))
             {
             #pragma warning disable CS8602
                 OverlayElement.Click();

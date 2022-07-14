@@ -124,25 +124,25 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Set brand filter to ""([^""]*)""")]
         public void GivenSetBrandFilterTo(string Brand)
         {
-            throw new PendingStepException();
+
         }
 
         [Given(@"Set price filter ""([^""]*)"" and ""([^""]*)""")]
         public void GivenSetPriceFilterAnd(string MinPrice, string MaxPrice)
         {
-            throw new PendingStepException();
+            filters.CheckPriceFiter();
         }
 
         [When(@"Verify product brand is ""([^""]*)""")]
         public void WhenVerifyProductBrandIs(string Brand)
         {
-            throw new PendingStepException();
+
         }
 
         [Then(@"Verify product title contains ""([^""]*)""")]
         public void ThenVerifyProductTitleContains(string SearchItem)
         {
-            throw new PendingStepException();
+
         }
 
 
