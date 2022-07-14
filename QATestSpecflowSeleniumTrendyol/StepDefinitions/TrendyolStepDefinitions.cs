@@ -130,7 +130,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Set price filter ""([^""]*)"" and ""([^""]*)""")]
         public void GivenSetPriceFilterAnd(string MinPrice, string MaxPrice)
         {
-            filters.CheckPriceFiter();
+            filters.CheckAndSetPriceFiter();
         }
 
         [When(@"Verify product brand is ""([^""]*)""")]
