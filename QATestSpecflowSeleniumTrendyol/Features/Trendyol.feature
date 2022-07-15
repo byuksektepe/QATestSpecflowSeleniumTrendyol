@@ -55,7 +55,7 @@ Scenario Outline: 06 Visitor should be able search product using filters
 	And Search for product "<SearchItem>" in search
 	And Verify search executed
 	And Set brand filter to "<Brand>"
-	And Set price filter "<MinPrice>" and "<MaxPrice>"
+	And Set price filter Min:"<MinPrice>" and Max:"<MaxPrice>"
 	When Click first product in results
 	And Verify product detail page opened
 	And Verify product brand is "<Brand>"
@@ -64,3 +64,4 @@ Scenario Outline: 06 Visitor should be able search product using filters
 Examples: 
 	| SearchItem      | Brand   | MinPrice | MaxPrice |
 	| Kamp Sandalyesi | Quechua | 200      | 350      |
+	| iphone 11       | Apple   | 10000    | 16000    |

@@ -292,6 +292,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Filter")]
         [NUnit.Framework.TestCaseAttribute("Kamp Sandalyesi", "Quechua", "200", "350", null)]
+        [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "16000", null)]
         public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchItem, string brand, string minPrice, string maxPrice, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -331,7 +332,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Set brand filter to \"{0}\"", brand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 58
- testRunner.And(string.Format("Set price filter \"{0}\" and \"{1}\"", minPrice, maxPrice), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Set price filter Min:\"{0}\" and Max:\"{1}\"", minPrice, maxPrice), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 59
  testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

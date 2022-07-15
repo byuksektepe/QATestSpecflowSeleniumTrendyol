@@ -66,7 +66,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyProductBrandByGivenBrand(string Brand)
         {
-            string BrandText = ProductBrandElement.Text;
+            string BrandText = (ProductBrandElement.Text).ToLower();
+            Brand = Brand.ToLower();
             if (!BrandText.Equals(Brand))
             {
                 throw new BrandNotMatchByGivenException(BrandText, Brand);
@@ -75,7 +76,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyProductTitleContainsSearchQuery(string SearchQuery)
         {
-            string ProductTitle = ProductTitleElement.Text;
+            string ProductTitle = (ProductTitleElement.Text).ToLower();
+            SearchQuery = SearchQuery.ToLower();
             if (!ProductTitle.Contains(SearchQuery))
             {
                 throw new ProductTitleNotContainsSearchQueryException(ProductTitle, SearchQuery);
