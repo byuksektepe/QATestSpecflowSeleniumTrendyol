@@ -358,6 +358,62 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("07 Visitor should be able see Sign-In form error messages")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
+        [NUnit.Framework.CategoryAttribute("SignInErrors")]
+        [NUnit.Framework.TestCaseAttribute("Null email", "", "pass123", "Lütfen geçerli bir e-posta adresi giriniz.", null)]
+        [NUnit.Framework.TestCaseAttribute("Invalid email", "wthmail.lolx", "pass123", "Lütfen geçerli bir e-posta adresi giriniz.", null)]
+        [NUnit.Framework.TestCaseAttribute("Null password", "berkant@gmail.com", "", "Lütfen şifrenizi giriniz.", null)]
+        [NUnit.Framework.TestCaseAttribute("Unregistered email", "berkant@gmail.com", "pass123", "E-posta adresiniz ve/veya şifreniz hatalı.", null)]
+        public void _07VisitorShouldBeAbleSeeSign_InFormErrorMessages(string description, string email, string password, string expectedMessage, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Smoke",
+                    "SignInErrors"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("Password", password);
+            argumentsOfScenario.Add("ExpectedMessage", expectedMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("07 Visitor should be able see Sign-In form error messages", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 74
+ testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 75
+ testRunner.And("Click login button in navbar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+ testRunner.And("Verify login page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+ testRunner.When(string.Format("Set email to \"{0}\" and password to \"{1}\"", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 78
+ testRunner.And("Click login button to submit form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 79
+ testRunner.Then(string.Format("Check exception message \"{0}\"", expectedMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -8,7 +8,6 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
     [Binding]
     public class TrendyolStepDefinitions
     {
-        private readonly Common common;
         private readonly Navbar navbar;
         private readonly SearchResults searchResults;
         private readonly ProductDetail productDetail;
@@ -20,7 +19,6 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 
         public TrendyolStepDefinitions(SeleniumDriver driver)
         {
-            common = new Common(driver.Current);
             navbar = new Navbar(driver.Current);
             searchResults = new SearchResults(driver.Current);
             productDetail = new ProductDetail(driver.Current);

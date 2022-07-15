@@ -74,9 +74,9 @@ Scenario Outline: 07 Visitor should be able see Sign-In form error messages
 	Given Navigate to trendyol website
 	And Click login button in navbar
 	And Verify login page opened
-	When Set email and password
+	When Set email to "<Email>" and password to "<Password>"
 	And Click login button to submit form
-	Then Check exception message
+	Then Check exception message "<ExpectedMessage>"
 
 Examples:
 	| Description        | Email             | Password | ExpectedMessage                            |

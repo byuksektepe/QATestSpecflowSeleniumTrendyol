@@ -19,4 +19,16 @@
             : base(String.Format("Product title '{0}' is not contains given '{1}' search query.", ProductTitle, SearchQuery))
         { }
     }
+
+    [Serializable]
+    class SignInExceptionMessageNotMatchByGivenException : Exception
+    {
+        public SignInExceptionMessageNotMatchByGivenException() { }
+        public SignInExceptionMessageNotMatchByGivenException(string GivenException, string ReceivedException)
+            : base(String.Format("Given exception message '{0}' is not equals received '{1}' message.", GivenException, ReceivedException))
+        
+        { }
+
+    }
+
 }

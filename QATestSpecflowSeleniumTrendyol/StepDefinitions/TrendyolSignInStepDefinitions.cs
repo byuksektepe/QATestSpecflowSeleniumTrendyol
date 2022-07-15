@@ -9,14 +9,12 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
     [Binding]
     public class TrendyolSignInStepDefinitions
     {
-        private readonly Common common;
         private readonly Navbar navbar;
         private readonly SignIn signIn;
         private readonly SubMethods subMethods;
 
         public TrendyolSignInStepDefinitions(SeleniumDriver driver)
         {
-            common = new Common(driver.Current);
             navbar = new Navbar(driver.Current);
             signIn = new SignIn(driver.Current);
             subMethods = new SubMethods(driver.Current);
@@ -28,28 +26,23 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar.ClickSignInButton();
         }
 
-        [Given(@"Verify login page opened")]
-        public void GivenVerifyLoginPageOpened()
+        [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)""")]
+        public void WhenSetEmailToAndPasswordTo(string Email, string Password)
         {
-            signIn.VerifyPageLoad();
-        }
-
-        [When(@"Set email and password")]
-        public void WhenSetEmailAndPassword()
-        {
-            throw new PendingStepException();
+            signIn.SetEmailAndPassword(Email, Password);
         }
 
         [When(@"Click login button to submit form")]
         public void WhenClickLoginButtonToSubmitForm()
         {
-            throw new PendingStepException();
+            signIn.ClickSignInButtonForSubmit();
         }
 
-        [Then(@"Check exception message")]
-        public void ThenCheckExceptionMessage()
+        [Then(@"Check exception message ""([^""]*)""")]
+        public void ThenCheckExceptionMessage(string Message)
         {
-            throw new PendingStepException();
+            signIn.VerifyExceptionMessageByGiven(Message);
         }
+
     }
 }
