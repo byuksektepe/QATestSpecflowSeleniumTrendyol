@@ -64,4 +64,5 @@ Scenario Outline: 06 Visitor should be able search product using filters
 Examples: 
 	| SearchItem      | Brand   | MinPrice | MaxPrice |
 	| Kamp Sandalyesi | Quechua | 200      | 350      |
-	| iphone 11       | Apple   | 10000    | 16000    |
+	| iphone 11       | Apple   | 10000    | 14000    |
+	| Alet Çantası    | Bosch   | 300      | 400      |

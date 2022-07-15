@@ -142,8 +142,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         {
             var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultPageWaitInSeconds));
             wait.Until(driver => js.ExecuteScript("return document.readyState").Equals("complete"));
-            // This 5ms wait for prevent sync errors.
-            System.Threading.Thread.Sleep(500);
+            // This 7ms wait for prevent sync errors.
+            System.Threading.Thread.Sleep(700);
         }
 
         public void VerifyPageLoad()

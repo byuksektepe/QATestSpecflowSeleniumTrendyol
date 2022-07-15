@@ -292,7 +292,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Filter")]
         [NUnit.Framework.TestCaseAttribute("Kamp Sandalyesi", "Quechua", "200", "350", null)]
-        [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "16000", null)]
+        [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "14000", null)]
+        [NUnit.Framework.TestCaseAttribute("Alet Çantası", "Bosch", "300", "400", null)]
         public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchItem, string brand, string minPrice, string maxPrice, string[] exampleTags)
         {
             string[] @__tags = new string[] {
