@@ -294,7 +294,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("Kamp Sandalyesi", "Quechua", "200", "350", "x", "", null)]
         [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "14000", "", "x", null)]
         [NUnit.Framework.TestCaseAttribute("Alet Çantası", "Bosch", "300", "400", "x", "", null)]
-        public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchItem, string brand, string minPrice, string maxPrice, string photoReview, string freeCargo, string[] exampleTags)
+        public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchQuery, string brand, string minPrice, string maxPrice, string photoReview, string freeCargo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Smoke",
@@ -305,7 +305,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("SearchItem", searchItem);
+            argumentsOfScenario.Add("SearchQuery", searchQuery);
             argumentsOfScenario.Add("Brand", brand);
             argumentsOfScenario.Add("MinPrice", minPrice);
             argumentsOfScenario.Add("MaxPrice", maxPrice);
@@ -326,7 +326,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 55
- testRunner.And(string.Format("Search for product \"{0}\" in search", searchItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Search for product \"{0}\" in search", searchQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 56
  testRunner.And("Verify search executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -353,7 +353,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Verify product brand is \"{0}\"", brand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 64
- testRunner.Then(string.Format("Verify product title contains \"{0}\"", searchItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Verify product title contains \"{0}\"", searchQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -52,7 +52,7 @@ Scenario: 05 Move to top button should be work
 @Smoke @Filter
 Scenario Outline: 06 Visitor should be able search product using filters
 	Given Navigate to trendyol website
-	And Search for product "<SearchItem>" in search
+	And Search for product "<SearchQuery>" in search
 	And Verify search executed
 	And Set brand filter to "<Brand>"
 	And Set photo review filter if selected "<PhotoReview>"
@@ -61,10 +61,10 @@ Scenario Outline: 06 Visitor should be able search product using filters
 	When Click first product in results
 	And Verify product detail page opened
 	And Verify product brand is "<Brand>"
-	Then Verify product title contains "<SearchItem>"
+	Then Verify product title contains "<SearchQuery>"
 
 Examples: 
-	| SearchItem      | Brand   | MinPrice | MaxPrice | PhotoReview | FreeCargo |
+	| SearchQuery     | Brand   | MinPrice | MaxPrice | PhotoReview | FreeCargo |
 	| Kamp Sandalyesi | Quechua | 200      | 350      | x           |           |
 	| iphone 11       | Apple   | 10000    | 14000    |             | x         |
 	| Alet Çantası    | Bosch   | 300      | 400      | x           |           |
