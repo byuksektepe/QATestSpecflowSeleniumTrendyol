@@ -55,6 +55,8 @@ Scenario Outline: 06 Visitor should be able search product using filters
 	And Search for product "<SearchItem>" in search
 	And Verify search executed
 	And Set brand filter to "<Brand>"
+	And Set photo review filter if selected "<PhotoReview>"
+	And Set free cargo filter if selected "<FreeCargo>"
 	And Set price filter Min:"<MinPrice>" and Max:"<MaxPrice>"
 	When Click first product in results
 	And Verify product detail page opened
@@ -62,7 +64,7 @@ Scenario Outline: 06 Visitor should be able search product using filters
 	Then Verify product title contains "<SearchItem>"
 
 Examples: 
-	| SearchItem      | Brand   | MinPrice | MaxPrice |
-	| Kamp Sandalyesi | Quechua | 200      | 350      |
-	| iphone 11       | Apple   | 10000    | 14000    |
-	| Alet Çantası    | Bosch   | 300      | 400      |
+	| SearchItem      | Brand   | MinPrice | MaxPrice | PhotoReview | FreeCargo |
+	| Kamp Sandalyesi | Quechua | 200      | 350      | x           |           |
+	| iphone 11       | Apple   | 10000    | 14000    |             | x         |
+	| Alet Çantası    | Bosch   | 300      | 400      | x           |           |

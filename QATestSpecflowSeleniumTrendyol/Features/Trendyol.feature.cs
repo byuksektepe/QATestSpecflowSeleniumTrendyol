@@ -291,10 +291,10 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("06 Visitor should be able search product using filters")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Filter")]
-        [NUnit.Framework.TestCaseAttribute("Kamp Sandalyesi", "Quechua", "200", "350", null)]
-        [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "14000", null)]
-        [NUnit.Framework.TestCaseAttribute("Alet Çantası", "Bosch", "300", "400", null)]
-        public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchItem, string brand, string minPrice, string maxPrice, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Kamp Sandalyesi", "Quechua", "200", "350", "x", "", null)]
+        [NUnit.Framework.TestCaseAttribute("iphone 11", "Apple", "10000", "14000", "", "x", null)]
+        [NUnit.Framework.TestCaseAttribute("Alet Çantası", "Bosch", "300", "400", "x", "", null)]
+        public void _06VisitorShouldBeAbleSearchProductUsingFilters(string searchItem, string brand, string minPrice, string maxPrice, string photoReview, string freeCargo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Smoke",
@@ -309,6 +309,8 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Brand", brand);
             argumentsOfScenario.Add("MinPrice", minPrice);
             argumentsOfScenario.Add("MaxPrice", maxPrice);
+            argumentsOfScenario.Add("PhotoReview", photoReview);
+            argumentsOfScenario.Add("FreeCargo", freeCargo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06 Visitor should be able search product using filters", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 53
 this.ScenarioInitialize(scenarioInfo);
@@ -333,18 +335,24 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Set brand filter to \"{0}\"", brand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 58
- testRunner.And(string.Format("Set price filter Min:\"{0}\" and Max:\"{1}\"", minPrice, maxPrice), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Set photo review filter if selected \"{0}\"", photoReview), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 59
- testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("Set free cargo filter if selected \"{0}\"", freeCargo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 60
- testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Set price filter Min:\"{0}\" and Max:\"{1}\"", minPrice, maxPrice), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 61
- testRunner.And(string.Format("Verify product brand is \"{0}\"", brand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 62
+ testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 63
+ testRunner.And(string.Format("Verify product brand is \"{0}\"", brand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 64
  testRunner.Then(string.Format("Verify product title contains \"{0}\"", searchItem), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

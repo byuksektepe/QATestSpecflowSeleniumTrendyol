@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.Resources
 {
@@ -12,7 +11,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private string? BrandName;
 
         private const string FilterFrameMainLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']";
- 
+
         private const string PriceFilterFrameLocator = FilterFrameMainLocator + "/div[.='Fiyat']";
         private const string PriceFilterContentLocator = FilterFrameMainLocator + "//div[contains(text(), '0 TL')]";
 
@@ -24,6 +23,10 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         private const string PriceFilterSubmitButton = FilterFrameMainLocator + "//button[@class='fltr-srch-prc-rng-srch']";
 
         private const string BrandSearchInput = FilterFrameMainLocator + "//input[@class='fltr-srch-inpt']";
+
+        private const string PhotoReviewLocator = FilterFrameMainLocator + "//div[@class='fltrs toggleFilter']//div[.='Fotoğraflı Yorumlar']";
+        private const string FreeCargoLocator = FilterFrameMainLocator + "//div[@class='fltrs toggleFilter']//div[.='Kargo Bedava']";
+
 
         public Filters(IWebDriver driver)
         {
@@ -44,6 +47,8 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
         IWebElement PriceFilterSubmitButtonElement => Driver.FindElement(By.XPath(PriceFilterSubmitButton));
 
         IWebElement BrandFilterSearchInputElement => Driver.FindElement(By.XPath(BrandSearchInput));
+        IWebElement PhotoReviewElement => Driver.FindElement(By.XPath(PhotoReviewLocator));
+        IWebElement FreeCargoElement => Driver.FindElement(By.XPath(FreeCargoLocator));
 
 
 
@@ -64,7 +69,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
         }
 
-        public void SetPriceFilter(string MinPrice, string MaxPrice)
+        protected void SetPriceFilter(string MinPrice, string MaxPrice)
         {
             PriceFilterMinInputElement.SendKeys(MinPrice);
             PriceFilterMaxInputElement.SendKeys(MaxPrice);
@@ -90,7 +95,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             }
         }
 
-        public void SetBrandFilter(string Brand)
+        protected void SetBrandFilter(string Brand)
         {
             string BrandFilterCheckBoxLocator = "//div[@class='aggrgtn-cntnr-wrppr']/div[@class='fltrs-wrppr hide-fltrs']//div[.='" + Brand + "']";
             BrandFilterSearchInputElement.SendKeys(Brand);
@@ -98,6 +103,20 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             IWebElement BrandFilterCheckBoxElement = Driver.FindElement(By.XPath(BrandFilterCheckBoxLocator));
             Console.Write(BrandFilterContentLocator);
             BrandFilterCheckBoxElement.Click();
+            common.WaitForPageLoad();
+        }
+
+        public void SetPhotoReviewFilter()
+        {
+            common.ScrollToElement(PhotoReviewElement);
+            PhotoReviewElement.Click();
+            common.WaitForPageLoad();
+        }
+
+        public void SetFreeCargoFilter()
+        {
+            common.ScrollToElement(FreeCargoElement);
+            FreeCargoElement.Click();
             common.WaitForPageLoad();
         }
     }

@@ -152,7 +152,22 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail.VerifyProductTitleContainsSearchQuery(SearchQuery);
         }
 
+        [Given(@"Set photo review filter if selected ""([^""]*)""")]
+        public void GivenSetPhotoReviewFilterIfSelected(string PhotoReview)
+        {
+            if(!String.IsNullOrWhiteSpace(PhotoReview))
+            {
+                filters.SetPhotoReviewFilter();
+            }
+        }
 
+        [Given(@"Set free cargo filter if selected ""([^""]*)""")]
+        public void GivenSetFreeCargoFilterIfSelected(string FreeCargo)
+        {
+            if(!String.IsNullOrWhiteSpace(FreeCargo))
+            {
+                filters.SetFreeCargoFilter();
+            }
+        }
     }
-
 }
