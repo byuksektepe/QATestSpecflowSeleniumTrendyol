@@ -147,9 +147,9 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         }
 
         [Then(@"Verify product title contains ""([^""]*)""")]
-        public void ThenVerifyProductTitleContains(string SearchItem)
+        public void ThenVerifyProductTitleContains(string SearchQuery)
         {
-
+            productDetail.VerifyProductTitleContainsSearchQuery(SearchQuery);
         }
 
 

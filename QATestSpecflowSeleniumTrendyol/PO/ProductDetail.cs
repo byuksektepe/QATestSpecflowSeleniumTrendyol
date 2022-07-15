@@ -15,6 +15,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         private const string CommentsMainLocator = "//article[@data-drroot='product-reviews']";
         private const string ProductBrandLocator = "//div[@class='product-container']//h1[@class='pr-new-br']/a";
+        private const string ProductTitleLocator = "//div[@class='product-container']//h1[@class='pr-new-br']";
 
         public ProductDetail(IWebDriver webDriver)
         {
@@ -30,6 +31,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         IWebElement CommentsMainElement => Driver.FindElement(By.XPath(CommentsMainLocator));
 
         IWebElement ProductBrandElement => Driver.FindElement(By.XPath(ProductBrandLocator));
+        IWebElement ProductTitleElement => Driver.FindElement(By.XPath(ProductTitleLocator));
 
         public void VerifyPageLoad()
         {
@@ -68,6 +70,15 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             if (!BrandText.Equals(Brand))
             {
                 throw new BrandNotMatchByGivenException(BrandText, Brand);
+            }
+        }
+
+        public void VerifyProductTitleContainsSearchQuery(string SearchQuery)
+        {
+            string ProductTitle = ProductTitleElement.Text;
+            if (!ProductTitle.Contains(SearchQuery))
+            {
+                throw new ProductTitleNotContainsSearchQueryException(ProductTitle, SearchQuery);
             }
         }
     }
