@@ -25,13 +25,13 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Click login button in navbar")]
         public void GivenClickLoginButtonInNavbar()
         {
-            throw new PendingStepException();
+            navbar.ClickSignInButton();
         }
 
         [Given(@"Verify login page opened")]
         public void GivenVerifyLoginPageOpened()
         {
-            throw new PendingStepException();
+            signIn.VerifyPageLoad();
         }
 
         [When(@"Set email and password")]
