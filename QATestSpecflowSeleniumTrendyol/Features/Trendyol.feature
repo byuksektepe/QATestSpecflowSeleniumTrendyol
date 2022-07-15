@@ -68,3 +68,20 @@ Examples:
 	| Kamp Sandalyesi | Quechua | 200      | 350      | x           |           |
 	| iphone 11       | Apple   | 10000    | 14000    |             | x         |
 	| Alet Çantası    | Bosch   | 300      | 400      | x           |           |
+
+@Smoke @SignInErrors
+Scenario Outline: 07 Visitor should be able see Sign-In form error messages
+	Given Navigate to trendyol website
+	And Click login button in navbar
+	And Verify login page opened
+	When Set email and password
+	And Click login button to submit form
+	Then Check exception message
+
+Examples:
+	| Description        | Email             | Password | ExpectedMessage                            |
+	| Null email         |                   | pass123  | Lütfen geçerli bir e-posta adresi giriniz. |
+	| Invalid email      | wthmail.lolx      | pass123  | Lütfen geçerli bir e-posta adresi giriniz. |
+	| Null password      | berkant@gmail.com |          | Lütfen şifrenizi giriniz.                  |
+	| Unregistered email | berkant@gmail.com | pass123  | E-posta adresiniz ve/veya şifreniz hatalı. |
+

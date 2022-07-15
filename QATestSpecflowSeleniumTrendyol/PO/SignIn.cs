@@ -3,14 +3,14 @@ using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.PO
 {
-    public class SignInUp
+    public class SignIn
     {
         private readonly IWebDriver Driver;
         private readonly Common common;
 
         private const string SignInVerifyLocator = "//div[@id='login-register']";
 
-        public SignInUp(IWebDriver driver)
+        public SignIn(IWebDriver driver)
         {
             Driver = driver;
             common = new Common(driver);

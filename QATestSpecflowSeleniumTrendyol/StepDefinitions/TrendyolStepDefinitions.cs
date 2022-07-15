@@ -13,7 +13,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly SearchResults searchResults;
         private readonly ProductDetail productDetail;
         private readonly Cart cart;
-        private readonly SignInUp signInUp;
+        private readonly SignIn signIn;
         private readonly Footer footer;
         private readonly SubMethods subMethods;
         private readonly Filters filters;
@@ -25,7 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             searchResults = new SearchResults(driver.Current);
             productDetail = new ProductDetail(driver.Current);
             cart = new Cart(driver.Current);
-            signInUp = new SignInUp(driver.Current);
+            signIn = new SignIn(driver.Current);
             footer = new Footer(driver.Current);
             subMethods = new SubMethods(driver.Current);
             filters = new Filters(driver.Current);
@@ -87,10 +87,11 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail.ClickAddToFavoritesButton();
         }
 
+        [Given(@"Verify login page opened")]
         [Then(@"Verify login page opened")]
         public void ThenVerifyLoginPageOpened()
         {
-            signInUp.VerifyPageLoad();
+            signIn.VerifyPageLoad();
         }
 
 
