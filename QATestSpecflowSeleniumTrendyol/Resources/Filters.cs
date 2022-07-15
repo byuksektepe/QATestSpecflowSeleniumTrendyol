@@ -97,6 +97,7 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             IWebElement BrandFilterCheckBoxElement = Driver.FindElement(By.XPath(BrandFilterCheckBoxLocator));
             Console.Write(BrandFilterContentLocator);
             BrandFilterCheckBoxElement.Click();
+            common.Sleep(1);
         }
     }
 }
