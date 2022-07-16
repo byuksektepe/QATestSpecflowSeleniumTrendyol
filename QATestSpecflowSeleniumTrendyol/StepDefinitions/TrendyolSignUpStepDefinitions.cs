@@ -44,13 +44,20 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Check password warner if required to ""([^""]*)""")]
         public void WhenCheckPasswordWarnerIfRequiredTo(string PasswordWarner)
         {
-            signUp.VerifyPasswordWarnerMessageByGiven(PasswordWarner);
+            if (!String.IsNullOrWhiteSpace(PasswordWarner))
+            {
+                signUp.VerifyPasswordWarnerMessageByGiven(PasswordWarner);
+            }
+
         }
 
         [Then(@"Check exception message ""([^""]*)"" in signup form")]
         public void ThenCheckExceptionMessageInSignupForm(string Message)
         {
-            signUp.VerifyExceptionMessageByGiven(Message);
+            if (!String.IsNullOrWhiteSpace(Message))
+            {
+                signUp.VerifyExceptionMessageByGiven(Message);
+            }
         }
     }
 }

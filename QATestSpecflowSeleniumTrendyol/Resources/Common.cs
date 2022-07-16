@@ -9,6 +9,7 @@
         public const string PopupLocator = "//div[@class='popup']";
         public const string OverlayLocator = "//div[@class='overlay']";
 
+
         private IWebDriver _webDriver;
         private readonly IJavaScriptExecutor js;
         public readonly Actions action;

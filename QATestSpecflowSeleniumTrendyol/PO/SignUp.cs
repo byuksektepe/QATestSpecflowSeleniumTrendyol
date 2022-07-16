@@ -15,6 +15,7 @@
         private const string PasswordWarnerMessageLocator = "//div[@class='progress-bar-container']/span[contains(@class, 'pw-title')]";
 
 
+
         public SignUp(IWebDriver driver)
         {
             Driver = driver;
@@ -38,8 +39,16 @@
 
         public void SetEmailAndPassword(string Email, string Password)
         {
-            EmailInputElement.SendKeys(Email);
-            PasswordInputElement.SendKeys(Password);
+            if (!String.IsNullOrWhiteSpace(Email))
+            {
+                EmailInputElement.SendKeys(Email);
+            }
+            
+            if (!String.IsNullOrWhiteSpace(Password))
+            {
+                PasswordInputElement.SendKeys(Password);
+            }
+            
         }
 
         public void VerifyExceptionMessageByGiven(string GivenException)
@@ -51,14 +60,14 @@
 
             if (!ReceivedException.Equals(GivenException))
             {
-
                 throw new ExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
             }
         }
 
         public void VerifyPasswordWarnerMessageByGiven(string GivenMessage)
         {
-            common.WaitUntilElement(By.XPath(PasswordWarnerMessageLocator));
+            common.WaitUntilElement(By.XPath(PasswordWarnerMessageLocator), "Visible");
+
             string ReceivedMessage = (PasswordWarnerMessageElement.Text).ToLower();
             GivenMessage = GivenMessage.ToLower();
 
