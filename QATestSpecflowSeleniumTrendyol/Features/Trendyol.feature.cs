@@ -403,13 +403,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Verify login page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 77
- testRunner.When(string.Format("Set email to \"{0}\" and password to \"{1}\"", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Set email to \"{0}\" and password to \"{1}\" in signin form", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 78
  testRunner.And("Click login button to submit form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 79
- testRunner.Then(string.Format("Check exception message \"{0}\"", expectedMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Check exception message \"{0}\" in signin form", expectedMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

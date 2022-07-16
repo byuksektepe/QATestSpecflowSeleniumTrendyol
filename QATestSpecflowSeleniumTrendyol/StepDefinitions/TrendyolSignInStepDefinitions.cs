@@ -1,8 +1,5 @@
-using System;
-using TechTalk.SpecFlow;
 using QATestSpecflowSeleniumTrendyol.Drivers;
 using QATestSpecflowSeleniumTrendyol.PO;
-using QATestSpecflowSeleniumTrendyol.Resources;
 
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
@@ -33,7 +30,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             signIn.VerifyPageLoad();
         }
 
-        [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)""")]
+        [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)"" in signin form")]
         public void WhenSetEmailToAndPasswordTo(string Email, string Password)
         {
             signIn.SetEmailAndPassword(Email, Password);
@@ -45,7 +42,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             signIn.ClickSignInButtonForSubmit();
         }
 
-        [Then(@"Check exception message ""([^""]*)""")]
+        [Then(@"Check exception message ""([^""]*)"" in signin form")]
         public void ThenCheckExceptionMessage(string Message)
         {
             signIn.VerifyExceptionMessageByGiven(Message);
