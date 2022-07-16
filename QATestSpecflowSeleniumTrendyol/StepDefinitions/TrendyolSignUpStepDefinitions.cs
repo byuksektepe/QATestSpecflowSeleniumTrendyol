@@ -30,9 +30,9 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         }
 
         [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)"" in signup form")]
-        public void WhenSetEmailToAndPasswordToInSignupForm(string p0, string p1)
+        public void WhenSetEmailToAndPasswordToInSignupForm(string Email, string Password)
         {
-            throw new PendingStepException();
+            signUp.SetEmailAndPassword(Email, Password);
         }
 
         [When(@"Click signup button to submit form")]

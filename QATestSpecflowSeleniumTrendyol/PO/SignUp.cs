@@ -22,7 +22,6 @@
             subMethods = new SubMethods(driver);
         }
 
-        private IWebElement SignUpVerifyElement => Driver.FindElement(By.XPath(SignUpVerifyLocator));
         private IWebElement EmailInputElement => Driver.FindElement(By.XPath(EmailInputLocator));
         private IWebElement PasswordInputElement => Driver.FindElement(By.XPath(PasswordInputLocator));
         private IWebElement SignUpButtonElement => Driver.FindElement(By.XPath(SignUpButtonLocator));
@@ -41,6 +40,12 @@
         {
             EmailInputElement.SendKeys(Email);
             PasswordInputElement.SendKeys(Password);
+        }
+
+        public void ClickSignUpButtonForSubmit()
+        {
+            subMethods.AcceptCoockiesIfVisible();
+            SignUpButtonElement.Click();
         }
     }
 }
