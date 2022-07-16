@@ -21,12 +21,23 @@
     }
 
     [Serializable]
-    class SignInExceptionMessageNotMatchByGivenException : Exception
+    class ExceptionMessageNotMatchByGivenException : Exception
     {
-        public SignInExceptionMessageNotMatchByGivenException() { }
-        public SignInExceptionMessageNotMatchByGivenException(string GivenException, string ReceivedException)
+        public ExceptionMessageNotMatchByGivenException() { }
+        public ExceptionMessageNotMatchByGivenException(string GivenException, string ReceivedException)
             : base(String.Format("Given exception message '{0}' is not equals received '{1}' message.", GivenException, ReceivedException))
         
+        { }
+
+    }
+
+    [Serializable]
+    class MessageNotMatchByGivenException : Exception
+    {
+        public MessageNotMatchByGivenException() { }
+        public MessageNotMatchByGivenException(string GivenException, string ReceivedException)
+            : base(String.Format("Given message '{0}' is not equals received '{1}' message.", GivenException, ReceivedException))
+
         { }
 
     }

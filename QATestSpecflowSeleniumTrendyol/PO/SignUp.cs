@@ -42,6 +42,32 @@
             PasswordInputElement.SendKeys(Password);
         }
 
+        public void VerifyExceptionMessageByGiven(string GivenException)
+        {
+            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), "Visible");
+
+            string ReceivedException = (ExceptionMessageElement.Text).ToLower();
+            GivenException = GivenException.ToLower();
+
+            if (!ReceivedException.Equals(GivenException))
+            {
+
+                throw new ExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
+            }
+        }
+
+        public void VerifyPasswordWarnerMessageByGiven(string GivenMessage)
+        {
+            common.WaitUntilElement(By.XPath(PasswordWarnerMessageLocator));
+            string ReceivedMessage = (PasswordWarnerMessageElement.Text).ToLower();
+            GivenMessage = GivenMessage.ToLower();
+
+            if (!ReceivedMessage.Equals(GivenMessage))
+            {
+                throw new MessageNotMatchByGivenException(GivenMessage, ReceivedMessage);
+            }
+        }
+
         public void ClickSignUpButtonForSubmit()
         {
             subMethods.AcceptCoockiesIfVisible();

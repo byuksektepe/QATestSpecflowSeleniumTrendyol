@@ -48,7 +48,7 @@
             if (!ReceivedException.Equals(GivenException))
             {
 
-                throw new SignInExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
+                throw new ExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
             }
         }
 

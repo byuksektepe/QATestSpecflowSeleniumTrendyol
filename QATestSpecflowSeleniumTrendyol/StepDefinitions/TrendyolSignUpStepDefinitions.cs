@@ -38,19 +38,19 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click signup button to submit form")]
         public void WhenClickSignupButtonToSubmitForm()
         {
-            throw new PendingStepException();
+            signUp.ClickSignUpButtonForSubmit();
         }
 
         [When(@"Check password warner if required to ""([^""]*)""")]
-        public void WhenCheckPasswordWarnerIfRequiredTo(string p0)
+        public void WhenCheckPasswordWarnerIfRequiredTo(string PasswordWarner)
         {
-            throw new PendingStepException();
+            signUp.VerifyPasswordWarnerMessageByGiven(PasswordWarner);
         }
 
         [Then(@"Check exception message ""([^""]*)"" in signup form")]
-        public void ThenCheckExceptionMessageInSignupForm(string p0)
+        public void ThenCheckExceptionMessageInSignupForm(string Message)
         {
-            throw new PendingStepException();
+            signUp.VerifyExceptionMessageByGiven(Message);
         }
     }
 }
