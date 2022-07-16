@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
-
-
-namespace QATestSpecflowSeleniumTrendyol.Resources
+﻿namespace QATestSpecflowSeleniumTrendyol.Resources
 {
     public static class Locators
     {

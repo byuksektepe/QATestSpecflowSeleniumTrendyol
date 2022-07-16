@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using QATestSpecflowSeleniumTrendyol.Resources;
-
-namespace QATestSpecflowSeleniumTrendyol.PO
+﻿namespace QATestSpecflowSeleniumTrendyol.PO
 {
     public class SignIn
     {
@@ -48,7 +45,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             string ReceivedException = (ExceptionMessageElement.Text).ToLower();
             GivenException = GivenException.ToLower();
 
-            if (!ReceivedException.Equals(GivenException)){
+            if (!ReceivedException.Equals(GivenException))
+            {
 
                 throw new SignInExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
             }
