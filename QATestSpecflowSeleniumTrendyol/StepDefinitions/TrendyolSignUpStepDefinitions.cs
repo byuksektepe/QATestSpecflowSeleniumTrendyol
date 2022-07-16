@@ -26,7 +26,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Verify signup page opened")]
         public void GivenVerifySignupPageOpened()
         {
-            throw new PendingStepException();
+            signUp.VerifyPageLoad();
         }
 
         [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)"" in signup form")]

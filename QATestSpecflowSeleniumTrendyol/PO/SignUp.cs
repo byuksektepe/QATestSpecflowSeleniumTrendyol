@@ -29,5 +29,18 @@
 
         private IWebElement ExceptionMessageElement => Driver.FindElement(By.XPath(ExceptionMessageLocator));
         private IWebElement PasswordWarnerMessageElement => Driver.FindElement(By.XPath(PasswordWarnerMessageLocator));
+
+        public void VerifyPageLoad()
+        {
+            Driver.SwitchTo().Window(Driver.WindowHandles.Last());
+            common.WaitForPageLoad();
+            common.WaitUntilElement(By.XPath(SignUpVerifyLocator), "Visible");
+        }
+
+        public void SetEmailAndPassword(string Email, string Password)
+        {
+            EmailInputElement.SendKeys(Email);
+            PasswordInputElement.SendKeys(Password);
+        }
     }
 }
