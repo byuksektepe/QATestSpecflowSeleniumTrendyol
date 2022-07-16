@@ -20,7 +20,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Click signup button in navbar")]
         public void GivenClickSignupButtonInNavbar()
         {
-            throw new PendingStepException();
+            navbar.ClickSignUpButtonInDropdown();
         }
 
         [Given(@"Verify signup page opened")]
