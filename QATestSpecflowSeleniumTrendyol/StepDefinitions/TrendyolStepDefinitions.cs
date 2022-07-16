@@ -85,14 +85,6 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productDetail.ClickAddToFavoritesButton();
         }
 
-        [Given(@"Verify login page opened")]
-        [Then(@"Verify login page opened")]
-        public void ThenVerifyLoginPageOpened()
-        {
-            signIn.VerifyPageLoad();
-        }
-
-
         [Then(@"Verify visitor see product comments")]
         public void ThenVerifyVisitorSeeProductComments()
         {

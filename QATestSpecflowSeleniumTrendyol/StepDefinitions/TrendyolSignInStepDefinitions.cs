@@ -26,6 +26,13 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             navbar.ClickSignInButton();
         }
 
+        [Given(@"Verify login page opened")]
+        [Then(@"Verify login page opened")]
+        public void ThenVerifyLoginPageOpened()
+        {
+            signIn.VerifyPageLoad();
+        }
+
         [When(@"Set email to ""([^""]*)"" and password to ""([^""]*)""")]
         public void WhenSetEmailToAndPasswordTo(string Email, string Password)
         {
