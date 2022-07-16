@@ -147,18 +147,26 @@
             System.Threading.Thread.Sleep(300);
         }
 
-        public void ScrollToElement(IWebElement elementLocator)
+        public void ScrollToElement(IWebElement element)
         {
             // Aptal firefox için Scroll to el methodu.
             try
             {
-                action.MoveToElement(elementLocator).Perform();
+                action.MoveToElement(element).Perform();
             }
             catch (MoveTargetOutOfBoundsException e)
             {
                 Console.WriteLine(e);
-                js.ExecuteScript("arguments[0].scrollIntoView(true);", elementLocator);
+                js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
             }
+        }
+
+        public void MouseOverToElement(IWebElement element)
+        {
+            // it only works properly in chrome and chromium based browsers.
+            action.MoveToElement(element).Perform();
+            // This 5ms wait for prevent sync errors.
+            System.Threading.Thread.Sleep(500);
         }
 
         public void Sleep(int Time)
