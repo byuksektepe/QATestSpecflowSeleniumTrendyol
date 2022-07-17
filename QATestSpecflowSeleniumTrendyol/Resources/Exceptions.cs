@@ -42,4 +42,15 @@
 
     }
 
+    [Serializable]
+    class SellerNameNotMatchByGivenException : Exception
+    {
+        public SellerNameNotMatchByGivenException() { }
+        public SellerNameNotMatchByGivenException(string GivenSellerName, string ReceivedSellerName)
+            : base(String.Format("Given seller name '{0}' is not equals received '{1}' seller name.", GivenSellerName, ReceivedSellerName))
+
+        { }
+
+    }
+
 }
