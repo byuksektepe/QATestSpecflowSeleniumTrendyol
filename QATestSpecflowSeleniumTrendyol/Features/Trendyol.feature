@@ -1,8 +1,8 @@
 ﻿Feature: Trendyol
 	
-	Trendyol Complete Tests BDD, Test badge now TC-U
+	Trendyol Complete Tests BDD, Test badge now TC-A
 
-![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-u.png)
+![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)
 
 
 @Smoke @Common

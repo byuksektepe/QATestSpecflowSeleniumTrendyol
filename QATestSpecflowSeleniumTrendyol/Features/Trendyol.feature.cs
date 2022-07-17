@@ -35,9 +35,9 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Trendyol", "\tTrendyol Complete Tests BDD, Test badge now TC-U\r\n\r\n![tcu](https://raw.githubuse" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Trendyol", "\tTrendyol Complete Tests BDD, Test badge now TC-A\r\n\r\n![tcu](https://raw.githubuse" +
                     "rcontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114" +
-                    "x40-tc-u.png)", ProgrammingLanguage.CSharp, featureTags);
+                    "x40-tc-a.png)", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -418,7 +418,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("08 Visitor should be able see Sign-Up form error messages")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("SignInErrors")]
+        [NUnit.Framework.CategoryAttribute("SignUpErrors")]
         [NUnit.Framework.TestCaseAttribute("Null email", "", "WhatTheHell!Is4", "E-posta ve şifrenizi giriniz.", "Güçlü Şifre", null)]
         [NUnit.Framework.TestCaseAttribute("Invalid email", "wthmail.lolx", "WhatTheHell!Is4", "Lütfen geçerli bir email adresi giriniz.", "Güçlü Şifre", null)]
         [NUnit.Framework.TestCaseAttribute("Null password", "berkant28@gmail.com", "", "E-posta ve şifrenizi giriniz.", "", null)]
@@ -430,7 +430,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "Smoke",
-                    "SignInErrors"};
+                    "SignUpErrors"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
