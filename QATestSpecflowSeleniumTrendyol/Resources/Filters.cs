@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace QATestSpecflowSeleniumTrendyol.Resources
+﻿namespace QATestSpecflowSeleniumTrendyol.Resources
 {
     public class Filters
     {

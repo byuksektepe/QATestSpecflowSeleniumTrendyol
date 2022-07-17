@@ -1,6 +1,4 @@
-﻿using BoDi;
-using QATestSpecflowSeleniumTrendyol.Drivers;
-using QATestSpecflowSeleniumTrendyol.Resources;
+﻿using QATestSpecflowSeleniumTrendyol.Drivers;
 
 namespace QATestSpecflowSeleniumTrendyol.Hooks
 {

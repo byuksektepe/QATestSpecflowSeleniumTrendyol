@@ -1,7 +1,5 @@
 using QATestSpecflowSeleniumTrendyol.Drivers;
 using QATestSpecflowSeleniumTrendyol.PO;
-using QATestSpecflowSeleniumTrendyol.Resources;
-using TechTalk.SpecFlow.Assist;
 
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
@@ -117,8 +115,6 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             subMethods.VerifyTopOfThePageIsVisible();
         }
 
-        //
-
         [Given(@"Set brand filter to ""([^""]*)""")]
         public void GivenSetBrandFilterTo(string Brand)
         {
@@ -146,7 +142,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Set photo review filter if selected ""([^""]*)""")]
         public void GivenSetPhotoReviewFilterIfSelected(string PhotoReview)
         {
-            if(!String.IsNullOrWhiteSpace(PhotoReview))
+            if (!String.IsNullOrWhiteSpace(PhotoReview))
             {
                 filters.SetPhotoReviewFilter();
             }
@@ -155,7 +151,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Given(@"Set free cargo filter if selected ""([^""]*)""")]
         public void GivenSetFreeCargoFilterIfSelected(string FreeCargo)
         {
-            if(!String.IsNullOrWhiteSpace(FreeCargo))
+            if (!String.IsNullOrWhiteSpace(FreeCargo))
             {
                 filters.SetFreeCargoFilter();
             }
