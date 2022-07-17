@@ -14,8 +14,6 @@
         private const string ExceptionMessageLocator = "//div[@id='error-box-wrapper']//span[@class='message']";
         private const string PasswordWarnerMessageLocator = "//div[@class='progress-bar-container']/span[contains(@class, 'pw-title')]";
 
-
-
         public SignUp(IWebDriver driver)
         {
             Driver = driver;
@@ -48,7 +46,6 @@
             {
                 PasswordInputElement.SendKeys(Password);
             }
-            
         }
 
         public void VerifyExceptionMessageByGiven(string GivenException)

@@ -44,14 +44,5 @@ namespace QATestSpecflowSeleniumTrendyol.Resources
             common.WaitUntilElement(By.XPath(PageTopVerifyLocator), "Visible");
             common.Sleep(1);
         }
-
-        public enum Locators
-        {
-            [Display(Name = "xpath")]
-            XPath = 0,
-
-            [Display(Name = "id")]
-            Id = 1
-        }
     }
 }

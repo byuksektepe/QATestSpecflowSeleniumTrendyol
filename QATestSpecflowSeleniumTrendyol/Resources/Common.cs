@@ -34,7 +34,6 @@
                 _webDriver.Manage().Window.Maximize();
                 _webDriver.Url = SiteUrl;
                 CloseModalIfExists();
-
             }
         }
 
@@ -45,7 +44,7 @@
 
         public void CloseModalIfExists()
         {
-            VerifyPageLoad();
+            WaitForPageLoad();
             #pragma warning disable CS8600
             IWebElement ModalClose = FindElementAndIgnoreErrors("XPath", ModalCloseElement);
 
@@ -56,12 +55,11 @@
             }
             #pragma warning restore CS8604
             #pragma warning restore CS8600
-
         }
 
         public void ClosePopupIfExists()
         {
-            VerifyPageLoad();
+            WaitForPageLoad();
             #pragma warning disable CS8600
             IWebElement PopupElement = FindElementAndIgnoreErrors("XPath", PopupLocator);
             IWebElement OverlayElement = FindElementAndIgnoreErrors("XPath", OverlayLocator);
@@ -177,9 +175,8 @@
             System.Threading.Thread.Sleep(SecsToMs);
         }
 
-        public void WaitUntilElement(By elementLocator, string method = "Visible", int timeout = 10)
+        public void WaitUntilElement(By elementLocator, string method = "Visible")
         {
-            
             try
             {
                 if (method == "Clickable")
@@ -198,7 +195,6 @@
                 {
                     wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
                 }
-                Console.WriteLine(method);
 
             }
             catch (NoSuchElementException)
