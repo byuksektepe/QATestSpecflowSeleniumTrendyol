@@ -85,7 +85,7 @@ Examples:
 	| Null password      | berkant28@gmail.com |          | Lütfen şifrenizi giriniz.                  |
 	| Unregistered email | berkant28@gmail.com | pass123  | E-posta adresiniz ve/veya şifreniz hatalı. |
 
-@Smoke @SignInErrors
+@Smoke @SignUpErrors
 Scenario Outline: 08 Visitor should be able see Sign-Up form error messages
 	Given Navigate to trendyol website
 	And Click signup button in navbar
