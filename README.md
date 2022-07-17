@@ -21,7 +21,7 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 
 ### Test Runtime Requirements
 - SpecFlow Extension for Visual Studio or Rider.
-- NUnit Test Framework
+- NUnit Test Framework.
 
 ### NuGet Packages That Must be Installed
 - NUnit
@@ -35,7 +35,7 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 - Specflow.NUnit
 - Specflow.Plus.LivingDocPlugin
 
-### Generate Specflow Living Documentation
+### Generate SpecFlow Living Documentation
 Open terminal and type  ```livingdoc``` for start execution, then type  ```feature-folder``` to give the project file path and type ```-t``` to give TestExecution.json file. After typing all the necessary parameters hit enter then LivingDoc will be generated in project directory.
 
 Example:
