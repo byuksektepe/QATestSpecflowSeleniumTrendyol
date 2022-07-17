@@ -1,6 +1,7 @@
 ﻿Feature: Trendyol
 	
 	Trendyol Complete Tests BDD, Test badge now TC-A
+	All scenarios are in one feature file, optionally scenarios can be moved to separate feature files.
 
 ![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)
 
