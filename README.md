@@ -9,8 +9,31 @@
 <a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark#test-class-u" rel="tc-u"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40/114x40-tc-u.png" alt="tc-u" /></a>
 
 <p>Software All-Encompassing QA Test Project For Trendyol. Using Specflow .NET BDD with Selenium and NUnit Test Framework. TeamCity was used as CI/CD. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain and Easy-To-Understand. OOP used. Includes only smoke tests, regression and integration tests will be added later.
-The tests will be perform 90% automation 10% manually.</p>
-<p>All main methods added in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Resources">Resorces/common.cs</a></p>
+The tests will be perform 90% automation 10% manually. The tests are optimized for Chrome, Edge and Safari browsers.</p>
+
+<p>All Resorces located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Resources">/Resorces</a></p>
+<p>All Page Opjects located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/PO">/PO</a></p>
+<p>All Step Definitions located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/StepDefinitions">/StepDefinitions</a></p>
+
+### Test Environment Requirements
+- .NET Desktop Development.
+- Visual Studio or Jetbrains Rider as IDE.
+
+### Test Runtime Requirements
+- SpecFlow Extension for Visual Studio or Rider.
+- NUnit Test Framework
+
+### NuGet Packages That Must be Installed
+- NUnit
+- NUnit3TestAdapter
+- Microsoft.NET.Test.Sdk
+- FluentAssertions
+- Selenium.WebDriver
+- Selenium.Support
+- DotNetSeleniumExtras.WaitHelpers
+- SpecFlow.Assist.Dynamic
+- Specflow.NUnit
+- Specflow.Plus.LivingDocPlugin
 
 ![image](https://user-images.githubusercontent.com/61010367/179116255-e9378698-8c76-441a-8d21-57ad0a39e515.png)
 ![image2](https://user-images.githubusercontent.com/61010367/179357595-b86811af-50d1-4e4a-a4cf-d670e9e4ba8d.png)
