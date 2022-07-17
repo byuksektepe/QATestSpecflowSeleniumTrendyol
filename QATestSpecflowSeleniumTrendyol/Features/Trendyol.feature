@@ -115,6 +115,6 @@ Scenario: 09 Visitor should be able see product seller
 	And Get product seller name
 	And Click product seller page link
 	And Verify seller page opened
-	Then Verify the seller received
+	Then Verify the product seller with received name
 
 

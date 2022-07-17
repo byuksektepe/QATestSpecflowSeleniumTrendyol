@@ -6,8 +6,8 @@
         private readonly Common common;
         private readonly SubMethods subMethods;
 
-        private const string ProductSellerVerifyLocator = "";
-        private const string ProductSellerNameLocator = "";
+        private const string ProductSellerVerifyLocator = "//div[@id='seller-store']";
+        private const string ProductSellerNameLocator = "//div[@class='ss-header-inner__data__title']/h1[@class='seller-store__name seller-info__name']";
 
         public ProductSeller(IWebDriver driver)
         {

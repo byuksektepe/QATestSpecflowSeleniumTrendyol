@@ -17,6 +17,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private const string ProductBrandLocator = "//div[@class='product-container']//h1[@class='pr-new-br']/a";
         private const string ProductTitleLocator = "//div[@class='product-container']//h1[@class='pr-new-br']";
 
+        private const string ProductSellerLocator = "//section[@class='seller-widget widget']//div[@class='seller-container']/a";
+
         public ProductDetail(IWebDriver webDriver)
         {
             Driver = webDriver;
@@ -24,14 +26,16 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         }
         //
 
-        IWebElement ProductDetailVerifyElement => Driver.FindElement(By.XPath(ProductDetailVerifyLocator));
-        IWebElement AddToCartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));
-        IWebElement SeeCartElement => Driver.FindElement(By.XPath(SeeCartLocator));
-        IWebElement AddToFavoritesButtonElement => Driver.FindElement(By.XPath(AddToFavoritesButtonLocator));
-        IWebElement CommentsMainElement => Driver.FindElement(By.XPath(CommentsMainLocator));
+        private IWebElement ProductDetailVerifyElement => Driver.FindElement(By.XPath(ProductDetailVerifyLocator));
+        private IWebElement AddToCartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));
+        private IWebElement SeeCartElement => Driver.FindElement(By.XPath(SeeCartLocator));
+        private IWebElement AddToFavoritesButtonElement => Driver.FindElement(By.XPath(AddToFavoritesButtonLocator));
+        private IWebElement CommentsMainElement => Driver.FindElement(By.XPath(CommentsMainLocator));
 
-        IWebElement ProductBrandElement => Driver.FindElement(By.XPath(ProductBrandLocator));
-        IWebElement ProductTitleElement => Driver.FindElement(By.XPath(ProductTitleLocator));
+        private IWebElement ProductBrandElement => Driver.FindElement(By.XPath(ProductBrandLocator));
+        private IWebElement ProductTitleElement => Driver.FindElement(By.XPath(ProductTitleLocator));
+
+        private IWebElement ProductSellerElement => Driver.FindElement(By.XPath(ProductSellerLocator));
 
         public void VerifyPageLoad()
         {
@@ -82,6 +86,17 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             {
                 throw new ProductTitleNotContainsSearchQueryException(ProductTitle, SearchQuery);
             }
+        }
+
+        public string GetProductSellerName()
+        {
+            common.ScrollToElement(ProductSellerElement);
+            return ProductSellerElement.Text;
+        }
+
+        public void ClickProductSellerLink()
+        {
+            ProductSellerElement.Click();
         }
     }
 }

@@ -1,30 +1,47 @@
+using QATestSpecflowSeleniumTrendyol.Drivers;
+using QATestSpecflowSeleniumTrendyol.PO;
+
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
     public class TrendyolProductSellerStepDefinitions
     {
+        private readonly ProductSeller productSeller;
+        private readonly SubMethods subMethods;
+        private readonly ProductDetail productDetail;
+
+
+        public TrendyolProductSellerStepDefinitions(SeleniumDriver driver)
+        {
+            productSeller = new ProductSeller(driver.Current);
+            subMethods = new SubMethods(driver.Current);
+            productDetail = new ProductDetail(driver.Current);
+        }
+
+        private string ProductSellerName;
+
         [When(@"Get product seller name")]
         public void WhenGetProductSellerName()
         {
-            throw new PendingStepException();
+            ProductSellerName = productDetail.GetProductSellerName();
         }
 
         [When(@"Click product seller page link")]
         public void WhenClickProductSellerPageLink()
         {
-            throw new PendingStepException();
+            productDetail.ClickProductSellerLink();
         }
 
         [When(@"Verify seller page opened")]
         public void WhenVerifySellerPageOpened()
         {
-            throw new PendingStepException();
+            productSeller.VerifyPageLoad();
         }
 
-        [Then(@"Verify the seller received")]
+        [Then(@"Verify the product seller with received name")]
         public void ThenVerifyTheSellerReceived()
         {
-            throw new PendingStepException();
+            productSeller.CheckProductSellerNameByGiven(ProductSellerName);
         }
     }
 }
