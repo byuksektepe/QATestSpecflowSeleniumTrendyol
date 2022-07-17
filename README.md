@@ -6,7 +6,7 @@
  ![TeamCity](https://img.shields.io/badge/TeamCity-000000?style=for-the-badge&logo=TeamCity&logoColor=white)
  ![Git](https://img.shields.io/badge/GIT-000000?style=for-the-badge&logo=git&logoColor=white)
  ![TEST-002-A](https://img.shields.io/badge/TEST%20002%20A-000000?style=for-the-badge&logo=null&logoColor=white)
-<a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark#test-class-u" rel="tc-u"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40/114x40-tc-u.png" alt="tc-u" /></a>
+<a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark#test-class-a" rel="tc-a"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40/114x40-tc-a.png" alt="tc-a" /></a>
 
 <p>Software All-Encompassing QA Test Project For Trendyol. Using Specflow .NET BDD with Selenium and NUnit Test Framework. TeamCity was used as CI/CD. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain and Easy-To-Understand. OOP used. Includes only smoke tests, regression and integration tests will be added later.
 The tests will be perform 90% automation 10% manually. The tests are optimized for Chrome, Edge and Safari browsers.</p>
@@ -43,8 +43,9 @@ Example:
 livingdoc feature-folder <your_path_to_project>\QATestSpecflowSeleniumTrendyol -t <your_path_to_project>\QATestSpecflowSeleniumTrendyol\bin\Debug\net6.0\TestExecution.json
  ```
 
-![image](https://user-images.githubusercontent.com/61010367/179116255-e9378698-8c76-441a-8d21-57ad0a39e515.png)
-![image2](https://user-images.githubusercontent.com/61010367/179357595-b86811af-50d1-4e4a-a4cf-d670e9e4ba8d.png)
+![image](https://user-images.githubusercontent.com/61010367/179406154-11d4d498-f723-47a3-b93e-13282e45b7ca.png)
+![image](https://user-images.githubusercontent.com/61010367/179406171-cd0a3cd3-aa0d-4845-9fc8-3601abad4381.png)
+
 
 
 
