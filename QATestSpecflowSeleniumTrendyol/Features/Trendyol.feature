@@ -105,4 +105,6 @@ Examples:
 	| 7 > letter with numbers pass | berkant28@gmail.com | somepass2       |                                                | Zayıf Şifre           |
 	| Medium password              | berkant28@gmail.com | somepass2A      |                                                | Orta Şifre            |
 
+Scenario Outline: 09 Visitor should be able see product seller
+
 
