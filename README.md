@@ -11,6 +11,7 @@
 <p>Software All-Encompassing QA Test Project For Trendyol. Using Specflow .NET BDD with Selenium and NUnit Test Framework. TeamCity was used as CI/CD. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain and Easy-To-Understand. OOP used. Includes only smoke tests, regression and integration tests will be added later.
 The tests will be perform 90% automation 10% manually. The tests are optimized for Chrome, Edge and Safari browsers.</p>
 
+<p>Feature File located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Features">/Features</a></p>
 <p>All Resorces located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/Resources">/Resorces</a></p>
 <p>All Page Opjects located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/PO">/PO</a></p>
 <p>All Step Definitions located in <a href="https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol/tree/master/QATestSpecflowSeleniumTrendyol/StepDefinitions">/StepDefinitions</a></p>
