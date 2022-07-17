@@ -105,6 +105,15 @@ Examples:
 	| 7 > letter with numbers pass | berkant28@gmail.com | somepass2       |                                                | Zayıf Şifre           |
 	| Medium password              | berkant28@gmail.com | somepass2A      |                                                | Orta Şifre            |
 
-Scenario Outline: 09 Visitor should be able see product seller
+Scenario: 09 Visitor should be able see product seller
+	Given Navigate to trendyol website
+	And Search for product "Macbook Air" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Get product seller name
+	And Click product seller page link
+	And Verify seller page opened
+	Then Verify the seller received
 
 
