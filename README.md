@@ -35,6 +35,14 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 - Specflow.NUnit
 - Specflow.Plus.LivingDocPlugin
 
+### Generate Specflow Living Documentation
+Open terminal and type  ```livingdoc``` for start execution, then type  ```future-folder``` to give the project file path and type ```-t``` to give TestExecution.json file. After typing all the necessary parameters hit enter then LivingDoc will be generated in project directory.
+
+Example:
+ ```
+livingdoc feature-folder <your_path_to_project>\QATestSpecflowSeleniumTrendyol -t <your_path_to_project>\QATestSpecflowSeleniumTrendyol\bin\Debug\net6.0\TestExecution.json
+ ```
+
 ![image](https://user-images.githubusercontent.com/61010367/179116255-e9378698-8c76-441a-8d21-57ad0a39e515.png)
 ![image2](https://user-images.githubusercontent.com/61010367/179357595-b86811af-50d1-4e4a-a4cf-d670e9e4ba8d.png)
 
