@@ -36,7 +36,7 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 - Specflow.Plus.LivingDocPlugin
 
 ### Generate Specflow Living Documentation
-Open terminal and type  ```livingdoc``` for start execution, then type  ```future-folder``` to give the project file path and type ```-t``` to give TestExecution.json file. After typing all the necessary parameters hit enter then LivingDoc will be generated in project directory.
+Open terminal and type  ```livingdoc``` for start execution, then type  ```feature-folder``` to give the project file path and type ```-t``` to give TestExecution.json file. After typing all the necessary parameters hit enter then LivingDoc will be generated in project directory.
 
 Example:
  ```
