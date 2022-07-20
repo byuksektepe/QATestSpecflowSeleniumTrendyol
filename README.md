@@ -33,8 +33,8 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 - Selenium.Support
 - DotNetSeleniumExtras.WaitHelpers
 - SpecFlow.Assist.Dynamic
-- Specflow.NUnit
-- Specflow.Plus.LivingDocPlugin
+- SpecFlow.NUnit
+- SpecFlow.Plus.LivingDocPlugin
 
 ### Clone for TeamCity CI/CD
 ```
