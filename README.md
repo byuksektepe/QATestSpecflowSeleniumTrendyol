@@ -36,6 +36,10 @@ The tests will be perform 90% automation 10% manually. The tests are optimized f
 - Specflow.NUnit
 - Specflow.Plus.LivingDocPlugin
 
+### Clone for TeamCity CI/CD
+```
+https://github.com/Berkantyuks/QATestSpecflowSeleniumTrendyol.git
+```
 ### Generate SpecFlow Living Documentation
 Open terminal and type  ```livingdoc``` for start execution, then type  ```feature-folder``` to give the project file path and type ```-t``` to give TestExecution.json file. After typing all the necessary parameters hit enter then LivingDoc will be generated in project directory.
 
