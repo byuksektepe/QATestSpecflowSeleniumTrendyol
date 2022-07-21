@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using QATestSpecflowSeleniumTrendyol.Resources;
-
-namespace QATestSpecflowSeleniumTrendyol.PO
+﻿namespace QATestSpecflowSeleniumTrendyol.PO
 {
     public class ProductDetail
     {

@@ -70,46 +70,10 @@ Examples:
 	| iphone 11       | Apple   | 10000    | 14000    |             | x         |
 	| Alet Çantası    | Bosch   | 300      | 400      | x           |           |
 
-@Smoke @SignInErrors
-Scenario Outline: 07 Visitor should be able see Sign-In form error messages
-	Given Navigate to trendyol website
-	And Click login button in navbar
-	And Verify login page opened
-	When Set email to "<Email>" and password to "<Password>" in signin form
-	And Click login button to submit form
-	Then Check exception message "<ExpectedMessage>" in signin form
-
-Examples:
-	| Description        | Email               | Password | ExpectedMessage                            |
-	| Null email         |                     | pass123  | Lütfen geçerli bir e-posta adresi giriniz. |
-	| Invalid email      | wthmail.lolx        | pass123  | Lütfen geçerli bir e-posta adresi giriniz. |
-	| Null password      | berkant28@gmail.com |          | Lütfen şifrenizi giriniz.                  |
-	| Unregistered email | berkant28@gmail.com | pass123  | E-posta adresiniz ve/veya şifreniz hatalı. |
-
-@Smoke @SignUpErrors
-Scenario Outline: 08 Visitor should be able see Sign-Up form error messages
-	Given Navigate to trendyol website
-	And Click signup button in navbar
-	And Verify signup page opened
-	When Set email to "<Email>" and password to "<Password>" in signup form
-	And Click signup button to submit form
-	And Check password warner if required to "<PasswordWarnerMessage>"
-	Then Check exception message "<ExpectedMessage>" in signup form
-
-Examples:
-	| Description                  | Email               | Password        | ExpectedMessage                                | PasswordWarnerMessage |
-	| Null email                   |                     | WhatTheHell!Is4 | E-posta ve şifrenizi giriniz.                  | Güçlü Şifre           |
-	| Invalid email                | wthmail.lolx        | WhatTheHell!Is4 | Lütfen geçerli bir email adresi giriniz.       | Güçlü Şifre           |
-	| Null password                | berkant28@gmail.com |                 | E-posta ve şifrenizi giriniz.                  |                       |
-	| 7 < letter pass              | berkant28@gmail.com | some            | Şifreniz 7 ile 15 karakter arasında olmalıdır. | Zayıf Şifre           |
-	| 7 > letter pass              | berkant28@gmail.com | somepass        | Şifreniz en az 1 rakam içermelidir.            | Zayıf Şifre           |
-	| 7 > letter with numbers pass | berkant28@gmail.com | somepass2       |                                                | Zayıf Şifre           |
-	| Medium password              | berkant28@gmail.com | somepass2A      |                                                | Orta Şifre            |
-
 @Smoke @ProductSeller
 Scenario: 09 Visitor should be able see product seller
 	Given Navigate to trendyol website
-	And Search for product "Macbook Air" in search
+	And Search for product "İpad Mini" in search
 	And Verify search executed
 	When Click first product in results
 	And Verify product detail page opened
