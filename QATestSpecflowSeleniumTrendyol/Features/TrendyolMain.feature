@@ -6,7 +6,6 @@
 ![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)
 
 
-
 @Smoke @Favorites
 Scenario: Visitor should be able click add to favorites button and redirect login page
 	Given Navigate to trendyol website
@@ -31,16 +30,5 @@ Scenario: Move to top button should be work
 	And Click move to top button
 	Then Verify top of the page is visible
 
-@Smoke @ProductSeller
-Scenario: Visitor should be able see product seller
-	Given Navigate to trendyol website
-	And Search for product "İpad Mini" in search
-	And Verify search executed
-	When Click first product in results
-	And Verify product detail page opened
-	And Get product seller name
-	And Click product seller page link
-	And Verify seller page opened
-	Then Verify the product seller with received name
 
 

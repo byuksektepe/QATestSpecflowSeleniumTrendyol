@@ -20,25 +20,22 @@ namespace QATestSpecflowSeleniumTrendyol.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("TrendyolMain")]
-    public partial class TrendyolMainFeature
+    [NUnit.Framework.DescriptionAttribute("Product")]
+    public partial class ProductFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "TrendyolMain.feature"
+#line 1 "Product.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TrendyolMain", @"	Trendyol Complete Tests BDD, Test badge now TC-A
-	All scenarios are in one feature file, optionally scenarios can be moved to separate feature files.
-
-![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Product", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,17 +74,17 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be able click add to favorites button and redirect login page")]
+        [NUnit.Framework.DescriptionAttribute("Visitor should be able see product seller")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("Favorites")]
-        public void VisitorShouldBeAbleClickAddToFavoritesButtonAndRedirectLoginPage()
+        [NUnit.Framework.CategoryAttribute("ProductSeller")]
+        public void VisitorShouldBeAbleSeeProductSeller()
         {
             string[] tagsOfScenario = new string[] {
                     "Smoke",
-                    "Favorites"};
+                    "ProductSeller"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able click add to favorites button and redirect login page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able see product seller", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -97,43 +94,58 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 7
  testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 12
- testRunner.And("Search for product \"Watch\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.And("Search for product \"İpad Mini\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 9
  testRunner.And("Verify search executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 10
  testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 11
  testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
- testRunner.And("Click add to favorites button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("Get product seller name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
- testRunner.Then("Verify login page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.And("Click product seller page link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("Verify seller page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.Then("Verify the product seller with received name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Visitor should be able to see footer")]
+        [NUnit.Framework.DescriptionAttribute("Visitor should be able add multiple products to cart")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("Footer")]
-        public void VisitorShouldBeAbleToSeeFooter()
+        [NUnit.Framework.CategoryAttribute("MultipleProduct")]
+        [NUnit.Framework.TestCaseAttribute("Kurşun Kalem", "Plus", "4", null)]
+        public void VisitorShouldBeAbleAddMultipleProductsToCart(string searchQuery, string buttonType, string clickTimes, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "Smoke",
-                    "Footer"};
+                    "MultipleProduct"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able to see footer", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+            argumentsOfScenario.Add("SearchQuery", searchQuery);
+            argumentsOfScenario.Add("ButtonType", buttonType);
+            argumentsOfScenario.Add("ClickTimes", clickTimes);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Visitor should be able add multiple products to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -143,54 +155,32 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 21
+#line 19
  testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 20
+ testRunner.And(string.Format("Search for product \"{0}\" in search", searchQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 21
+ testRunner.And("Verify search executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.When("Scroll to footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.Then("Verify footer is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Move to top button should be work")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("MoveToTop")]
-        public void MoveToTopButtonShouldBeWork()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Smoke",
-                    "MoveToTop"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Move to top button should be work", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
+ testRunner.And(string.Format("Verify product title contains \"{0}\"", searchQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+ testRunner.And("Click add to cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 26
-this.ScenarioInitialize(scenarioInfo);
+ testRunner.And("Click see cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
 #line 27
- testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 28
- testRunner.When("Scroll to footer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 29
- testRunner.And("Verify footer is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 30
- testRunner.And("Click move to top button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 31
- testRunner.Then("Verify top of the page is visible", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("Click \"{0}\" Button for \"{1}\" times", buttonType, clickTimes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
