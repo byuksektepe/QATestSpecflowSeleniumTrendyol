@@ -20,22 +20,22 @@ namespace QATestSpecflowSeleniumTrendyol.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Trendyol")]
-    public partial class TrendyolFeature
+    [NUnit.Framework.DescriptionAttribute("TrendyolMain")]
+    public partial class TrendyolMainFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Trendyol.feature"
+#line 1 "TrendyolMain.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Trendyol", @"	Trendyol Complete Tests BDD, Test badge now TC-A
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "TrendyolMain", @"	Trendyol Complete Tests BDD, Test badge now TC-A
 	All scenarios are in one feature file, optionally scenarios can be moved to separate feature files.
 
 ![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)", ProgrammingLanguage.CSharp, featureTags);
@@ -361,29 +361,16 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("07 Visitor should be able see Sign-In form error messages")]
+        [NUnit.Framework.DescriptionAttribute("09 Visitor should be able see product seller")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("SignInErrors")]
-        [NUnit.Framework.TestCaseAttribute("Null email", "", "pass123", "Lütfen geçerli bir e-posta adresi giriniz.", null)]
-        [NUnit.Framework.TestCaseAttribute("Invalid email", "wthmail.lolx", "pass123", "Lütfen geçerli bir e-posta adresi giriniz.", null)]
-        [NUnit.Framework.TestCaseAttribute("Null password", "berkant28@gmail.com", "", "Lütfen şifrenizi giriniz.", null)]
-        [NUnit.Framework.TestCaseAttribute("Unregistered email", "berkant28@gmail.com", "pass123", "E-posta adresiniz ve/veya şifreniz hatalı.", null)]
-        public void _07VisitorShouldBeAbleSeeSign_InFormErrorMessages(string description, string email, string password, string expectedMessage, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("ProductSeller")]
+        public void _09VisitorShouldBeAbleSeeProductSeller()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Smoke",
-                    "SignInErrors"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+                    "ProductSeller"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Description", description);
-            argumentsOfScenario.Add("Email", email);
-            argumentsOfScenario.Add("Password", password);
-            argumentsOfScenario.Add("ExpectedMessage", expectedMessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("07 Visitor should be able see Sign-In form error messages", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09 Visitor should be able see product seller", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 74
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -398,133 +385,27 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 76
- testRunner.And("Click login button in navbar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 77
- testRunner.And("Verify login page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 78
- testRunner.When(string.Format("Set email to \"{0}\" and password to \"{1}\" in signin form", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 79
- testRunner.And("Click login button to submit form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 80
- testRunner.Then(string.Format("Check exception message \"{0}\" in signin form", expectedMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("08 Visitor should be able see Sign-Up form error messages")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("SignUpErrors")]
-        [NUnit.Framework.TestCaseAttribute("Null email", "", "WhatTheHell!Is4", "E-posta ve şifrenizi giriniz.", "Güçlü Şifre", null)]
-        [NUnit.Framework.TestCaseAttribute("Invalid email", "wthmail.lolx", "WhatTheHell!Is4", "Lütfen geçerli bir email adresi giriniz.", "Güçlü Şifre", null)]
-        [NUnit.Framework.TestCaseAttribute("Null password", "berkant28@gmail.com", "", "E-posta ve şifrenizi giriniz.", "", null)]
-        [NUnit.Framework.TestCaseAttribute("7 < letter pass", "berkant28@gmail.com", "some", "Şifreniz 7 ile 15 karakter arasında olmalıdır.", "Zayıf Şifre", null)]
-        [NUnit.Framework.TestCaseAttribute("7 > letter pass", "berkant28@gmail.com", "somepass", "Şifreniz en az 1 rakam içermelidir.", "Zayıf Şifre", null)]
-        [NUnit.Framework.TestCaseAttribute("7 > letter with numbers pass", "berkant28@gmail.com", "somepass2", "", "Zayıf Şifre", null)]
-        [NUnit.Framework.TestCaseAttribute("Medium password", "berkant28@gmail.com", "somepass2A", "", "Orta Şifre", null)]
-        public void _08VisitorShouldBeAbleSeeSign_UpFormErrorMessages(string description, string email, string password, string expectedMessage, string passwordWarnerMessage, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Smoke",
-                    "SignUpErrors"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Description", description);
-            argumentsOfScenario.Add("Email", email);
-            argumentsOfScenario.Add("Password", password);
-            argumentsOfScenario.Add("ExpectedMessage", expectedMessage);
-            argumentsOfScenario.Add("PasswordWarnerMessage", passwordWarnerMessage);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08 Visitor should be able see Sign-Up form error messages", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 90
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 91
- testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 92
- testRunner.And("Click signup button in navbar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 93
- testRunner.And("Verify signup page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 94
- testRunner.When(string.Format("Set email to \"{0}\" and password to \"{1}\" in signup form", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 95
- testRunner.And("Click signup button to submit form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 96
- testRunner.And(string.Format("Check password warner if required to \"{0}\"", passwordWarnerMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 97
- testRunner.Then(string.Format("Check exception message \"{0}\" in signup form", expectedMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("09 Visitor should be able see product seller")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("ProductSeller")]
-        public void _09VisitorShouldBeAbleSeeProductSeller()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Smoke",
-                    "ProductSeller"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09 Visitor should be able see product seller", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 110
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 111
- testRunner.Given("Navigate to trendyol website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 112
  testRunner.And("Search for product \"İpad Mini\" in search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 113
+#line 77
  testRunner.And("Verify search executed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 114
+#line 78
  testRunner.When("Click first product in results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 115
+#line 79
  testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 116
+#line 80
  testRunner.And("Get product seller name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 117
+#line 81
  testRunner.And("Click product seller page link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 118
+#line 82
  testRunner.And("Verify seller page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 119
+#line 83
  testRunner.Then("Verify the product seller with received name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

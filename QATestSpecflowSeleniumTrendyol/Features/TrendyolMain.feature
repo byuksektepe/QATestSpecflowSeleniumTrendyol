@@ -1,4 +1,4 @@
-﻿Feature: Trendyol
+﻿Feature: TrendyolMain
 	
 	Trendyol Complete Tests BDD, Test badge now TC-A
 	All scenarios are in one feature file, optionally scenarios can be moved to separate feature files.

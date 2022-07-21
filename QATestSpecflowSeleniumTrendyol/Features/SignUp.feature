@@ -3,7 +3,7 @@
 Trendyol SignUp Feature File
 
 @Smoke @SignUpErrors
-Scenario Outline: 08 Visitor should be able see Sign-Up form error messages
+Scenario Outline: Visitor should be able see Sign-Up form error messages
 	Given Navigate to trendyol website
 	And Click signup button in navbar
 	And Verify signup page opened
