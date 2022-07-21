@@ -175,6 +175,11 @@
             System.Threading.Thread.Sleep(SecsToMs);
         }
 
+        public string? GetCurrentUrl()
+        {
+            return _webDriver.Url;
+        }
+
         public void WaitUntilElement(By elementLocator, string method = "Visible")
         {
             try

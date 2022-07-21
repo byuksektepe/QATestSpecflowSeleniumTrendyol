@@ -4,14 +4,14 @@ using QATestSpecflowSeleniumTrendyol.PO;
 namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
 {
     [Binding]
-    public class TrendyolProductSellerStepDefinitions
+    public class TrendyolProductStepDefinitions
     {
         private readonly ProductSeller productSeller;
         private readonly SubMethods subMethods;
         private readonly ProductDetail productDetail;
 
 
-        public TrendyolProductSellerStepDefinitions(SeleniumDriver driver)
+        public TrendyolProductStepDefinitions(SeleniumDriver driver)
         {
             productSeller = new ProductSeller(driver.Current);
             subMethods = new SubMethods(driver.Current);
