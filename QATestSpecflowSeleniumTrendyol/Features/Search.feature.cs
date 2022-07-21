@@ -116,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Click see cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.Then("Verify product added to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Verify cart page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

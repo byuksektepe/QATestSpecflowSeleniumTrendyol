@@ -35,7 +35,7 @@ namespace QATestSpecflowSeleniumTrendyol.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Product", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Product", "Trendyol Product Feature File", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -171,7 +171,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Verify product detail page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
- testRunner.And(string.Format("Verify product title contains \"{0}\"", searchQuery), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Get Product base link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
  testRunner.And("Click add to cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -180,6 +180,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Click see cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 27
+ testRunner.And("Verify cart page opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 28
  testRunner.And(string.Format("Click \"{0}\" Button for \"{1}\" times", buttonType, clickTimes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

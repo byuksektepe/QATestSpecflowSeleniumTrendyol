@@ -11,7 +11,7 @@ Scenario: Visitor should be able search product and add to cart
 	And Verify product detail page opened
 	And Click add to cart button
 	And Click see cart button
-	Then Verify product added to cart
+	Then Verify cart page opened
 
 @Smoke @Filter
 Scenario Outline: Visitor should be able search product using filters

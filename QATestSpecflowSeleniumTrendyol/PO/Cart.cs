@@ -25,7 +25,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common.WaitUntilElement(By.XPath(CartVerifyLocator));
         }
 
-        public void VerifyProductAddedToCart()
+        public void VerifyCartPageOpened()
         {
             common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
         }

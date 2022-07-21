@@ -1,6 +1,6 @@
 ﻿Feature: Product
 
-A short summary of the feature
+Trendyol Product Feature File
 
 @Smoke @ProductSeller
 Scenario: Visitor should be able see product seller
@@ -25,6 +25,7 @@ Scenario Outline: Visitor should be able add multiple products to cart
 	And Click add to cart button
 	And Click see cart button
 	And Verify cart page opened
+	And Verify Product added to cart by received base link
 	And Click "<ButtonType>" Button for "<ClickTimes>" times
 
 
