@@ -6,16 +6,6 @@
 ![tcu](https://raw.githubusercontent.com/Berkantyuks/QA-Project-Test-Classification-Mark/main/TCM-114x40/114x40-tc-a.png)
 
 
-@Smoke @Common
-Scenario: 01 Visitor should be able search product and add to cart
-	Given Navigate to trendyol website
-	And Search for product "Laptop" in search
-	And Verify search executed
-	When Click first product in results
-	And Verify product detail page opened
-	And Click add to cart button
-	And Click see cart button
-	Then Verify product added to cart
 
 @Smoke @Favorites
 Scenario: 02 Visitor should be able click add to favorites button and redirect login page
