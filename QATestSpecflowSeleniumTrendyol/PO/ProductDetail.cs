@@ -96,9 +96,12 @@
            return common.GetCurrentUrl();
         }
 
-        public void VerifyProductLinkByGiven()
+        public void VerifyProductLink(string GivenUrl, string ReceivedUrl)
         {
+            if (!GivenUrl.Contains(ReceivedUrl))
+            {
 
+            }
         }
 
         public void ClickProductSellerLink()
