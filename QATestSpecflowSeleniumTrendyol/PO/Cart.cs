@@ -29,5 +29,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         {
             common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
         }
+
+        public void VerifyProductLink(string GivenUrl)
+        {
+            if (!GivenUrl.Contains(ReceivedUrl))
+            {
+
+            }
+        }
     }
 }
