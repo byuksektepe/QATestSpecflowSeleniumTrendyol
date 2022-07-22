@@ -175,7 +175,7 @@
             System.Threading.Thread.Sleep(SecsToMs);
         }
 
-        public string? GetCurrentUrl()
+        public string GetCurrentUrl()
         {
             return _webDriver.Url;
         }

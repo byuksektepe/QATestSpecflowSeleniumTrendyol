@@ -91,6 +91,16 @@
             return ProductSellerElement.Text;
         }
 
+        public string GetProductBaseUrl()
+        {
+           return common.GetCurrentUrl();
+        }
+
+        public void VerifyProductLinkByGiven()
+        {
+
+        }
+
         public void ClickProductSellerLink()
         {
             ProductSellerElement.Click();

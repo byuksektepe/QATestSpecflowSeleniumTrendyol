@@ -19,6 +19,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         }
 
         private string ProductSellerName;
+        private string ProductUrl;
 
         [When(@"Get product seller name")]
         public void WhenGetProductSellerName()
@@ -42,6 +43,30 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         public void ThenVerifyTheSellerReceived()
         {
             productSeller.CheckProductSellerNameByGiven(ProductSellerName);
+        }
+
+        [When(@"Get Product base link")]
+        public void WhenGetProductBaseLink()
+        {
+            ProductUrl = productDetail.GetProductBaseUrl();
+        }
+
+        [When(@"Verify Product added to cart by received base link")]
+        public void WhenVerifyProductAddedToCartByReceivedBaseLink()
+        {
+            
+        }
+
+        [When(@"Click ""([^""]*)"" Button for ""([^""]*)"" times")]
+        public void WhenClickButtonForTimes(string Button, string ForTimes)
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"verify that the number of products is increased correctly")]
+        public void ThenVerifyThatTheNumberOfProductsIsIncreasedCorrectly()
+        {
+            throw new PendingStepException();
         }
     }
 }
