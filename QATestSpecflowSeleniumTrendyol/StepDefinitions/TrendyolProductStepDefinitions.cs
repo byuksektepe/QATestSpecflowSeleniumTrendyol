@@ -9,6 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         private readonly ProductSeller productSeller;
         private readonly SubMethods subMethods;
         private readonly ProductDetail productDetail;
+        private readonly Cart cart;
 
 
         public TrendyolProductStepDefinitions(SeleniumDriver driver)
@@ -16,6 +17,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             productSeller = new ProductSeller(driver.Current);
             subMethods = new SubMethods(driver.Current);
             productDetail = new ProductDetail(driver.Current);
+            cart = new Cart(driver.Current);
         }
 
         private string ProductSellerName;
@@ -54,19 +56,19 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Verify Product added to cart by received base link")]
         public void WhenVerifyProductAddedToCartByReceivedBaseLink()
         {
-            
+            cart.VerifyProductAddedToCartByGivenLink(ProductUrl);
         }
 
         [When(@"Click ""([^""]*)"" Button for ""([^""]*)"" times")]
         public void WhenClickButtonForTimes(string Button, string ForTimes)
         {
-            throw new PendingStepException();
+
         }
 
         [Then(@"verify that the number of products is increased correctly")]
         public void ThenVerifyThatTheNumberOfProductsIsIncreasedCorrectly()
         {
-            throw new PendingStepException();
+
         }
     }
 }

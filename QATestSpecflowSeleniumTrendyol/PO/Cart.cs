@@ -30,14 +30,15 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
         }
 
-        public void VerifyProductLinkByGiven(string GivenUrl)
+        public void VerifyProductAddedToCartByGivenLink(string GivenUrl)
         {
+            GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
             string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]", GivenUrl);
             IWebElement ReceivedProductUrlElement = common.FindElementAndIgnoreErrors("XPath", ReceivedProductUrlLocator);
 
             if (!common.Exists(ReceivedProductUrlElement))
             {
-
+                throw new ProductNotFoundCalledPageException(GivenUrl);
             }
         }
     }
