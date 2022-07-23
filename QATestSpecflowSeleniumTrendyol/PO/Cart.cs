@@ -76,7 +76,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             IWebElement ReceivedProductNumberElement = Driver.FindElement(By.XPath(ReceivedProductNumberLocator));
 
             string ProductPiece = ReceivedProductNumberElement.GetAttribute("value");
-            forTimes = forTimes + Calibration;
+            if (Calibration != 0) { forTimes = forTimes + Calibration; }
 
             if (!ProductPiece.Equals(Convert.ToString(forTimes)))
             {
