@@ -27,7 +27,7 @@ Scenario Outline: Visitor should be able add multiple products to cart
 	And Verify cart page opened
 	And Verify Product added to cart by received base link
 	And Click "<ButtonType>" Button for "<ClickTimes>" times
-	Then verify that the number of products is increased correctly
+	Then verify that the number of products is increased correctly by "<ClickTimes>"
 
 
 Examples: 

@@ -189,7 +189,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("Click \"{0}\" Button for \"{1}\" times", buttonType, clickTimes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
- testRunner.Then("verify that the number of products is increased correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("verify that the number of products is increased correctly by \"{0}\"", clickTimes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

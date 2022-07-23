@@ -65,10 +65,11 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             cart.ClickProductIncreaseButtonByGivenTimes(ForTimes, ProductUrl);
         }
 
-        [Then(@"verify that the number of products is increased correctly")]
-        public void ThenVerifyThatTheNumberOfProductsIsIncreasedCorrectly()
+        [Then(@"verify that the number of products is increased correctly by ""([^""]*)""")]
+        public void ThenVerifyThatTheNumberOfProductsIsIncreasedCorrectlyBy(string ForTimes)
         {
-
+            cart.VerifyProductNumberIncreaseByGiven(ForTimes, ProductUrl, 1);
         }
+
     }
 }

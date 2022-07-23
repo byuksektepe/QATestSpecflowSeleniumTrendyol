@@ -64,6 +64,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyProductNumberIncreaseByGiven(string ForTimes, string GivenUrl, int Calibration = 0)
         {
+            common.WaitForPageLoad();
             int forTimes;
             if (!int.TryParse(ForTimes, out forTimes))
             {
@@ -74,16 +75,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             string ReceivedProductNumberLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//input[@class='counter-content']", GivenUrl);
             IWebElement ReceivedProductNumberElement = Driver.FindElement(By.XPath(ReceivedProductNumberLocator));
 
-            string ProductPiece = ReceivedProductNumberElement.Text;
+            string ProductPiece = ReceivedProductNumberElement.GetAttribute("value");
             forTimes = forTimes + Calibration;
 
-            if (!ProductPiece.Equals(forTimes))
+            if (!ProductPiece.Equals(Convert.ToString(forTimes)))
             {
-
+                throw new ProductNumberNotMatchException(forTimes, ProductPiece);
             }
-
-
-
         }
     }
 }
