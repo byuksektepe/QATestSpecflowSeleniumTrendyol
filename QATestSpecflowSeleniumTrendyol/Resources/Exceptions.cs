@@ -65,9 +65,9 @@
     }
 
     [Serializable]
-    class TypeParseException : Exception
+    class TryParseException : Exception
     {
-        public TypeParseException()
+        public TryParseException()
             : base("The value given is not parseable.")
 
         { }

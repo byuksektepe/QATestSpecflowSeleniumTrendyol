@@ -47,7 +47,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             int forTimes;
             if(!int.TryParse(ForTimes, out forTimes))
             {
-                throw new TypeParseException();
+                throw new TryParseException();
             }
 
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
