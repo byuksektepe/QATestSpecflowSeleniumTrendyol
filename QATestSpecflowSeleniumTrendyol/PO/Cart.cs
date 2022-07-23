@@ -32,9 +32,10 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyProductLinkByGiven(string GivenUrl)
         {
-            string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//button[@class='ty-numeric-counter-button']", GivenUrl);
+            string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]", GivenUrl);
+            IWebElement ReceivedProductUrlElement = common.FindElementAndIgnoreErrors("XPath", ReceivedProductUrlLocator);
 
-            if (!GivenUrl.Contains("null"))
+            if (!common.Exists(ReceivedProductUrlElement))
             {
 
             }

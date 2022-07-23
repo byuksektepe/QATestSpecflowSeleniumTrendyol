@@ -53,4 +53,15 @@
 
     }
 
+    [Serializable]
+    class ProductNotFoundCalledPageException : Exception
+    {
+        public ProductNotFoundCalledPageException() { }
+        public ProductNotFoundCalledPageException(string GivenUrl)
+            : base(String.Format("Given product url '{0}' does not found in called page.", GivenUrl))
+
+        { }
+
+    }
+
 }
