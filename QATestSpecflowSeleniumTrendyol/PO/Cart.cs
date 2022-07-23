@@ -62,7 +62,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             }
         }
 
-        public void VerifyProductNumberIncreaseByGiven(string ForTimes, string GivenUrl, int Calibration)
+        public void VerifyProductNumberIncreaseByGiven(string ForTimes, string GivenUrl, int Calibration = 0)
         {
             int forTimes;
             if (!int.TryParse(ForTimes, out forTimes))
@@ -75,6 +75,15 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             IWebElement ReceivedProductNumberElement = Driver.FindElement(By.XPath(ReceivedProductNumberLocator));
 
             string ProductPiece = ReceivedProductNumberElement.Text;
+            forTimes = forTimes + Calibration;
+
+            if (!ProductPiece.Equals(forTimes))
+            {
+
+            }
+
+
+
         }
     }
 }

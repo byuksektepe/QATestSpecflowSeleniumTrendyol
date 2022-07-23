@@ -74,4 +74,15 @@
 
     }
 
+    [Serializable]
+    class ProductNumberNotMatchException : Exception
+    {
+        public ProductNumberNotMatchException() { }
+        public ProductNumberNotMatchException(int forTimes, string ProductPiece)
+            : base(String.Format("Clicked product number times '{0}' not match by received '{1}' product pieces", forTimes, ProductPiece))
+
+        { }
+
+    }
+
 }
