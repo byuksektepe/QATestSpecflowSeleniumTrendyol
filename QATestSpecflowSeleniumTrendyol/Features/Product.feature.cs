@@ -129,7 +129,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Visitor should be able add multiple products to cart")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("MultipleProduct")]
-        [NUnit.Framework.TestCaseAttribute("Kurşun Kalem", "Plus", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("Kurşun Kalem", "Up", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("Silgi", "Up", "7", null)]
         public void VisitorShouldBeAbleAddMultipleProductsToCart(string searchQuery, string buttonType, string clickTimes, string[] exampleTags)
         {
             string[] @__tags = new string[] {
