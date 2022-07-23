@@ -41,5 +41,25 @@ namespace QATestSpecflowSeleniumTrendyol.PO
                 throw new ProductNotFoundCalledPageException(GivenUrl);
             }
         }
+
+        public void ClickProductIncreaseButtonByGivenTimes(string ForTimes, string GivenUrl)
+        {
+            int forTimes;
+            if(!int.TryParse(ForTimes, out forTimes))
+            {
+                throw new TypeParseException();
+            }
+
+            GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
+            string ReceivedProductIncreaseButtonLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//button[@class='ty-numeric-counter-button']", GivenUrl);
+            IWebElement ReceivedProductIncreaseButtonElement = Driver.FindElement(By.XPath(ReceivedProductIncreaseButtonLocator));
+
+            foreach (int i in Enumerable.Range(1, forTimes))
+            {
+                ReceivedProductIncreaseButtonElement.Click();
+                common.WaitForPageLoad();
+                common.WaitUntilElement(By.XPath(ReceivedProductIncreaseButtonLocator), "Clickable");
+            }
+        }
     }
 }

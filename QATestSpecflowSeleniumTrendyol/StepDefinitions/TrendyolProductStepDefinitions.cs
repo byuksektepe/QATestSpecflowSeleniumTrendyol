@@ -62,7 +62,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click ""([^""]*)"" Button for ""([^""]*)"" times")]
         public void WhenClickButtonForTimes(string Button, string ForTimes)
         {
-
+            cart.ClickProductIncreaseButtonByGivenTimes(ForTimes, ProductUrl);
         }
 
         [Then(@"verify that the number of products is increased correctly")]

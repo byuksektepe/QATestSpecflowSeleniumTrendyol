@@ -64,4 +64,14 @@
 
     }
 
+    [Serializable]
+    class TypeParseException : Exception
+    {
+        public TypeParseException()
+            : base("The value given is not parseable.")
+
+        { }
+
+    }
+
 }
