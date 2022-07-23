@@ -63,7 +63,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         }
 
         public void VerifyProductNumberIncreaseByGiven(string ForTimes, string GivenUrl, int Calibration = 0)
-        {
+        { // Kalibrasyon zaten sepette eklenmiş ürün varsa onu toplamak için kullanılır. Değer verilmediğinde 0 dır.
             common.WaitForPageLoad();
             int forTimes;
             if (!int.TryParse(ForTimes, out forTimes))
