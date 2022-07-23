@@ -180,19 +180,19 @@
             return _webDriver.Url;
         }
 
-        public void WaitUntilElement(By elementLocator, string method = "Visible")
+        public void WaitUntilElement(By elementLocator, string method = Conditions.Visible)
         {
             try
             {
-                if (method == "Clickable")
+                if (method == Conditions.Clickable)
                 {
                     wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
                 }
-                else if (method == "Exists")
+                else if (method == Conditions.Exists)
                 {
                     wait.Until(ExpectedConditions.ElementExists(elementLocator));
                 }
-                else if (method == "Visible")
+                else if (method == Conditions.Visible)
                 {
                     wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
                 }

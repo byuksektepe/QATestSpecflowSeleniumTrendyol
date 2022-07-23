@@ -7,4 +7,12 @@
         public const string CSS = "css";
 
     }
+
+    public static class Conditions
+    {
+        public const string Visible = "Visible";
+        public const string Exists = "Exists";
+        public const string Clickable = "Clickable";
+
+    }
 }

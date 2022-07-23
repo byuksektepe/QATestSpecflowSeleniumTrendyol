@@ -27,7 +27,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyCartPageOpened()
         {
-            common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
+            common.WaitUntilElement(By.XPath(CartVerifyLocator), Conditions.Exists);
         }
 
         public void VerifyProductAddedToCartByGivenLink(string GivenUrl)
@@ -58,7 +58,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             {
                 ReceivedProductIncreaseButtonElement.Click();
                 common.WaitForPageLoad();
-                common.WaitUntilElement(By.XPath(ReceivedProductIncreaseButtonLocator), "Clickable");
+                common.WaitUntilElement(By.XPath(ReceivedProductIncreaseButtonLocator), Conditions.Clickable);
             }
         }
 
