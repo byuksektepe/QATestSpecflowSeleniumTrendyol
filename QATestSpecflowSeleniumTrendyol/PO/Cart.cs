@@ -30,9 +30,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common.WaitUntilElement(By.XPath(CartVerifyLocator), "Exists");
         }
 
-        public void VerifyProductLink(string GivenUrl)
+        public void VerifyProductLinkByGiven(string GivenUrl)
         {
-            if (!GivenUrl.Contains(ReceivedUrl))
+            string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//button[@class='ty-numeric-counter-button']", GivenUrl);
+
+            if (!GivenUrl.Contains("null"))
             {
 
             }
