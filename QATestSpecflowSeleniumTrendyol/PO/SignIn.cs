@@ -47,7 +47,6 @@
 
             if (!ReceivedException.Equals(GivenException))
             {
-
                 throw new ExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
             }
         }

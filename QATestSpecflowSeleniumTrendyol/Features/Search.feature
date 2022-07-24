@@ -29,6 +29,6 @@ Scenario Outline: Visitor should be able search product using filters
 
 Examples: 
 	| SearchQuery     | Brand   | MinPrice | MaxPrice | PhotoReview | FreeCargo |
-	| Kamp Sandalyesi | Quechua | 200      | 350      | x           |           |
+	| Kamp Sandalyesi | Quechua | 200      | 450      | x           |           |
 	| iphone 11       | Apple   | 10000    | 14000    |             | x         |
 	| Alet Çantası    | Bosch   | 300      | 400      | x           |           |
