@@ -33,4 +33,4 @@ Scenario Outline: Visitor should be able add multiple products to cart
 Examples: 
 	| SearchQuery  | ButtonType | ClickTimes |
 	| Kurşun Kalem | Up         | 4          |
-	| Silgi		   | Up         | 7          |
+	| Silgi		  | Up         | 7          |
