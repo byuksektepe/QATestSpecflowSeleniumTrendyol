@@ -2,9 +2,9 @@
 {
     public static class Locators
     {
-        public const string XPath = "xpath";
-        public const string Id = "id";
-        public const string CSS = "css";
+        public const string XPath = "XPath";
+        public const string Id = "Id";
+        public const string CSS = "CSS";
 
     }
 

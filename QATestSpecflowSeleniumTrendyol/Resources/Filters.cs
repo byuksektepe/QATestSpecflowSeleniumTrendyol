@@ -56,13 +56,13 @@
 
             if (common.Exists(PriceFilterContentElement))
             {
-                common.WaitUntilElement(By.XPath(PriceFilterContentLocator), "Visible");
+                common.WaitUntilElement(By.XPath(PriceFilterContentLocator), Conditions.Visible);
                 SetPriceFilter(MinPrice, MaxPrice);
             }
             else
             {
                 PriceFilterFrameElement.Click();
-                common.WaitUntilElement(By.XPath(PriceFilterContentLocator), "Visible");
+                common.WaitUntilElement(By.XPath(PriceFilterContentLocator), Conditions.Visible);
                 SetPriceFilter(MinPrice, MaxPrice);
             }
         }
@@ -82,13 +82,13 @@
 
             if (common.Exists(BrandFilterContentElement))
             {
-                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), "Visible");
+                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), Conditions.Visible);
                 SetBrandFilter(Brand);
             }
             else
             {
                 BrandFilterFrameElement.Click();
-                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), "Visible");
+                common.WaitUntilElement(By.XPath(BrandFilterContentLocator), Conditions.Visible);
                 SetBrandFilter(Brand);
             }
         }

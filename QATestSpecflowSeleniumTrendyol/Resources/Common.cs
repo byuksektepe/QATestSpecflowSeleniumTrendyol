@@ -77,7 +77,6 @@
 
         public IWebElement? FindElementAndIgnoreErrors(string method, string locator)
         { 
-            method = method.ToLower();
             switch (method)
             {
                 case Locators.XPath:

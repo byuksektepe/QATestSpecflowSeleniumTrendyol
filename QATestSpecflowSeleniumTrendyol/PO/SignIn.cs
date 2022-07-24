@@ -29,7 +29,7 @@
         {
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(SignInVerifyLocator), "Visible");
+            common.WaitUntilElement(By.XPath(SignInVerifyLocator), Conditions.Visible);
         }
 
         public void SetEmailAndPassword(string email, string password)
@@ -40,7 +40,7 @@
 
         public void VerifyExceptionMessageByGiven(string GivenException)
         {
-            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), "Visible");
+            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), Conditions.Visible);
 
             string ReceivedException = (ExceptionMessageElement.Text).ToLower();
             GivenException = GivenException.ToLower();

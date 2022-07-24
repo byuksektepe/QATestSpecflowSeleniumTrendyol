@@ -18,7 +18,7 @@
 
         IWebElement MoveToTopButtonElement => Driver.FindElement(By.XPath(MoveToTopButtonLocator));
         IWebElement PageTopElement => Driver.FindElement(By.XPath(PageTopVerifyLocator));
-        IWebElement AcceptCookiesElement => common.FindElementAndIgnoreErrors("XPath", AcceptCoockiesButton);
+        IWebElement AcceptCookiesElement => common.FindElementAndIgnoreErrors(Locators.XPath, AcceptCoockiesButton);
 
         public void AcceptCoockiesIfVisible()
         {
@@ -35,7 +35,7 @@
 
         public void VerifyTopOfThePageIsVisible()
         {
-            common.WaitUntilElement(By.XPath(PageTopVerifyLocator), "Visible");
+            common.WaitUntilElement(By.XPath(PageTopVerifyLocator), Conditions.Visible);
             common.Sleep(1);
         }
     }

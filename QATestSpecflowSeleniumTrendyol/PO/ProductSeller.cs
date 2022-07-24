@@ -21,7 +21,7 @@
         public void VerifyPageLoad()
         {
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(ProductSellerVerifyLocator), "Visible");
+            common.WaitUntilElement(By.XPath(ProductSellerVerifyLocator), Conditions.Visible);
         }
 
         public void CheckProductSellerNameByGiven(string GivenSellerName)

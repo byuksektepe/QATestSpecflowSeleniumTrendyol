@@ -24,7 +24,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void VerifyPageLoad()
         {
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(FirstProductLocator), "Visible");
+            common.WaitUntilElement(By.XPath(FirstProductLocator), Conditions.Visible);
             subMethods.AcceptCoockiesIfVisible();
             common.ClosePopupIfExists();
         }
@@ -32,7 +32,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickFirstProduct()
         {
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(FirstProductLocator), "Visible");
+            common.WaitUntilElement(By.XPath(FirstProductLocator), Conditions.Visible);
             common.ScrollToElement(FirstProductInResults);
             FirstProductInResults.Click();
 

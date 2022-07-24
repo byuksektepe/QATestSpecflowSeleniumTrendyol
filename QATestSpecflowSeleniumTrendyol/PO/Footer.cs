@@ -27,7 +27,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void VerifyFooterIsVisible()
         {
-            common.WaitUntilElement(By.XPath(FooterVerifyLocator), "Visible");
+            common.WaitUntilElement(By.XPath(FooterVerifyLocator), Conditions.Visible);
         }
     }
 }

@@ -32,7 +32,7 @@
         {
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(SignUpVerifyLocator), "Visible");
+            common.WaitUntilElement(By.XPath(SignUpVerifyLocator), Conditions.Visible);
         }
 
         public void SetEmailAndPassword(string Email, string Password)
@@ -50,7 +50,7 @@
 
         public void VerifyExceptionMessageByGiven(string GivenException)
         {
-            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), "Visible");
+            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), Conditions.Visible);
 
             string ReceivedException = (ExceptionMessageElement.Text).ToLower();
             GivenException = GivenException.ToLower();
@@ -63,7 +63,7 @@
 
         public void VerifyPasswordWarnerMessageByGiven(string GivenMessage)
         {
-            common.WaitUntilElement(By.XPath(PasswordWarnerMessageLocator), "Visible");
+            common.WaitUntilElement(By.XPath(PasswordWarnerMessageLocator), Conditions.Visible);
 
             string ReceivedMessage = (PasswordWarnerMessageElement.Text).ToLower();
             GivenMessage = GivenMessage.ToLower();

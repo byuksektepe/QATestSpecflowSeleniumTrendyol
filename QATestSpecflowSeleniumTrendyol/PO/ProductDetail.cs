@@ -55,9 +55,9 @@
 
         public void VerifyCommentsAreVisible()
         {
-            common.WaitUntilElement(By.XPath(CommentsMainLocator), "Exists");
+            common.WaitUntilElement(By.XPath(CommentsMainLocator), Conditions.Exists);
             common.ScrollToElement(CommentsMainElement);
-            common.WaitUntilElement(By.XPath(CommentsMainLocator), "Visible");
+            common.WaitUntilElement(By.XPath(CommentsMainLocator), Conditions.Visible);
         }
 
         public void ClickSeeCartElement()
