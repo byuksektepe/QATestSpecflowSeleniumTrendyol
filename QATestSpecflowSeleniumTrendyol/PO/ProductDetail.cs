@@ -21,7 +21,6 @@
             Driver = webDriver;
             common = new Common(webDriver);
         }
-        //
 
         private IWebElement ProductDetailVerifyElement => Driver.FindElement(By.XPath(ProductDetailVerifyLocator));
         private IWebElement AddToCartButtonElement => Driver.FindElement(By.XPath(AddToCartButtonLocator));

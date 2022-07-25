@@ -14,7 +14,6 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private const string D_SignUpLocator = "//div[@class='login-dropdown']//div[@class='signup-button']";
         private const string D_SignInLocator = "//div[@class='login-dropdown']//div[@class='login-button']";
 
-        // Create new instances
         public Navbar(IWebDriver webDriver)
         {
             Driver = webDriver;
