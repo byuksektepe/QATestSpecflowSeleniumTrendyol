@@ -86,7 +86,12 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
         public void ClickProductDeleteButtonByGiven(string GivenUrl)
         {
+            GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
+            string ReceivedProductDeleteButtonLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']/button", GivenUrl);
+            IWebElement ReceivedProductDeleteButtonElement = Driver.FindElement(By.XPath(ReceivedProductDeleteButtonLocator));
 
+            ReceivedProductDeleteButtonElement.Click();
+            common.WaitForPageLoad();
         }
     }
 }
