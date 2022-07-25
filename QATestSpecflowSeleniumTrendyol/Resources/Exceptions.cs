@@ -26,9 +26,7 @@
         public ExceptionMessageNotMatchByGivenException() { }
         public ExceptionMessageNotMatchByGivenException(string GivenException, string ReceivedException)
             : base(String.Format("Given exception message '{0}' is not equals received '{1}' message.", GivenException, ReceivedException))
-        
         { }
-
     }
 
     [Serializable]
@@ -37,9 +35,7 @@
         public MessageNotMatchByGivenException() { }
         public MessageNotMatchByGivenException(string GivenException, string ReceivedException)
             : base(String.Format("Given message '{0}' is not equals received '{1}' message.", GivenException, ReceivedException))
-
         { }
-
     }
 
     [Serializable]
@@ -48,9 +44,7 @@
         public SellerNameNotMatchByGivenException() { }
         public SellerNameNotMatchByGivenException(string GivenSellerName, string ReceivedSellerName)
             : base(String.Format("Given seller name '{0}' is not equals received '{1}' seller name.", GivenSellerName, ReceivedSellerName))
-
         { }
-
     }
 
     [Serializable]
@@ -59,9 +53,7 @@
         public ProductNotFoundCalledPageException() { }
         public ProductNotFoundCalledPageException(string GivenUrl)
             : base(String.Format("Given product url '{0}' does not found in called page.", GivenUrl))
-
         { }
-
     }
 
     [Serializable]
@@ -69,9 +61,7 @@
     {
         public TryParseException()
             : base("The value given is not parseable.")
-
         { }
-
     }
 
     [Serializable]
@@ -80,9 +70,7 @@
         public ProductIsNotDeletedInCartException() { }
         public ProductIsNotDeletedInCartException(string GivenUrl)
             : base(String.Format("The checked product '{0}' appears not to have been deleted from the cart.", GivenUrl))
-
         { }
-
     }
 
     [Serializable]
@@ -93,7 +81,5 @@
             : base(String.Format("Clicked product number times '{0}' not match by received '{1}' product pieces", forTimes, ProductPiece))
 
         { }
-
     }
-
 }

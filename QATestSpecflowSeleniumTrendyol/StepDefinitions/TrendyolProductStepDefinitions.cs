@@ -82,7 +82,5 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         {
             cart.VerifyProductIsDeletedByGiven(ProductUrl);
         }
-
-
     }
 }
