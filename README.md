@@ -47,10 +47,33 @@ Example:
  ```
 livingdoc feature-folder <your_path_to_project>\QATestSpecflowSeleniumTrendyol -t <your_path_to_project>\QATestSpecflowSeleniumTrendyol\bin\Debug\net6.0\TestExecution.json
  ```
+### Scenarios in Feature Files
 
-![image](https://user-images.githubusercontent.com/61010367/179406154-11d4d498-f723-47a3-b93e-13282e45b7ca.png)
-![image](https://user-images.githubusercontent.com/61010367/179406171-cd0a3cd3-aa0d-4845-9fc8-3601abad4381.png)
+In TrendyolMain.feature file
+```gherkin
+@Smoke @Favorites
+Scenario: Visitor should be able click add to favorites button and redirect login page
+	Given Navigate to trendyol website
+	And Search for product "Watch" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Click add to favorites button
+	Then Verify login page opened
 
+@Smoke @Footer
+Scenario: Visitor should be able to see footer
+	Given Navigate to trendyol website
+	When Scroll to footer
+	Then Verify footer is visible
 
+@Smoke @MoveToTop
+Scenario: Move to top button should be work
+	Given Navigate to trendyol website
+	When Scroll to footer
+	And Verify footer is visible
+	And Click move to top button
+	Then Verify top of the page is visible
+```
 
 
