@@ -74,7 +74,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [When(@"Click delete button by received base link")]
         public void WhenClickDeleteButtonByReceivedBaseLink()
         {
-            throw new PendingStepException();
+            cart.ClickProductDeleteButtonByGiven(ProductUrl);
         }
 
         [Then(@"Verify the product is deleted")]
