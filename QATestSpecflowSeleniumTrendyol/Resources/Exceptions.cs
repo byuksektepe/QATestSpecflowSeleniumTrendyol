@@ -75,6 +75,17 @@
     }
 
     [Serializable]
+    class ProductIsNotDeletedInCartException : Exception
+    {
+        public ProductIsNotDeletedInCartException() { }
+        public ProductIsNotDeletedInCartException(string GivenUrl)
+            : base(String.Format("The checked product '{0}' appears not to have been deleted from the cart.", GivenUrl))
+
+        { }
+
+    }
+
+    [Serializable]
     class ProductNumberNotMatchException : Exception
     {
         public ProductNumberNotMatchException() { }
