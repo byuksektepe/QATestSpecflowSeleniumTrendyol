@@ -49,7 +49,8 @@ livingdoc feature-folder <your_path_to_project>\QATestSpecflowSeleniumTrendyol -
  ```
 ### Scenarios in Feature Files
 
-In TrendyolMain.feature file
+In TrendyolMain.feature file. All of the basic features available in the application.
+
 ```gherkin
 @Smoke @Favorites
 Scenario: Visitor should be able click add to favorites button and redirect login page
@@ -74,6 +75,58 @@ Scenario: Move to top button should be work
 	And Verify footer is visible
 	And Click move to top button
 	Then Verify top of the page is visible
+```
+
+In Product.feature file
+
+```gherkin
+@Smoke @ProductSeller
+Scenario: Visitor should be able see product seller
+	Given Navigate to trendyol website
+	And Search for product "İpad Mini" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Get product seller name
+	And Click product seller page link
+	And Verify seller page opened
+	Then Verify the product seller with received name
+
+@Smoke @MultipleProduct
+Scenario Outline: Visitor should be able add multiple products to cart
+	Given Navigate to trendyol website
+	And Search for product "<SearchQuery>" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Get Product base link
+	And Click add to cart button
+	And Click see cart button
+	And Verify cart page opened
+	And Verify Product added to cart by received base link
+	And Click "<ButtonType>" Button for "<ClickTimes>" times
+	Then verify that the number of products is increased correctly by "<ClickTimes>"
+
+
+Examples: 
+	| SearchQuery  | ButtonType | ClickTimes |
+	| Kurşun Kalem | Up         | 4          |
+	| Silgi        | Up         | 7          |
+
+@Smoke @DeleteProductFromCart
+Scenario: Visitor should be able delete products in cart
+	Given Navigate to trendyol website
+	And Search for product "Parfüm" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Get Product base link
+	And Click add to cart button
+	And Click see cart button
+	And Verify cart page opened
+	And Verify Product added to cart by received base link
+	And Click delete button by received base link
+	Then Verify the product is deleted
 ```
 
 
