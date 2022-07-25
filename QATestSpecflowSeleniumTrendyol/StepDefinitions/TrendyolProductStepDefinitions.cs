@@ -80,7 +80,7 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
         [Then(@"Verify the product is deleted")]
         public void ThenVerifyTheProductIsDeleted()
         {
-            throw new PendingStepException();
+            cart.VerifyProductIsDeletedByGiven(ProductUrl);
         }
 
 

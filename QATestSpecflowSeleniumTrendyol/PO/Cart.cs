@@ -102,7 +102,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
             if (common.Exists(ReceivedProductUrlElement))
             {
-                throw new ProductNotFoundCalledPageException(GivenUrl);
+                throw new ProductIsNotDeletedInCartException(GivenUrl);
             }
         }
     }
