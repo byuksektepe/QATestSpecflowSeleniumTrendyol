@@ -9,7 +9,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         private readonly Common common;
 
         private const string CartVerifyLocator = "//div[@id='basket-app-container']";
-        private const string ProductVerifyLocator = "//div[@class='pb-merchant-group'][1]";
+        private const string ProductDeleteButton = "//button[contains(@class, 'ty-primary') and .='Sil']";
 
         public Cart(IWebDriver webDriver)
         {
@@ -17,7 +17,7 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common = new Common(webDriver);
         }
 
-        IWebElement ProductVerifyElement => Driver.FindElement(By.XPath(ProductVerifyLocator));
+        IWebElement ProductDeleteButtonElement => Driver.FindElement(By.XPath(ProductDeleteButton));
 
         public void VerifyPageLoad()
         {
@@ -92,10 +92,12 @@ namespace QATestSpecflowSeleniumTrendyol.PO
 
             ReceivedProductDeleteButtonElement.Click();
             common.WaitForPageLoad();
+            ProductDeleteButtonElement.Click();
         }
 
         public void VerifyProductIsDeletedByGiven(string GivenUrl)
         {
+            common.WaitForPageLoad();
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
             string ReceivedProductUrlLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]", GivenUrl);
             IWebElement ReceivedProductUrlElement = common.FindElementAndIgnoreErrors(Locators.XPath, ReceivedProductUrlLocator);
