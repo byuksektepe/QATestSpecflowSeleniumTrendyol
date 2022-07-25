@@ -83,5 +83,10 @@ namespace QATestSpecflowSeleniumTrendyol.PO
                 throw new ProductNumberNotMatchException(forTimes, ProductPiece);
             }
         }
+
+        public void ClickProductDeleteButtonByGiven(string GivenUrl)
+        {
+
+        }
     }
 }
