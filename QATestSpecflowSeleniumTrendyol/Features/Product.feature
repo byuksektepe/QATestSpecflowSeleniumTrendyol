@@ -35,6 +35,7 @@ Examples:
 	| Kurşun Kalem | Up         | 4          |
 	| Silgi        | Up         | 7          |
 
+@Smoke @DeleteProductFromCart
 Scenario: Visitor should be able delete products in cart
 	Given Navigate to trendyol website
 	And Search for product "Parfüm" in search
