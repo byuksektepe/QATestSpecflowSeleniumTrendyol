@@ -34,3 +34,17 @@ Examples:
 	| SearchQuery  | ButtonType | ClickTimes |
 	| Kurşun Kalem | Up         | 4          |
 	| Silgi        | Up         | 7          |
+
+Scenario: Visitor should be able delete products in cart
+	Given Navigate to trendyol website
+	And Search for product "Parfüm" in search
+	And Verify search executed
+	When Click first product in results
+	And Verify product detail page opened
+	And Get Product base link
+	And Click add to cart button
+	And Click see cart button
+	And Verify cart page opened
+	And Verify Product added to cart by received base link
+	And Click delete button by received base link
+	Then Verify the product is deleted
