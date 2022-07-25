@@ -46,7 +46,7 @@
         {
             WaitForPageLoad();
             #pragma warning disable CS8600
-            IWebElement ModalClose = FindElementAndIgnoreErrors("XPath", ModalCloseElement);
+            IWebElement ModalClose = FindElementAndIgnoreErrors(Locators.XPath, ModalCloseElement);
 
             #pragma warning disable CS8604
             if (Exists(ModalClose))
@@ -61,8 +61,8 @@
         {
             WaitForPageLoad();
             #pragma warning disable CS8600
-            IWebElement PopupElement = FindElementAndIgnoreErrors("XPath", PopupLocator);
-            IWebElement OverlayElement = FindElementAndIgnoreErrors("XPath", OverlayLocator);
+            IWebElement PopupElement = FindElementAndIgnoreErrors(Locators.XPath, PopupLocator);
+            IWebElement OverlayElement = FindElementAndIgnoreErrors(Locators.XPath, OverlayLocator);
 
             #pragma warning disable CS8604
             if (Exists(OverlayElement) || Exists(PopupElement))
