@@ -71,5 +71,18 @@ namespace QATestSpecflowSeleniumTrendyol.StepDefinitions
             cart.VerifyProductNumberIncreaseByGiven(ForTimes, ProductUrl, 1);
         }
 
+        [When(@"Click delete button by received base link")]
+        public void WhenClickDeleteButtonByReceivedBaseLink()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"Verify the product is deleted")]
+        public void ThenVerifyTheProductIsDeleted()
+        {
+            throw new PendingStepException();
+        }
+
+
     }
 }
