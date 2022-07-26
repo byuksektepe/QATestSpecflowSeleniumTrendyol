@@ -24,7 +24,8 @@
             _webDriver = webDriver;
             js = (IJavaScriptExecutor)webDriver;
             action = new Actions(webDriver);
-            wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(DefaultWaitInSeconds));
+            wait = new WebDriverWait(webDriver, 
+                                    TimeSpan.FromSeconds(DefaultWaitInSeconds));
         }
 
         public void StartTest()
@@ -132,8 +133,13 @@
 
         public void WaitForPageLoad()
         {
-            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(DefaultPageWaitInSeconds));
-            wait.Until(driver => js.ExecuteScript("return document.readyState").Equals("complete"));
+            var wait = new WebDriverWait(_webDriver, 
+                                         TimeSpan.FromSeconds(DefaultPageWaitInSeconds));
+
+            wait.Until(driver => js.ExecuteScript
+                                        ("return document.readyState")
+                                            .Equals("complete"));
+
             // This 7ms wait for prevent sync errors.
             System.Threading.Thread.Sleep(700);
         }
@@ -179,31 +185,37 @@
             return _webDriver.Url;
         }
 
-        public void WaitUntilElement(By elementLocator, string method = Conditions.Visible)
+        public void WaitUntilElement(By elementLocator, 
+                                     string method = Conditions.Visible)
         {
             try
             {
                 if (method == Conditions.Clickable)
                 {
-                    wait.Until(ExpectedConditions.ElementToBeClickable(elementLocator));
+                    wait.Until(ExpectedConditions
+                        .ElementToBeClickable(elementLocator));
                 }
                 else if (method == Conditions.Exists)
                 {
-                    wait.Until(ExpectedConditions.ElementExists(elementLocator));
+                    wait.Until(ExpectedConditions
+                        .ElementExists(elementLocator));
                 }
                 else if (method == Conditions.Visible)
                 {
-                    wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
+                    wait.Until(ExpectedConditions
+                        .ElementIsVisible(elementLocator));
                 }
                 else
                 {
-                    wait.Until(ExpectedConditions.ElementIsVisible(elementLocator));
+                    wait.Until(ExpectedConditions
+                        .ElementIsVisible(elementLocator));
                 }
 
             }
             catch (NoSuchElementException)
             {
-                Console.WriteLine("Element with locator: '" + elementLocator + "' was not found.");
+                Console.WriteLine("Element with locator: '" 
+                                        + elementLocator + "' was not found.");
                 throw;
             }
         }

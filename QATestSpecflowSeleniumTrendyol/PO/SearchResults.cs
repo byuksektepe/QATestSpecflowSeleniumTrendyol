@@ -18,20 +18,24 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             subMethods = new SubMethods(webDriver);
         }
 
-        IWebElement FirstProductInResults => Driver.FindElement(By.XPath(FirstProductLocator));
+        IWebElement FirstProductInResults => Driver.FindElement(
+                                                    By.XPath(FirstProductLocator));
 
         public void VerifyPageLoad()
         {
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(FirstProductLocator), Conditions.Visible);
+
+            common.WaitUntilElement(By.XPath(FirstProductLocator), 
+                                    Conditions.Visible);
+
             subMethods.AcceptCoockiesIfVisible();
             common.ClosePopupIfExists();
         }
 
         public void ClickFirstProduct()
         {
-            common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(FirstProductLocator), Conditions.Visible);
+            VerifyPageLoad();
+
             common.ScrollToElement(FirstProductInResults);
             FirstProductInResults.Click();
         }
