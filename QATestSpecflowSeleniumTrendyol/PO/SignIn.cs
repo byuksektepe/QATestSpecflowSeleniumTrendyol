@@ -11,7 +11,8 @@
         private const string PasswordInputLocator = "//input[@id='login-password-input']";
         private const string SignInButtonLocator = "//button[@class='q-primary q-fluid q-button-medium q-button submit']";
 
-        private const string ExceptionMessageLocator = "//div[@id='error-box-wrapper']//span[@class='message']";
+        private const string ExceptionMessageLocator = "//div[@id='error-box-wrapper']" +
+            "                                           //span[@class='message']";
 
         public SignIn(IWebDriver driver)
         {
@@ -29,7 +30,8 @@
         {
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
             common.WaitForPageLoad();
-            common.WaitUntilElement(By.XPath(SignInVerifyLocator), Conditions.Visible);
+            common.WaitUntilElement(By.XPath(SignInVerifyLocator), 
+                                    Conditions.Visible);
         }
 
         public void SetEmailAndPassword(string email, string password)
@@ -40,14 +42,16 @@
 
         public void VerifyExceptionMessageByGiven(string GivenException)
         {
-            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), Conditions.Visible);
+            common.WaitUntilElement(By.XPath(ExceptionMessageLocator), 
+                                    Conditions.Visible);
 
             string ReceivedException = (ExceptionMessageElement.Text).ToLower();
             GivenException = GivenException.ToLower();
 
             if (!ReceivedException.Equals(GivenException))
             {
-                throw new ExceptionMessageNotMatchByGivenException(GivenException, ReceivedException);
+                throw new ExceptionMessageNotMatchByGivenException(
+                          GivenException, ReceivedException);
             }
         }
 

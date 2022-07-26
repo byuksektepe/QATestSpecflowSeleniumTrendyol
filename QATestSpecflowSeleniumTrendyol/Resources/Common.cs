@@ -3,8 +3,11 @@
     public class Common
     {
         public const string SiteUrl = "https://trendyol.com";
-        public const string ModalCloseElement = "//div[@class='modal-content']//div[@class='modal-close']";
-        public const string PageLoadVerifyElement = "//div[@class='header']//a[@id='logo']";
+        public const string ModalCloseElement = "//div[@class='modal-content']" +
+                                                "//div[@class='modal-close']";
+
+        public const string PageLoadVerifyElement = "//div[@class='header']" +
+                                                    "//a[@id='logo']";
 
         public const string PopupLocator = "//div[@class='popup']";
         public const string OverlayLocator = "//div[@class='overlay']";
@@ -46,34 +49,27 @@
         public void CloseModalIfExists()
         {
             WaitForPageLoad();
-            #pragma warning disable CS8600
-            IWebElement ModalClose = FindElementAndIgnoreErrors(Locators.XPath, ModalCloseElement);
-
-            #pragma warning disable CS8604
+            IWebElement? ModalClose = FindElementAndIgnoreErrors(Locators.XPath, 
+                                                                ModalCloseElement);
             if (Exists(ModalClose))
             {
-                ModalClose.Click();
+                ModalClose?.Click();
             }
-            #pragma warning restore CS8604
-            #pragma warning restore CS8600
+
         }
 
         public void ClosePopupIfExists()
         {
             WaitForPageLoad();
-            #pragma warning disable CS8600
-            IWebElement PopupElement = FindElementAndIgnoreErrors(Locators.XPath, PopupLocator);
-            IWebElement OverlayElement = FindElementAndIgnoreErrors(Locators.XPath, OverlayLocator);
+            IWebElement? PopupElement = FindElementAndIgnoreErrors(Locators.XPath, 
+                                                                  PopupLocator);
 
-            #pragma warning disable CS8604
+            IWebElement? OverlayElement = FindElementAndIgnoreErrors(Locators.XPath, 
+                                                                    OverlayLocator);
             if (Exists(OverlayElement) || Exists(PopupElement))
             {
-            #pragma warning disable CS8602
-                OverlayElement.Click();
-            #pragma warning restore CS8602
+                OverlayElement?.Click();
             }
-            #pragma warning restore CS8604
-            #pragma warning restore CS8600
         }
 
         public IWebElement? FindElementAndIgnoreErrors(string method, string locator)
@@ -124,7 +120,7 @@
         }
 
 
-        public bool Exists(IWebElement element)
+        public bool Exists(IWebElement? element)
         {
             if (element == null)
             { return false; }

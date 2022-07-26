@@ -5,8 +5,11 @@
         private readonly IWebDriver Driver;
         private readonly Common common;
 
-        private const string MoveToTopButtonLocator = "//div[@id='scrollToUp']//div[@class='scroll-to-up']";
-        private const string PageTopVerifyLocator = "//div[@id='headerMain']//div[@class='header-top']//li[1]";
+        private const string MoveToTopButtonLocator = "//div[@id='scrollToUp']" +
+                                                      "//div[@class='scroll-to-up']";
+
+        private const string PageTopVerifyLocator = "//div[@id='headerMain']" +
+                                                    "//div[@class='header-top']//li[1]";
 
         private const string AcceptCoockiesButton = "//button[@id='onetrust-accept-btn-handler']";
 
@@ -18,13 +21,15 @@
 
         IWebElement MoveToTopButtonElement => Driver.FindElement(By.XPath(MoveToTopButtonLocator));
         IWebElement PageTopElement => Driver.FindElement(By.XPath(PageTopVerifyLocator));
-        IWebElement AcceptCookiesElement => common.FindElementAndIgnoreErrors(Locators.XPath, AcceptCoockiesButton);
+
+        IWebElement? AcceptCookiesElement => common.FindElementAndIgnoreErrors
+                                             (Locators.XPath, AcceptCoockiesButton);
 
         public void AcceptCoockiesIfVisible()
         {
             if (common.Exists(AcceptCookiesElement))
             {
-                AcceptCookiesElement.Click();
+                AcceptCookiesElement?.Click();
             }
         }
 
@@ -35,7 +40,8 @@
 
         public void VerifyTopOfThePageIsVisible()
         {
-            common.WaitUntilElement(By.XPath(PageTopVerifyLocator), Conditions.Visible);
+            common.WaitUntilElement(By.XPath(PageTopVerifyLocator), 
+                                    Conditions.Visible);
             common.Sleep(1);
         }
     }

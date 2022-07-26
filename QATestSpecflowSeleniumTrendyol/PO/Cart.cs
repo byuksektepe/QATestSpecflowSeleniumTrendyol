@@ -17,7 +17,8 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             common = new Common(webDriver);
         }
 
-        IWebElement ProductDeleteButtonElement => Driver.FindElement(By.XPath(ProductDeleteButton));
+        IWebElement ProductDeleteButtonElement => Driver.FindElement(
+                                                         By.XPath(ProductDeleteButton));
 
         public void VerifyPageLoad()
         {
@@ -33,8 +34,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void VerifyProductAddedToCartByGivenLink(string GivenUrl)
         {
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
-            string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]", GivenUrl);
-            IWebElement ReceivedProductUrlElement = common.FindElementAndIgnoreErrors(Locators.XPath, ReceivedProductUrlLocator);
+            string ReceivedProductUrlLocator =  String.Format("//div[@class='pb-basket-item']" +
+                                                              "//a[contains(@href, '{0}')]", GivenUrl);
+
+            IWebElement? ReceivedProductUrlElement = common.FindElementAndIgnoreErrors
+                                                            (Locators.XPath, ReceivedProductUrlLocator);
 
             if (!common.Exists(ReceivedProductUrlElement))
             {
@@ -51,7 +55,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             }
 
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
-            string ReceivedProductIncreaseButtonLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//button[@class='ty-numeric-counter-button']", GivenUrl);
+            string ReceivedProductIncreaseButtonLocator = String.Format("//div[@class='pb-basket-item']" +
+                                                                        "//a[contains(@href, '{0}')]/.." +
+                                                                        "//div[@class='pb-basket-item-actions']" +
+                                                                        "//button[@class='ty-numeric-counter-button']", GivenUrl);
+
             IWebElement ReceivedProductIncreaseButtonElement = Driver.FindElement(By.XPath(ReceivedProductIncreaseButtonLocator));
 
             foreach (int i in Enumerable.Range(1, forTimes))
@@ -72,8 +80,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
             }
 
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
-            string ReceivedProductNumberLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']//input[@class='counter-content']", GivenUrl);
-            IWebElement ReceivedProductNumberElement = Driver.FindElement(By.XPath(ReceivedProductNumberLocator));
+            string ReceivedProductNumberLocator = String.Format("//div[@class='pb-basket-item']" +
+                                                                "//a[contains(@href, '{0}')]/.." +
+                                                                "//div[@class='pb-basket-item-actions']" +
+                                                                "//input[@class='counter-content']", GivenUrl);
+
+            IWebElement ReceivedProductNumberElement = Driver.FindElement
+                                                       (By.XPath(ReceivedProductNumberLocator));
 
             string ProductPiece = ReceivedProductNumberElement.GetAttribute("value");
             if (Calibration != 0) { forTimes = forTimes + Calibration; }
@@ -87,8 +100,13 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         public void ClickProductDeleteButtonByGiven(string GivenUrl)
         {
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
-            string ReceivedProductDeleteButtonLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]/..//div[@class='pb-basket-item-actions']/button", GivenUrl);
-            IWebElement ReceivedProductDeleteButtonElement = Driver.FindElement(By.XPath(ReceivedProductDeleteButtonLocator));
+            string ReceivedProductDeleteButtonLocator = String.Format("//div[@class='pb-basket-item']" +
+                                                                      "//a[contains(@href, '{0}')]/.." +
+                                                                      "//div[@class='pb-basket-item-actions']" +
+                                                                      "/button", GivenUrl);
+
+            IWebElement ReceivedProductDeleteButtonElement = Driver.FindElement
+                                                             (By.XPath(ReceivedProductDeleteButtonLocator));
 
             ReceivedProductDeleteButtonElement.Click();
             common.WaitForPageLoad();
@@ -99,8 +117,11 @@ namespace QATestSpecflowSeleniumTrendyol.PO
         {
             common.WaitForPageLoad();
             GivenUrl = GivenUrl.Replace("https://www.trendyol.com", "");
-            string ReceivedProductUrlLocator = String.Format("//div[@class='pb-basket-item']//a[contains(@href, '{0}')]", GivenUrl);
-            IWebElement ReceivedProductUrlElement = common.FindElementAndIgnoreErrors(Locators.XPath, ReceivedProductUrlLocator);
+            string ReceivedProductUrlLocator = String.Format("//div[@class='pb-basket-item']" +
+                                                             "//a[contains(@href, '{0}')]", GivenUrl);
+
+            IWebElement? ReceivedProductUrlElement = common.FindElementAndIgnoreErrors
+                                                            (Locators.XPath, ReceivedProductUrlLocator);
 
             if (common.Exists(ReceivedProductUrlElement))
             {
